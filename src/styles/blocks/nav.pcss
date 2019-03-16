@@ -1,4 +1,10 @@
-
+.nav{
+font-weight:400;
+justify-content:center;
+  @include tablets {
+    display: none;
+  }
+}
 .nav__list{
   display:flex;
   justify-content:center;
@@ -6,7 +12,7 @@
 
 .nav__link{
   border-bottom:2px solid transparent;
-  height:50px;
+  white-space: nowrap;
 
   &:hover{
   border-bottom:2px solid $main-color;

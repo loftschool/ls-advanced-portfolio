@@ -11,7 +11,7 @@ html(lang="en")
     .wrapper
       .maincontent
         section.hero-section
-          .container
+          .container.hero-container
             header.header
               .header__logo
                 a.logo(href="") BA
@@ -30,7 +30,8 @@ html(lang="en")
                         +icon(item, 'socials__icon')
             .hero__desc
               .hero__content
-                .hero__title Личный сайт веб разработчика
+                .hero__title Личный сайт 
+                 .hero__title веб разработчика
                 .hero__name Владимир Астаханов
             .scroll
               .scroll__text Скролл
@@ -44,23 +45,23 @@ html(lang="en")
               .about-side__left
                 .about__desc
                   +image('content/user.jpg', 'about__ava')
-                ul.about__list
-                  li.about__item
-                    .about__occ Проживаю:
-                    .about__info Новосибирск
-                  li.about__item
-                    .about__occ Возраст:
-                    .about__info 27 лет
-                  li.about__item
-                    .about__occ Родился:
-                    .about__info 1 января 1991 
+                table.about__table
+                  tr.about__table-user
+                    td.about__table-occ Проживаю:
+                    td.about__table-info Новосибирск
+                  tr.about__item
+                    td.about__table-occ Возраст:
+                    td.about__table-info 27 лет
+                  tr.about__item
+                    td.about__table-occ Родился:
+                    td.about__table-info 1 января 1991 
                 
               .about-side__right
-                p.about__promo Привет, меня зовут
-                h2.about__promo-title Владимир Астаханов
-                p.about__promo Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                p.about__promo Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!                
-                  +image('content/star.png', 'about__promo-image')
+                p.about__info Привет, меня зовут
+                h2.about__info-title Владимир Астаханов
+                p.about__info-text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                p.about__info-text.about__info-text--italic Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!                
+                  +image('content/star.png', 'about__info-image')
 
         section.skills-section
           .container

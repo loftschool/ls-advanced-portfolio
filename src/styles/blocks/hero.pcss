@@ -1,32 +1,39 @@
 .hero-section{
-  background:url('../images/content/bg/train_bridge.jpg')center top no-repeat;
+  background:url('../images/content/bg/train_bridge.jpg') no-repeat top center;
   background-size:cover;
-  height:150vh;
+  min-height:150vh;
   color: $text-color;
+}
+.hero-container{
+  padding-top:60px;
 }
 
 .hero__desc{
   display:flex; 
-  width:50%;
   min-height:670px;
-  margin:auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24%;
 }
 
 .hero__content{
   display: flex;
+  flex:1;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+       align-self: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 .hero__title{
   font-size:18px;
   color:$icon-color;
   text-align:right;
-  margin-right:2%;
+  margin-right:5%;
+  word-wrap: break-word; 
+  width: 230px;
 }
 
 .hero__name{
