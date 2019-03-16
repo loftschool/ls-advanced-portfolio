@@ -1,8 +1,13 @@
 {
-  "text-color": "#414c63",
+  "text-color": "#ffffff",
   "links-color": "#4b6fd7",
+  "font-color": "#2d3c4e",
+  "footer-color": "#1b1f22",
+  "main-color": "#ff9a00",
+  "icon-color": "rgba(255, 255, 255, 0.4)",
+  "accent-color": "rgba(255, 0, 0, 0.1)",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",
   "bp-phones": "480px"
-}
+} 
