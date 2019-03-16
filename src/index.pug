@@ -10,3 +10,62 @@ html(lang="en")
   body
     .wrapper
       .maincontent
+        section.hero-section
+          .container
+            header.header
+              .header__logo
+                a.logo(href="") BA
+              nav.nav
+                ul.nav__list
+                  - var nav = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
+                  each item in nav
+                    li.nav__item
+                      a(href="#").nav__link #{item}
+              .header__social
+                ul.socials
+                  - var socials = ['insta', 'vk', 'github'];
+                  each item in socials
+                    li.socials__item
+                      a(href="#").socials__link
+                        +icon(item, 'socials__icon')
+            .hero__desc
+              .hero__content
+                .hero__title Личный сайт веб разработчика
+                .hero__name Владимир Астаханов
+            .scroll
+              .scroll__text Скролл
+              a(href="#").scroll__icon
+                +icon('scroll')      
+        
+                     
+        section.about-section
+          .container
+            .about-side
+              .about-side__left
+                .about__desc
+                  +image('content/user.jpg', 'about__ava')
+                ul.about__list
+                  li.about__item
+                    .about__occ Проживаю:
+                    .about__info Новосибирск
+                  li.about__item
+                    .about__occ Возраст:
+                    .about__info 27 лет
+                  li.about__item
+                    .about__occ Родился:
+                    .about__info 1 января 1991 
+                
+              .about-side__right
+                p.about__promo Привет, меня зовут
+                h2.about__promo-title Владимир Астаханов
+                p.about__promo Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                p.about__promo Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!                
+                  +image('content/star.png', 'about__promo-image')
+
+        section.skills-section
+          .container
+            .skills__title Чем я могу быть полезен вам
+            p.skills__info Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        section.works-section
+        section.feedback-section
+        section.contacts-section   

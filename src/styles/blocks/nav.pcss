@@ -1,0 +1,29 @@
+
+.nav__list{
+  display:flex;
+  justify-content:center;
+}
+
+.nav__link{
+  border-bottom:2px solid transparent;
+  height:50px;
+
+  &:hover{
+  border-bottom:2px solid $main-color;
+  transition: .6s;
+  }
+}
+
+.nav__list .nav__item{
+  display:flex;
+  margin:0 25px;
+  align-content:center;
+}
+
+.nav__item:last-child{
+  margin-right:0;
+  }
+  
+  .nav__item:first-child{
+  margin-left:0;
+  }
