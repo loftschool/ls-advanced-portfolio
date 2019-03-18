@@ -113,28 +113,29 @@ html(lang="en")
                                 .skill__title #{skill}
         section.portfolio
           .container.portfolio__container
-            .portfolio__title
-              h2.section-title.portfolio__title-text Мои работы
-              .portfolio__slider
-                .portfolio-slider
-                  .portfolio-slider__pics
-                    .portfolio-slider__content
-                      .portfolio-slider__preview
-                        img
-                      .portfolio-slider__btns
-                        a.portfolio-slider__btn.portfolio-slider__btn--next(href="#")
-                        a.portfolio-slider__btn.portfolio-slider__btn--prev(href="#")
-                      ul.portfolio-slider__thumbs
+            h2.section-title.portfolio__title Мои работы
+            .portfolio__slider
+              .portfolio-slider
+                .portfolio-slider__pics(data-slide="1")
+                  .portfolio-slider__content
+                    .portfolio-slider__preview
+                      +image('content/preview.jpg', 'portfolio-slider__full-pic')
+                    .portfolio-slider__btns
+                      a.portfolio-slider__btn.portfolio-slider__btn--next(href="#")
+                      a.portfolio-slider__btn.portfolio-slider__btn--prev(href="#")
+                    ul.portfolio-slider__thumbs
+                      - var thumbs = ['content/prev1.jpg', 'content/prev2.jpg', 'content/prev3.jpg'];
+                      each item in thumbs
                         li.portfolio-slider__thumb
                           a.portfolio-slider__thumb-link
-                            img
-                  .portfolio-slider__data
-                    ul.portfolio-slider__tags
-                    .portfolio-slider__title 2 Сайт школы образования
-                    .portfolio-slider__descr
-                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .portfolio-slider__link
-                     a.link-icon(href="") Посмотреть сайт
+                            +image(`${item}`, 'portfolio-slider__small-pic')
+                .portfolio-slider__data
+                  ul.portfolio-slider__tags
+                  .portfolio-slider__title 2 Сайт школы образования
+                  .portfolio-slider__descr
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .portfolio-slider__link
+                    a.link-icon(href="") Посмотреть сайт
 
         .triangles.triangles--bottom
           svg.triangles__item.trianles__item--left(viewBox="0 0 1000 100" preserveAspectRatio="none")
@@ -176,18 +177,18 @@ html(lang="en")
                 .form__row
                   label(data-title="Введите ваше имя").form-block
                     .form-block__container
-                      .form-block__icon.form-block__icon--user
+                      +icon('user', 'form-block__icon')
                       .form-block__field
                         input(type="text", placeholder="Ковальчук Дмитрий").form-block__input
                   label(data-title="Введите ваш email").form-block
                     .form-block__container
-                      .form-block__icon.form-block__icon--mail
+                      +icon('envelope', 'form-block__icon')
                       .form-block__field
                         input(type="text", placeholder="loftschool@study.com").form-block__input            
                 .form__row
                   label(data-title="Сообщение к письму").form-block
-                    .form-block__container
-                      .form-block__icon.form-block__icon--chat
+                    .form-block__container.form-block__container--top
+                      +icon('message', 'form-block__icon')
                       .form-block__field
                         textarea(placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").form-block__input
                 .form__row.form__row--bottom
@@ -197,10 +198,11 @@ html(lang="en")
         footer.footer
           .container.footer__container
             .footer__copyright
-              .copyright
-                .copyright__year 2019
-                .copyright__username Владимир Астаханов
-                .copyright__desc Личный сайт
+              .footer__copyright-left
+                .footer__copyright-year © 2019               
+              .footer__copyright-right
+                .footer__copyright-name Лариса Козяровская
+                .footer__copyright-desc Личный сайт веб - разработчика
             .footer__data
               .footer__menu
                 nav.nav.nav--color-white
@@ -210,15 +212,17 @@ html(lang="en")
                         a(href="").nav__link #{item}
               .footer__data-columns
                 .footer__data-col
-                  article.footer__text
-                    | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet omnis quasi ipsam voluptas? Ab corrupti perferendis commodi ullam tenetur nam deserunt asperiores! Distinctio minima ullam eveniet facere sit in ducimus?
-                  ul.footer__social.socials.socials--rounded
-                    each item in socials
-                      li.socials__item
-                        a(href="").socials__link
-                          +icon(`${item}`, 'socials__icon')
+                  .footer__data-text
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                  .footer__data-socials
+                    ul.socials.socials--rounded
+                      each item in socials
+                        li.socials__item
+                          a(href="").socials__link
+                            +icon(`${item}`, 'socials__icon')
                 .footer__data-col
-                  article.footer__text
-                    p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit sed autem quo possimus eligendi officiis veritatis! Corporis vitae iusto reprehenderit maxime autem ex. Laboriosam ad, nemo tenetur velit quisquam necessitatibus.
-                    p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit sed autem quo possimus eligendi officiis veritatis! Corporis vitae iusto reprehenderit maxime autem ex. Laboriosam ad, nemo tenetur velit quisquam necessitatibus.
+                  .text-quote
+                    .text-quote__text
+                      p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете 
+                    .text-quote__author Martin Golding
 

@@ -1,0 +1,45 @@
+.form-block {
+    flex: 1;
+    margin-right: 50px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid;
+
+    &:before {
+        display: block;
+        margin-bottom: 21px;
+        margin-left: 48px;
+        content: attr(data-title);
+        font-weight: 600;
+        color: rgba($text-color, 0.3);
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+
+        &--top {
+            align-items: flex-start;
+        }
+    }
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 16px;
+        fill: currentColor;
+        opacity: 0.3;
+    }
+
+    &__field {
+        flex: 1;
+    }
+
+    &__input {
+        width: 100%;
+        font-size: 18px;
+        font-weight: 700;
+        color: #000;
+        border: 0;
+        background: transparent;
+    }
+}
