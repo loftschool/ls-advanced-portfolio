@@ -1,0 +1,53 @@
+.values {
+  padding: 140px 0 115px;
+
+  &__container {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: '';
+      bottom: 5%;
+      left: -20%;
+      width: 69%;
+      height: 79%;
+      background: url(../images/content/bag.png) no-repeat 0 100%;
+      background-size: contain;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__title {
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__title-wrap {
+    width: 38%;
+    margin-left: 6%;
+  }
+
+  &__title-text {
+    margin-bottom: 55px;
+  }
+
+  &__desc {
+    color: rgba($text-color, 0.5);
+    font-weight: 600;
+    line-height: 1.8;
+  }
+
+  &__skills {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__skills-wrap {
+    width: 66%;
+  }
+}

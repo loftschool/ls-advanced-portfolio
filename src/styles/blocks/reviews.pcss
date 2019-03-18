@@ -1,0 +1,60 @@
+.reviews {
+  margin-bottom: 190px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 95px;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    margin-right: 10%;
+  }
+
+  &__slider-controls {
+    display: flex;
+  }
+
+  &__btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-right: 25px;
+    border: 1px solid;
+    border-radius: 50%;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      content: '';
+      width: 8px;
+      height: 10px;
+      background: svg-load('Short Arrow.svg') no-repeat 50%/contain;
+    }
+
+    &--prev:before {
+      transform: translate(-50%, -50%) rotate(-180deg);
+    }
+  }
+
+  &__slider-wrap {
+    overflow: hidden;
+  }
+
+  &__slider {
+    display: flex;
+    align-items: flex-start;
+    will-change: transform;
+    transition: transform .3s,-webkit-transform .3s;
+  }
+
+  &__slider-item {
+    flex-shrink: 0;
+    padding-right: 30px;
+    width: 50%;
+  }
+}
