@@ -1,0 +1,71 @@
+.slider-feedback {
+  display: flex;
+  justify-content: space-between;
+  &__nav {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+    &_disabled {
+      color: #6c7683;
+    }
+  }
+  &__child {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 45%;
+    padding-left: 100px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 75px;
+      height: 63px;
+      background: url('../images/content/quote.png') center no-repeat;
+    }
+  }
+  &__quote {
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0.5;
+    color: #ffffff;
+  }
+  &__info {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    &-avatar {
+      margin-right: 30px;
+    }
+    &-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    &-post {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: 400;
+      opacity: 0.3;
+      color: #ffffff;
+    }
+  }
+  &__image {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+  }
+}

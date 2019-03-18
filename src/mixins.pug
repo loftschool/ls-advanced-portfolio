@@ -4,4 +4,20 @@ mixin icon(name, className)
     use(xlink:href=icon.url)
 
 mixin image(path, className)
-  img(src=require(`images/${path}`) class=className)
+  img(src=require(`images/content/${path}`) class=className)
+
+
+mixin nav(className, items)
+  nav(class=`${className}`)
+    ul(class=`${className}__list`)
+      each item in items 
+        li(class=`${className}__child`)
+          a(class=`${className}__link` href="#")= item
+
+mixin socials(className)
+  div(class=`${className}`)
+    ul(class=`${className}__list`)
+      each social in ['inst','vk','github']
+        li(class=`${className}__child`)
+          a(class=`${className}__link ${className}__link_${social}` href="#")
+            +icon(social,`${className}__icon` )

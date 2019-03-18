@@ -1,0 +1,80 @@
+.about {
+  padding: 40px 0 140px 0;
+  color: #ffffff;
+  &__wrap {
+    width: 77%;
+    margin: 0 auto;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: auto auto;
+    grid-gap: 70px 0px;
+    justify-items: center;
+  }
+  &__title {
+    margin: 12px 0;
+    font-weight: 700;
+    font-size: 36px;
+    color: #ffffff;
+    opacity: 1;
+  }
+  &__descr {
+    line-height: 30px;
+  }
+  &__prompt {
+    position: relative;
+    font-style: italic;
+    line-height: 30px;
+    &:before {
+      content: '*';
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: -60px;
+      font-size: 48px;
+      opacity: 0.1;
+      color: #ff0000;
+    }
+  }
+  &__child {
+    &_first,
+    &_third {
+      grid-column: 1 / 2;
+    }
+    &_second,
+    &_fourth {
+      grid-column: 2 / 3;
+    }
+  }
+  &__avatar {
+    width: 200px;
+    height: 200px;
+  }
+  &__info {
+    justify-self: start;
+    margin-left: 79px;
+    &-child {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  &__cell {
+    color: #ffffff;
+    font-weight: 700;
+    padding: 7px 0;
+    &:first-child {
+      padding-right: 75px;
+    }
+    &_light {
+      opacity: 0.15;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+}

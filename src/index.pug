@@ -6,10 +6,206 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="shortcut icon", href="favicon.png" type="image/png")
     title Portfolio | main page
   body
-    .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+
+    .main-slide
+      header.header
+          .container
+            .header__wrap.fullscreen-section
+              .header__top
+                .header__logo
+                  .logo ЗН
+                .header__nav 
+                  +nav('nav', ["Главная","Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"])
+                .header__socials
+                  +socials('socials')
+              .header__middle
+                h1.header__title Зиновьев <br> Никита
+                .header__subtitle Личный сайт <br> веб-разработчика
+              .header__bottom
+                .header__prompt Скролл
+                .header__icon
+                  +icon('scroll','scroll')
+      
+      section.about
+        .container
+          .about__wrap
+            .about__grid
+              .about__child.about__child_first.about__avatar
+                +image( 'me.jpg', 'avatar')
+              .about__child.about__child_second.about__content
+                .section__descr.about__descr Привет, меня зовут
+                h2.about__title Никита Зиновьев
+                .section__descr.about__descr Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              .about__child.about__child_third.about__info
+                table.about__table
+                  -
+                    var info = [
+                      ['Проживаю:','Казань'],
+                      ['Возраст:','18'],
+                      ['Родился:','25 сентября 2000']
+                    ]
+                  each row in info
+                    tr.about__row
+                      td.about__cell.about__cell_light  #{row[0]}
+                      td.about__cell.about__cell_bold  #{row[1]}
+              .about__child.about__child_fourth.about__prompt.section__descr Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+      .main-slide__triangle
+        .triangle
+          svg.triangle__child(viewBox="0 0 100 100" preserveAspectRatio="none")
+            polygon(fill="#06001e" points="0,0 100,0 78,70")
+    
+    section.skills
+      .container
+        .skills__wrap
+          .skills__top
+            h2.skills__title Чем я могу быть полезен вам
+            .skills__subtitle.section__descr Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+          .skills__bottom
+            .skills__img
+              +image('guitar.png','skills__guitar')
+              +image('skills-bg.png','skills__bg')
+            .skills__metrics
+              ul.metrics
+                -
+                  var metrics = [
+                    ['Front-end', [['HTML5','-70s'],['CSS3','-60s'],['Javascript','-40s'],['Jquery и Vue.js','-45s']]],
+                    ['Workflow', [['GIT','-30s'],['Terminal','-20s'],['Gulp','-15s'],['Webpack','-10s']]]
+                  ]
+                each item in metrics
+                  li.metrics__child
+                    h3.metrics__title #{item[0]}
+                    ul.metrics__list
+                      each metric in item[1]
+                        li.metrics__list-child
+                          svg(viewBox="0 0 150 150" preserveAspectRatio="none").metrics__list-shape
+                            circle( r="65" cx="75" cy="75" ).metrics__circle.metrics__circle_before
+                            circle( stroke="url(#status)" width="100%" height="100%" r="65" cx="75" cy="75" style=`animation-delay: ${metric[1]} `).metrics__circle.metrics__circle_after
+                            linearGradient(id="status")
+                              stop(offset="0%" stop-color="#0089f2")
+                              stop(offset="100%" stop-color="#003dea")
+                            .metrics__list-title #{metric[0]}
+    
+    section.portfolio
+      .container
+        .portfolio__wrap
+          .portfolio__title.section__title Мои работы
+          .portfolio__slider
+            .slider-work
+              -
+                var works = [
+                  ['work-1','Сайт школы образования',['HTML','CSS','Javasript'],'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!','https://loftschool.com']
+                  //- ['work-2','Сайт школы образования',['HTML','CSS','Javasript'],'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!','https://loftschool.com'],
+                  //- ['work-3','Сайт школы образования',['HTML','CSS','Javasript'],'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!','https://loftschool.com'],
+                  //- ['work-4','Сайт школы образования',['HTML','CSS','Javasript'],'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!','https://loftschool.com']
+                ]
+              each item in works
+                .slider-work__left
+                  .slider-work__main
+                    +image(`${item[0]}.jpg`,'slider-work__img')
+                    - for (var i = 0; i < works.length; i++)
+                      .slider-work__main-number= i+1
+                  .slider-work__status
+                    .slider-work__status-child.slider-work__status-child_active
+                      .slider-work__status-wrap
+                        +image(`${item[0]}.jpg`,'slider-work__preview')
+                    .slider-work__status-child
+                      .slider-work__status-wrap
+                        +image(`work-2.jpg`,'slider-work__preview')
+                    .slider-work__status-child
+                      .slider-work__status-wrap
+                        +image(`work-3.jpg`,'slider-work__preview')
+                    .slider-work__status-child
+                      .slider-work__status-wrap
+                        +image(`work-4.jpg`,'slider-work__preview')
+                    .slider-work__nav
+                      .slider__button.slider-work__button.status-work__button-next >
+                      .slider__button.slider__button_disabled.slider-work__button.status-work__button-prev.slider-work__button_disabled <
+                .slider-work__right
+                  .slider-work__info
+                    .slider-work__tool
+                      each tool in item[2]
+                        .slider-work__tool-child #{tool}
+                    .slider-work__info-title #{item[1]}
+                    .slider-work__info-descr.section__descr #{item[3]}
+                    a(href=`${item[4]}`).slider-work__link
+                      .slider-work__link-icon
+                        +icon(`link`,'link-icon')
+                      .slider-work__link-title Посмотреть сайт
+    
+    .add-slide
+      .add-slide__child            
+        section.feedback
+          .container 
+            .feedback__wrap
+              .feedback__top
+                h2.feedback__title.section__title.section__title_light Что обо мне говорят
+                .slider-feedback__nav
+                  .slider__button.slider-feedback__button.slider-feedback__button-prev <
+                  .slider__button.slider__button_disabled.slider-feedback__button.slider-feedback__button-next >
+              .feedback__slider
+                .slider-feedback
+                  -
+                    var feedback = [
+                      ['Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!','fb-1.png','Ковальчук Дмитрий','Основатель Loftschool'],
+                      ['Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах','fb-2.png','Владимир Сабанцев','Преподаватель']
+                    ]
+                  each item in feedback
+                      .slider-feedback__child
+                        p.slider-feedback__quote #{item[0]}
+                        .slider-feedback__info
+                          .slider-feedback__info-avatar
+                            +image(`${item[1]}`,'slider-feedback__image')
+                          .slider-feedback__info-text
+                            .slider-feedback__info-name #{item[2]}
+                            .slider-feedback__info-post #{item[3]}
+      
+      .add-slide__child
+        section.contacts
+          .container
+            .contacts__wrap
+              h2.contacts-title.section__title.section__title_light Связаться со мной
+              .contacts__form
+                form.form
+                  .form__wrap
+                    .form__child
+                      label(for="fullname").input__label Введите ваше имя
+                      .form__input
+                        input(type="text" id="fullname" name="fullname" required).input
+                        +icon('user','form__input-icon')
+                    .form__child 
+                      label(for="email").input__label Введите ваше имя
+                      .form__input
+                        input(type="text" id="email" name="email" required).input
+                        +icon('envelope','form__input-icon')
+                    .form__child.form__child_full
+                      label(for="message").input__label Сообщение к письму
+                      .form__input
+                        textarea(type="text" id="message" name="message").input.textarea 
+                        +icon('message','form__input-icon')
+                  .form__btn
+                    input(type="submit" value="Отправить").btn
+   
+    footer.footer
+      .container
+        .footer__wrap
+          .footer__left
+            .footer__copyright © 2019
+            .footer__author
+              .footer__author-name Зиновьев Никита
+              .footer__author-project Личный сайт <br> веб-разработчика
+          .footer__right
+            .footer__nav
+              +nav('nav', ["Главная","Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"])
+            .footer__info
+              .footer__info-project
+                p.footer__info-descr Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                .footer__info-social
+                  +socials('socials')
+              .footer__info-project
+                .footer__quote 
+                  p.footer__info-descr Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                .footer__quote-author Martin Golding
