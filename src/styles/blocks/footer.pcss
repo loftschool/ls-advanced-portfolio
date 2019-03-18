@@ -1,0 +1,72 @@
+.footer{
+  padding: 2% 0;
+  overflow: hidden;
+  background:$footer-color;
+  line-height:1.7;
+}
+.footer-container{
+display:flex;
+justify-content:space-between;
+padding:0 10px;
+}
+
+.footer__copy{
+  width:25%;
+  display:flex;
+  justify-content:space-between;
+
+    &-info{
+  color:$icon-color;
+  font-size:48px;
+  font-weight:600;
+  margin-right:50px;
+  white-space:nowrap;
+
+    &:before{
+      content: "\00a9";
+      padding-right: 10px; 
+    }
+  }
+}
+
+.footer__copy-desc{
+  width:40%;
+}
+.footer__copy-col{
+  flex:1;
+}
+ .footer__copy-title{
+   color:$text-color;
+   text-transform:uppercase;
+   font-size: 18px;
+   font-weight:800;
+   margin-bottom:20px;
+ }
+
+ .footer__copy-subtitle{
+   margin-bottom:20px;
+   color:$icon-color;
+ }
+
+.footer__content{
+  width:65%;
+  
+  }
+  .footer__right-side{
+    width:45%;
+  }
+  .footer__right-text{
+    margin-bottom:20px;
+    color:$icon-color;
+    line-height:1,8;
+    font-weight:400;
+  }
+
+  .footer__text-signature{
+    color:$text-color;
+    font-style:italic;
+  }
+  .footer__side{
+    display:flex;
+  justify-content:space-between;
+  }

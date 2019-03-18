@@ -31,16 +31,15 @@ html(lang="en")
             .hero__desc
               .hero__content
                 .hero__title Личный сайт 
-                 .hero__title веб разработчика
+                 .hero__title веб-разработчика
                 .hero__name Владимир Астаханов
             .scroll
               .scroll__text Скролл
               a(href="#").scroll__icon
                 +icon('scroll')      
         
-                     
         section.about-section
-          .container
+          .container.about-container
             .about-side
               .about-side__left
                 .about__desc
@@ -64,9 +63,149 @@ html(lang="en")
                   +image('content/star.png', 'about__info-image')
 
         section.skills-section
-          .container
-            .skills__title Чем я могу быть полезен вам
-            p.skills__info Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+          .container.skills-container
+            .skills__box
+              .skills__title Чем я могу быть полезен вам
+              p.skills__info Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .skills__right
+                .skills__right-desc
+                  .skills__title Front-end
+                    .skills__row
+                      .skills__item
+                      svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
+                        circle(cx="50", cy="50", r="40").circle.circle__under
+                        circle(cx="50", cy="50", r="40", style="animation-delay:5s").circle.circle__above
+
+                    .skills__row
+                      .skills__item
+                      svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
+                        circle(cx="50", cy="50", r="40").circle.circle__under
+                        circle(cx="50", cy="50", r="40", style="animation-delay:-80s").circle.circle__above
+
+                
+                          
+
         section.works-section
+          .container.works__container
+            h3.section-title.works__section-title Мои работы
+            .slider
+              .slider__col.slider__col_left
+                .slider__img
+                  +image('userfiles/work_1.jpg', 'slider__pic_big')
+                  ul.slider__list
+                    li.slider__item.slider__item_active
+                      +image('userfiles/prew_1.jpg', 'slider__pic_prew')
+                    li.slider__item
+                      +image('userfiles/prew_2.jpg', 'slider__pic_prew')
+                    li.slider__item
+                      +image('userfiles/prew_3.jpg', 'slider__pic_prew')
+                    li.slider__item
+                      +image('userfiles/prew_4.jpg', 'slider__pic_prew')
+                    .slider__buttons
+                      .arrow__left
+                        +icon('arrow-down', 'arrow__left-icon')
+                      .arrow__right
+                        +icon('arrow-down', 'arrow__right-icon')
+              .slider__col
+                .slider__text
+                  ul.slider__text-list
+                    li.slider__text-item
+                      a(href="#").slider__text-link HTML
+                    li.slider__text-item
+                      a(href="#").slider__text-link CSS
+                    li.slider__text-item
+                      a(href="#").slider__text-link JavaScript
+                .slider__text-title Сайт школы образование
+                .slider__text-desc Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                .slider__school
+                  +icon('link', 'slider__school-icon')
+                  a(href="#").slider__school-link Посмотреть сайт
+                
+
         section.feedback-section
-        section.contacts-section   
+          .container.feedback-container
+            .feedback__about
+              .feedback__top
+                h4.feedback__info-title Что обо мне говорят
+                .feedback__button
+                  button.button.feedback__btn.feedback__btn_prew
+                    +icon('arrow_prew','feedback__btn-icon')              
+                  button.button.feedback__btn.feedback__btn_next
+                    +icon('arrow_next','feedback__btn-icon')
+              .feedback__comment
+                ul.feedback__comment-list
+                  li.feedback__comment-item
+                    .quote
+                      .quote__info Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      .info__desc
+                        .info__ava
+                            .info__wrap
+                              .info__ava-img
+                                +image('content/kovaldn.jpg', 'info__ava-img')
+                        .info__desc__person
+                          .persone__name Ковальчук Дмитрий
+                          .persone__post Основатель Loftschool
+
+                  li.feedback__comment-item
+                    .quote
+                      .quote__info Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      .info__desc
+                        .info__ava
+                            .info__wrap
+                              .info__ava-img
+                                +image('content/wowua.jpg', 'info__ava-img')
+                        .info__desc__person
+                          .persone__name Владимир Сабанцев
+                          .persone__post Преподаватель  
+
+            .feedback__form
+              .form__title Связаться со мной
+              .form
+                .form__row
+                  label.form-box Введите ваше имя
+                      .form-box__content
+                        +icon("user", "form-box__icon")
+                        .form-box__field
+                        input.form__input(type="text", placeholder="Ковальчук Дмитрий")
+                  label.form-box Введите ваш email
+                      .form-box__content
+                        +icon("envelope", "form-box__icon")
+                        .form-box__field
+                        input.form__input(type="text", placeholder="loftschool@study.com")
+                .form__row.form__row--big
+                  label.form-box Сообщение к письму
+                      .form-box__content
+                        +icon("message", "form-box__icon")
+                        .form-box__field
+                        textarea.form__input.form__input--big(type="text", placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
+                .form__row
+                  input.form-btn(type="submit" value="Отправить")
+
+    footer.footer
+        .container.footer-container
+          .footer__copy 
+            .footer__copy-col
+              .footer__copy-info 2019
+            .footer__copy-desc 
+                .footer__copy-title Владимир Астахов
+                .footer__copy-subtitle Личный сайт веб-разработчика
+          .footer__content
+            .nav__footer
+              ul.nav__footer-list
+                - var nav = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
+                each item in nav
+                  li.nav__footer-item
+                    a(href="#").nav__footer-link #{item}
+            .footer__side
+              .footer__right-side 
+                p.footer__right-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                .footer__socials
+                ul.footer__socials
+                  - var socials = ['insta', 'vk', 'github'];
+                  each item in socials
+                    li.footer__socials-item
+                      a(href="#").footer__socials-link
+                        +icon(item, 'footer__socials-icon')
+              .footer__right-side
+                p.footer__right-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете 
+                p.footer__text-signature Martin Golding

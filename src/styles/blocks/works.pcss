@@ -1,0 +1,147 @@
+.works-section{
+  background-color:#fff;
+}
+.works__container{
+  padding: 5% 0;
+}
+
+.works__section-title{
+  color:$footer-color;
+  font-size:36px;
+  line-height:1.33;
+  font-weight:700;
+  margin-bottom:40px;
+}
+
+.slider {
+  display: flex;
+}
+.slider__list {
+  display: flex;
+  position: absolute;
+  left: 20.5%;
+  top: 70%;
+flex-direction:row;
+
+}
+.slider__col {
+  width: 25%;
+  margin-left: 158px;
+
+}
+.slider__col_left {
+  position: relative;
+  z-index:30;
+  width: 65%;
+  margin-left: 0;
+}
+.slider__pic_big {
+  display: inline-flex;
+}
+
+.slider__pic_prew {
+  height: 100%;
+  cursor: pointer;
+}
+
+.slider__text-list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+.slider__text-link {
+  text-decoration: none;
+  color: $dark-grey;
+  font-weight: 600;
+  font-size: 15px;
+  background-color:  $light-grey;
+  border-radius: 22px;
+  padding: 5px 20px;
+}
+
+.slider__text-title {
+  color:$footer-color;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+    &:before{
+    content: "2";
+    position: absolute;
+    z-index: 2;
+    top: 63%;
+    font-size: 25rem;
+    font-weight: 800;
+    color: $light-grey;
+    -webkit-transform: translateY(-57%);
+    transform: translateY(-57%);
+    left: 57%;
+}
+}
+
+.slider__school-icon {
+  width: 15px;
+  height: 15px;
+  fill: $links-color;
+  margin-right: 20px;
+}
+
+.slider__school-link {
+color: $links-color;
+font-size: 18px;
+font-weight: 700;
+text-decoration: none;
+}
+
+.slider__text-desc {
+  color: $grey;
+  font-weight: 600;
+  line-height: 1.72em;
+  margin-bottom: 45px;
+}
+.slider__buttons{
+  display: inline-flex;
+    position: absolute;
+    top: 52%;
+    right: 6%;
+}
+
+.arrow__left-icon, .arrow__right-icon {
+  width: 20px;
+  height: 20px;
+  fill: $icon-color;
+  display:block;
+  position:relative;
+}
+
+.arrow__right-icon {
+  fill: $text-color;
+}
+
+.arrow__left, .arrow__right {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color:$dark-grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 100%;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: $main-color;
+  }
+}
+
+.arrow__left {
+  transform: rotate(180deg);
+  &:hover {
+    .arrow__left-icon {
+      fill: $dark-grey;
+    }
+  }
+}
+
+.arrow__right {
+  bottom:0px;
+}

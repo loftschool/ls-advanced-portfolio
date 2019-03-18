@@ -1,0 +1,56 @@
+.quote{
+  position:relative;
+  padding-left:30%;
+    @include tablets {
+    padding-left:0;
+  }
+ 
+}
+
+.quote:before{
+    content:'';
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+     width:70px;
+    height:60px;
+    background:svg-load('quote.svg', fill="rgba(255, 255, 255, 0.1)",width=100%, height=100%);
+    background-repeat:no-repeat;
+  }
+
+.quote__info{
+  color:$half-white;
+  line-height:1.8;
+  font-weight:600;
+  margin-bottom:30px;
+ } 
+
+ .info__desc{
+   display:flex;
+   align-items:center;
+ }
+
+ .info__ava{
+   margin-right:30px;
+    width:75px;
+   height:75px;
+ }
+
+ .info__wrap{
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  overflow: hidden;
+ }
+
+ .persone__name{
+   margin-bottom:10px;
+   font-size:18px;
+   font-weight: 800;
+ }
+
+ .persone__post{
+  color:$icon-color;
+  font-weight:600;
+ }

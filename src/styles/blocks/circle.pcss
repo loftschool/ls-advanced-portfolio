@@ -1,0 +1,29 @@
+.circle {
+  fill: transparent;
+  
+}
+
+.circle__under {
+  stroke:$grey;
+  stroke-width: 4px;
+}
+
+.circle__above {
+  stroke-width: 5px;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  animation:fill 100s linear infinite;
+  stroke: $main-color;
+   animation-play-state:paused;
+    animation-delay:.3s; 
+}
+
+@keyframes fill {
+  from {
+    stroke-dashoffset:251;
+  }
+  to{
+    stroke-dashoffset:0;
+  }
+}
+
