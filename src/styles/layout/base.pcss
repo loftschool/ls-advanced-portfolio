@@ -6,6 +6,7 @@ html {
     font-size: 14px;
   }
 }
+
 body,
 html {
   height: 100%;
@@ -19,19 +20,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
+
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 .wrapper {
   overflow: hidden;
   min-height: 100%;
   position: relative;
+  min-width:100%;
 }
 
 .container {
-  margin: 0 auto;
+  margin: 0  auto;
   max-width: 1480px;
   width: 95%;
   // width: 1490px;
+  padding:1 2%;
+
   @include phones {
     width: 85%;
   }
@@ -40,7 +51,6 @@ body {
 .fullscreen-section {
   height: 100vh;
   min-height: 650px;
-  border:1px solid green;
 }
 
 button {
@@ -56,6 +66,10 @@ ul {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+li{
+  list-style:none;
 }
 
 h1,
@@ -75,6 +89,7 @@ p {
 
 button[type="button"] {
   cursor: pointer;
+  border: none;
   background-color: transparent;
 }
 
@@ -90,19 +105,4 @@ img {
   max-height: 100%;
 }
 
-/* section{
-  width:100%;
-   height: 100vh;
-  min-height: 650px;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  
-} */
+

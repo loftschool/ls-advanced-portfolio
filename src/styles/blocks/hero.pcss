@@ -1,38 +1,33 @@
-.hero-section{
+section.hero-section{
   background:url('../images/content/bg/train_bridge.jpg') 0 0 no-repeat;
   background-size:cover;
-  background-position:center center;
-  min-height:150vh;
-  height:100%;
   color: $text-color;
 }
 .hero-container{
   padding-top:60px;
 }
 
-.hero__desc{
-  display:flex; 
-  min-height:670px;
-  align-items: center;
-  justify-content: center;
-  padding: 0 24%;
-}
+
 
 .hero__content{
   display: flex;
-  flex:1;
     -webkit-box-align: center;
     -ms-flex-align: center;
        align-self: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-25%;
 }
 
 .hero__title{
   font-size:18px;
   color:$icon-color;
   text-align:right;
+  
   margin-right:5%;
   word-wrap: break-word; 
   width: 230px;
