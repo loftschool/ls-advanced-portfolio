@@ -1,0 +1,17 @@
+.link-icon {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #4b6fd7;
+    text-decoration: none;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 15px;
+        height: 15px;
+        margin-right: 20px;
+        background: svg-load('link.svg', fill="#4b6fd7") 50% no-repeat;
+    }
+}
