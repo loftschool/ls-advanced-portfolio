@@ -30,7 +30,6 @@ body {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
-  // width: 1490px;
 
   @include phones {
     width: 85%;
@@ -42,48 +41,69 @@ body {
   min-height: 650px;
 }
 
-button {
-  border: 0;
-  cursor: pointer;
+/*-------------*/
+
+.main-content{
+  height: 100%;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
-* {
-  box-sizing: border-box;
+.section {
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
+// tag styles reset
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
   margin: 0;
+  font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+
+  & > li {
+    list-style: none;
+  }
 }
 
 p {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
-button[type="button"] {
+footer {
+  position: relative;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  border: none;
   cursor: pointer;
-  background-color: transparent;
+  color: inherit;
 }
 
 a {
-  color: inherit;
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
+  text-decoration: none;
+  color: $links-color;
 }
