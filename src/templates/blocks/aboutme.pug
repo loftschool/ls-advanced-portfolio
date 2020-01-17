@@ -1,0 +1,17 @@
+section.section
+    .container        
+        .about
+            .about__img-wrapper
+                +image('content/oleksii.jpg', 'about__img')
+            ul.about__list
+                each val in [
+                        {"title": "Проживаю", "value": "Киев"},
+                        {"title": "Возраст", "value": "43 года"},
+                        {"title": "Родися", "value": "26 декабря 1976"}
+                    ]
+                    li.about__item
+                        span.about__item-title=val.title
+                        span.about__item-value=val.value
+
+
+        

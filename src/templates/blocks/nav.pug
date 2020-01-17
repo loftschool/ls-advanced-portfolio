@@ -1,0 +1,5 @@
+nav.nav
+    ul.nav__list
+        each val in ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
+            li.nav__item
+                a.nav__url(href='#', data-scroll-to=index)=val

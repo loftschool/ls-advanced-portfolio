@@ -9,34 +9,11 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      header.header
-        .container
-        .favicon
-          +image('content/Favicon.png', 'favicon-pic')
-        nav.nav
-          ul.nav__list
-            each val, index in ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
-              li.nav__item
-                a.nav__url(href='#', data-scroll-to=index)=val
+      include ./templates/blocks/header.pug
+      include ./templates/blocks/maincontent.pug
+      include ./templates/blocks/aboutme.pug     
+
         
-        .socials
-          ul.socials__list
-            each social, index in ['insta', 'vk', 'github']
-              li.nav__item
-                a.nav__url(href='#')
-                  +icon(social, 'social__img')
-
-      .main-content
-        .container
-          .description Личный сайт веб разработчика
-          h1.title Алексей Лещенко
-          .scroll
-            .scroll__text Скролл
-            +icon('scroll', 'scroll__icon')
-
-      section.section
-
-
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        //- +image('content/user.jpg', 'user-pic')
+        //- +icon('link', 'link-class')
+        //- .icon-bg
