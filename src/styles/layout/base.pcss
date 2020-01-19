@@ -6,45 +6,31 @@ html {
     font-size: 14px;
   }
 }
+
 body,
 html {
   height: 100%;
+  width: 100%;
+  margin: 0px;
 }
 
 body {
   font-family: 'Open Sans', Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $text-color;
 }
 
 .wrapper {
   overflow: hidden;
-  min-height: 100%;
+  width:100%;
+  min-height: 100%; 
   position: relative;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 1480px;
+  max-width: 1500px;
   width: 95%;
-  // width: 1490px;
-
-  @include phones {
-    width: 85%;
-  }
-}
-
-.fullscreen-section {
-  height: 100vh;
-  min-height: 650px;
-}
-
-button {
-  border: 0;
-  cursor: pointer;
 }
 
 * {
@@ -54,7 +40,7 @@ button {
 ul {
   padding: 0;
   margin: 0;
-  list-style: none;
+  list-style-type:none;
 }
 
 h1,
@@ -63,7 +49,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
   margin: 0;
 }
 
@@ -72,18 +57,16 @@ p {
   padding: 0;
 }
 
-button[type="button"] {
-  cursor: pointer;
-  background-color: transparent;
-}
-
 a {
   color: inherit;
   cursor: pointer;
+  text-decoration: none;
 }
-
 img {
   display: block;
   max-width: 100%;
   max-height: 100%;
+}
+.splitblock {
+background: url(../images/content/background1.png) center center / cover no-repeat; 
 }

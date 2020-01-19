@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+$light: rgb(128,121,113);
+$dark: rgb(34,36,39);
+
+@mixin desktopHd() {
+  @media screen and (max-width:1800px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (max-width:1200px) {
+    @content;
+  }
+}
+
+@mixin tablets() {
+  @media screen and (max-width:768px) {
+    @content;
+  }
+}
+
+@mixin phones() {
+  @media screen and (max-width:3200px) {
+    @content;
+  }
+}

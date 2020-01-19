@@ -1,4 +1,6 @@
-include ./mixins.pug
+include ./pug/mixins.pug
+
+- var school = ["Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!"];
 
 <!DOCTYPE html>
 html(lang="en")
@@ -9,7 +11,125 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+      section.page
+        .splitblock
+          article.welcome
+            .container.welcome__container
+              header.header
+                .logo  CР
+                //- +menu('nav')
+                //- +social('social')
+                //- +me('my')
+              a.scroll(href="#") Скролл
+          article.about
+            .container.about__container
+              .about__personal
+                .about__photo
+                  +image('content/user', 'im')
+                .about__info
+                  table.personal__table
+                    tr.personal__line
+                      td.personal__line-info Проживаю:
+                      th.personal__line-info  Москва
+                    tr.personal__line
+                      td.personal__line-info Возраст
+                      th.personal__line-info  25 лет
+                    tr.personal__line
+                      td.personal__line-info Родилась:
+                      th.personal__line-info  18 октября 1994   
+              .about__description 
+                .description__hello Привет, меня зовут
+                .description__name Севара Рахманова
+                .description__job Я занимаюсь разработкой совеременных сайтов и приложений. Мне нравится делать интересные и современные проекты
+                each loftschool in school
+                  .description__school #{loftschool}
+              .background
+        article.knowledge
+          .container.knowledge__container
+            .knowledge__topic
+              h2.knowledge__heading Чем я могу быть вам полезен
+              each loftschool in school
+                .knowledge__school #{loftschool}
+            .knowledge__about
+            - 
+              var grafics = [
+              ["Front-end", ["HTML5","CSS3","Javascript","jQuery и Vue.js"]],
+              ["Workflow", ["GIT","Terminal","Gulp","Webpack"]]
+              ];
+            ul.knowledge__list
+              each item in grafics
+                li.knowledge__item 
+                  .knowledge__item-heading #{item[0]}
+                  .knowledge__item-grafic
+                    ul.skills
+                      each skill in item[1]
+                        li.skills__item #{skill}
+        article.projects
+          .container.projects__container
+            .presentation
+              h2.presentation__heading Мои работы
+              img.presentation__image(src="#", alt="")
+              - var presentation = ["slide1", "slide2", "slide3", "slide4"]
+                ul.presentaion__list
+                  each item in presentation
+                    li.presentaion__item #{item}
+                      //- +presentation(item, "presentation__item")
+                ul.presentation__buttons
+                  li.button__left
+                  li.button__right
+            .projects__school
+              - var knowledge = ["HTML","CSS","Javascript"]
+              ul.knowledge__list
+                each item in knowledge
+                  li.kmowledge__item #{item}
+              h3.projects__school-heading Сайт школы образования
+              p.projects__school-description Эта девчонка проходила обучение веб-разработке не где-то, а в Loftschool! 3 месяца только самых тяжелых испытаний и бессоных ночей!
+              a(href="https://loftschool.com").school__link Посмотреть сайт
+        article.contacts
+            .container.contacts__container
+              .comments-heading
+                h3.comments-slider__heading Что обо мне говорят
+                ul.comments__button
+                  li.comments__lest
+                  li.comments__right
+              .comments-slider
+                ul.comments-slider-list
+                  li.comments-slider-item
+              form.form
+                h3.form__heading Связаться со мной
+                .form__data
+                  label.form__label
+                    .label__name Введите Ваше имя
+                    input(type="text" tabindex="1" name="name" required).label__cell
+                    .error
+                  label.form__label
+                    .label__name Введите Ваш email
+                    input(type="email" tabindex="2" name="email" required).label__cell
+                    .error
+                .form__text
+                  label.form__label.form__label-text
+                    .label__name Сообщение к письму
+                    textarea(name="text" tabindex="3" required).message
+                    .error
+                  input(type="submit" value="отправить" tabindex="4" required).send
+      footer.footer
+        .container.footer__container
+          .footer__about
+            .year &copy; 2020
+            //- +me('my__footer')
+          .footer__information
+            .my__footer
+              //- +menu('nav'+'nav__footer')
+            .links
+              p.my__school Этот сайт я сделала в рамказ обучения в Школе онлайн образования Loftschool
+              //- +social('social__footer')
+            .citation 
+              p.citation__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает,где вы живете
+              p.citation__author Martin Golding
+
+         
+
+        
+
+           
+        
