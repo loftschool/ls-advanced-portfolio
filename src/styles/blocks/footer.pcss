@@ -1,16 +1,26 @@
 .footer {
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
     background: $dark;
     width: 100%;
+    padding: 80px 0;
 
     &__container {
         display:flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        height: 200px;
     }
 
     &__about {
         display: flex;
+        justify-content:space-between;
+        width:25%
+    }
+
+    &__information{
+        width:60%;
+        display: flex;
+        flex-flow: row wrap;
     }
 }
 
@@ -18,11 +28,69 @@
     font-size: 48px;
     font-weight:bold;
     color: $light;
+    width: 170px;
 }
 .my__footer {
     display:flex;
-    flex-direction:column;
-    justify-content: center;
+    flex-direction:column-reverse;
+    justify-content: flex-end;
+
+}
+
+.my__job--footer {
+text-align:left;
+color: $light;
+font-size:16px;
+width:160px;
+}
+
+.my__name--footer {
+text-align:left;
+color: white;
+font-weight: bold;
+font-size:18px;
+width:100px;
+margin-bottom:50px;
+
+}
+
+
+.nav__footer {
     color: red;
 }
 
+.my__school{
+    font-size: 16px;
+    color: $light;
+    width: 50%;
+}
+
+.links{
+  width:300px;
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.citation {
+    width:300px;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.social__footer{
+    width:50%;
+}
+
+.citation__text {
+    color:$light;
+    font-size: 16px;
+}
+
+.citation__author{
+    color: white;
+    font-style: italic;
+}

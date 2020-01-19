@@ -8,6 +8,7 @@
     justify-content: space-between;
     height: 100vh;
     padding: 5vh 0;
+    min-height: 650px;
   } 
 }
 
@@ -15,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items:center;
-  margin-bottom:15%;
+  /* margin-bottom:15%; */
 } 
 
 .logo {
@@ -63,11 +64,23 @@
   }
 }
 
-.my{
-  display:flex;
-  justify-content: center;
+.social__footer{
+  display: flex;
+  justify-content: space-between;
+  width:10%;
+}
 
-  &__job {
+
+
+.my{
+
+  &__header{
+    display:flex;
+    justify-content: center;
+
+  }
+ 
+  &__job--header {
     width: 200px;
     line-height:2;
     text-align:right;
@@ -76,8 +89,8 @@
     color: $light;
   }
   
-  &__name {
-    width:380px;
+  &__name--header {
+    width:430px;
     font-size: 72px;
     color: white;
     font-weight: bold;
@@ -86,10 +99,30 @@
   }
 }
 
-.scroll {
+.scroll-block {
+  width:100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.scroll__link {
   font-size: 18px;
   color:white;
   font-weight: bold;
+  margin-right: 10px;
 }
+
+.scroll__svg {
+  width: 25px;
+  height: 35px;
+}
+
+.scroll__icon {
+  fill: white;
+}
+
+
+
+
+

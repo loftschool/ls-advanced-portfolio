@@ -1,27 +1,22 @@
 .about {
+    /* margin-bottom: 150px; */
 
 &__container {
  display: flex;
  justify-content: center;
  color: $light;
- padding-bottom: 15%;
- position:relative;
+}
+
+&__personal {
+    margin-right: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index:1
 }
 
 &__photo{
     margin-bottom: 10%;
-}
-
-&__personal {
-    margin-right: 140px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-&__line-info{
-    text-align: left;
-    padding: 10px;
 }
 
 &__description {
@@ -32,15 +27,23 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    z-index:1;
 }
 
 }
 
+.personal__line-info{
+    text-align: left;
+    padding: 10px;
+}
+
+/* про меня */
 .im {
     width: 180px;
     height: 180px;
     border-radius:50%;
 }
+
 
 .description__name {
     font-size: 36px;

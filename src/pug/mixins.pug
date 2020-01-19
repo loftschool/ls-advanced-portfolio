@@ -1,28 +1,45 @@
 mixin image(path, className)
-  img(src=require(`images/${path}.png`) class=className)
+  img(src=require(`images/content/${path}.png`) class=className)
 
-//- mixin menu(className)
-//-   - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
-//-     nav(class=`${className} ${className}__footer`)
-//-       ul(class=`${className}__list`)
-//-         each item in items 
-//-           li(class=`${className}__item`)
-//-             a(href="#" class=`${className}__link`) #{item}
+mixin menu(className)
+  - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+    nav(class=`nav nav__${className}`)
+      ul(class=`nav__list`)
+        each item in menu
+          li(class=`nav__item`)
+            a(href="#" class=`nav__link`) #{item}
 
-//- mixin social(icon, className)
-//-   - var social = ["insta", "vk", "github"];
-//-       ul(class=`${className} ${className}__footer`)
-//-           each item in social
-//-               li(class=`${className}__item`)
-//-                   svg(class=`${className}__image`)
-//-                     use(xlink:href="./images/sprite.svg#{icon}" alt="" class=`${className}__icon`)
-//-                   a(href="#" class=`${className}__link`)
+mixin icon(name, className)
+  - var icon = require(`images/icons/${name}.svg`);
+  svg(class=`${className}__svg` viewBox=icon.viewBox preserveAspectRatio="none")
+    use(xlink:href=icon.url class=`${className}__icon`)
 
-//- mixin me(className)
-//-   div(class=`${className},${className}__footer`) 
-//-     div(class=`${className}__job`)
-//-         p Личный сайт <br/> веб разработчика
-//-     div(class=`${className}__name`) Севара Рахманова
-              
-//- mixin presentation(name , className)
-//-   img(src=require(`images/${name}.png`) class=className)
+mixin social(className)
+  - var social = ["insta", "vk", "github"];
+      ul(class=`social social__${className}`)
+          each item in social
+              li(class=`social__item`)
+                  +icon(item)
+
+mixin me(className)
+  div(class=`my my__${className}`) 
+    div(class=`my__job my__job--${className}`)
+        p Личный сайт <br/> веб разработчика
+    div(class=`my__name my__name--${className}`) Севара Рахманова
+
+mixin presentation(className)
+  - var presentation = ["slide1", "slide2", "slide3", "slide4","slide5"];
+      ul(class=`${className}__list`)
+          each item in presentation
+              li(class=`${className}__item`)
+                  +image(item)
+
+mixin comments(className)
+  ul.comments__list
+    li.comments__item
+      p.comments__text
+      .comments__person
+        +image
+        .comments__person-info
+          .comments__person-name
+          .comments__person-job

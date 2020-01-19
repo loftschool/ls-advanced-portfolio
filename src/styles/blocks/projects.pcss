@@ -1,0 +1,133 @@
+.projects {
+    margin-bottom: 100px;
+    
+    &__container{
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+    }
+
+    &__school{
+        width: 25%;
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__school-heading {
+        font-size: 30px;
+        color: $dark;
+        font-weight: bold;
+
+    }
+
+    &__school-description{
+        color: $light;
+        font-weight: bold;
+        font-size: 16px;
+
+    }
+
+    &__heading{
+        font-size: 36px;
+        font-weight: bold;
+        color: $dark;
+        margin-bottom:100px;
+    }
+}
+
+.presentation {
+    width: 80%;
+}
+
+.knowledges-list {
+    display: flex;
+}
+
+.knowledges-list__item {
+    padding: 10px 20px;
+    background-color: $blue;
+    color: $light;
+    border-radius:50px;
+    margin-right: 10px;
+
+    &:nth-last-child(1){
+        margin-right: 100px;
+    }
+}
+
+.school__link {
+    font-size:18px;
+    font-weight: bold;
+    color: $darkblue;
+}
+
+.link{
+    display: flex;
+}
+
+.link__svg {
+    width: 20px;
+    height: 30px;
+    margin-right:18px;
+}
+
+.link__icon{
+    fill: $darkblue;
+}
+
+.projects__block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.screen{
+    width: 975px;
+    height: 549px;
+}
+
+.slider-block{
+    width:704px;
+    height: 100px;
+    overflow:hidden;
+}
+
+.slider__left{
+    width: 50px;
+    height: 50px;
+    background-color: $dark;
+}
+
+.slider__right{
+    width: 50px;
+    height: 50px;
+    background: $dark;
+}
+
+.slider{
+    display:flex;
+    position: absolute;
+    bottom: 3%;
+    right: 9%;
+}
+
+.presentation {
+    position: relative; 
+
+    &__list{
+        display: flex;
+        
+    }
+
+    &__item{
+        min-width:25%;
+    }
+}
+
+.slider__buttons{
+    display:flex;
+    flex-direction:column;
+}
+
+
