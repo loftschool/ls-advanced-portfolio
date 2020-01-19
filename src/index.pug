@@ -9,11 +9,72 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      include ./templates/blocks/header.pug
-      include ./templates/blocks/maincontent.pug
+      .wellcome-section
+        include ./templates/blocks/header.pug
+        include ./templates/blocks/maincontent.pug
       include ./templates/blocks/aboutme.pug     
 
-        
+      section.service
+        .triangle
+          .container
+            .service__desc
+              h2.service__title Чем я могу быть полезен вам
+              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+            ul.skills
+              - 
+                var skills = [
+                  ['Front-end', ['html5', 'css3', 'javascript', 'JQuery и Vue.js']],
+                  ['Workflow', ['Git', 'terminal', 'gulp', 'webpack']],
+                ]
+              each item in skills 
+                li.skills-row
+                  h4.skills-row__title #{item[0]}
+                  ul.skills-row__list
+                    each skill in item[1]
+                      li.skills-row__item
+                        .skill
+                          svg(viewbox="0 0 200 200")
+                            circle(r="80" cx="100" cy="100" fill="none" stroke-width="12" stroke="#ccc")
+                            circle(r="80" cx="100" cy="100" fill="none" stroke-width="12" stroke="orangered" stroke-linecap="round" stroke-dasharray="226 502.4" stroke-dashoffset="-45")
+                          .skill__title #{skill}    
+
+      section.works
+        .container
+          h2.works__title Мои работы
+          .works__left
+            .slider
+              .slider__main
+                +image('content/1.jpg', 'slider__pic')
+                .slider__preview
+                  ul.previews
+                  - for (var i = 2; i < 6; i++)
+                    li.previews__item
+                      +image(`content/${i}.jpg`, 'previews__pic')
+              .slider__control
+                button.slider__button.slider__button--prev
+                button.slider__button.slider__button--next
+          .works__right  
+            .works__tags
+            - var tags = ['HTML', 'CSS', 'Javascript']
+            each tag in tags
+              ul.tags
+                li.tags__item #{tag}
+          .works__text
+            h3.works__title Сайт школы образования
+            .works__desc-text
+              p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            a.iconed-link
+              +icon('link', 'iconed-link__icon')
+              .iconed-link__text Посмотреть сайт
+
+      section.feedbacks
+      .triangles
+        .container
+          .feedbacks__header
+            h2.title Что обо мне говорят
+            
+    
         //- +image('content/user.jpg', 'user-pic')
         //- +icon('link', 'link-class')
         //- .icon-bg
