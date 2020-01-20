@@ -10,9 +10,11 @@ html(lang="en")
   body
     .wrapper
       .wellcome-section
-        include ./templates/blocks/header.pug
-        include ./templates/blocks/maincontent.pug
-      include ./templates/blocks/aboutme.pug     
+        .container
+          section.wellcome
+            include ./templates/blocks/header.pug
+            include ./templates/blocks/maincontent.pug
+          include ./templates/blocks/aboutme.pug     
 
       section.service
         .triangle
@@ -73,7 +75,73 @@ html(lang="en")
         .container
           .feedbacks__header
             h2.title Что обо мне говорят
-            
+            .feedbacks__control
+              button.feedbacks__button.feedbacks__button--prev
+              button.feedbacks__button.feedbacks__button--next
+          .feedbacks-slider
+            ul.feedbacks-slider__list
+            -
+              var feedbacks = [
+                  {
+                    "name": "Ковальчук Дмитрий",
+                    "occupation": "Основатель Loftschool",
+                    "feedback": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
+                    "picture": "dmitry.jpg"
+                  },
+                  {
+                    "name": "Владимир Сабанцев",
+                    "occupation": "Преподаватель",
+                    "feedback": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
+                    "picture": "vladimir.jpg"
+                  }
+              ]
+
+            each feedback in feedbacks
+              li.feedbacks-slider__item
+                .feedback
+                  .feedback__desc #{feedback.feedback}
+                  .feedback__user
+                    .user
+                      +image(`content/${feedback.picture}`, 'user__pic')
+                      .user__details
+                        .user__name #{feedback.name}
+                        .user__job #{feedback.occupation}
+
+      section.contact
+        .container
+          form.form
+            .form__row
+              .form__element
+                +icon('user', 'form__user-pic')
+                label.form_label Введите ваше имя
+                  input(type='text').form__input
+                .form__element
+                +icon('envelope', 'form__user-mail')
+                label.form_label Введите ваш email
+                  input(type='mail').form__input
+            .form__row
+              .form__element
+                +icon('quote', 'form__user-message')
+                label.form_label Сообщение к письму
+                  textarea(rows='2').form__input
+            button(type='submit').button отправить
+
+      footer.footer
+        .container
+          .copyrigt 2019
+          .owner
+            .owner__desc Личный сайт веб разработчика
+            .owner__title Алексей Лещенко
+          .footer__right
+            include ./templates/blocks/nav.pug
+            .footer__bottom
+              .footer__desc
+                .footer__desc-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                include ./templates/blocks/socials.pug
+              .footer__quote
+                .quote
+                  .qoute__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  .quote__author Martin Golding
     
         //- +image('content/user.jpg', 'user-pic')
         //- +icon('link', 'link-class')
