@@ -1,8 +1,16 @@
 .contacts {
     background: url(../images/content/background4.png) center center / cover no-repeat;
+    min-height: 1660px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 
     &__container {
-        padding: 150px 0px;
+        min-height: 1400px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
     }
 }
 
@@ -26,33 +34,37 @@
     font-size: 36px;
     color: white;
     font-weight: bold;
-    margin-bottom: 100px;
+    margin-bottom: 84px;
 }
 
 .label__name {
     color: $light;
     font-size: 16px; 
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 27px;
 }
 
 .label__cell {
-    padding: 10px 5px;
+    padding: 10px 33px;
     background: transparent;
     border: transparent;
     border-bottom: 2px solid;
     border-bottom-color: $light;
     width: 350px;
     outline: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .message {
     width:100%;
-    margin-bottom: 100px;
+    margin-bottom: 68px;
+    resize: none;;
 }
 
 .send {
-    width:387px;
+    width:355px;
     height: 80px;
     color: white;
     background: $orange;
@@ -61,11 +73,11 @@
     font-weight: bold;
 }
 
+
 .type__svg {
     width: 30px;
     height: 30px;
     position: absolute;
-
 }
 
 .type__icon {
@@ -74,26 +86,103 @@
 
 .comments-heading{
     display: flex;
-
+    margin-bottom: 5%;
 }
 
 .comments-slider__heading{
     font-size: 36px;
     color: white;
     font-weight: bold;
-    margin-right: 3%;
+    margin-right: 6%;
 }
 
 .comments__button {
     display: flex;
     justify-content: space-between;
-    width: 8%;
+    width: 10%;
 }
 
-.comments__left, .comments__right {
+.comments__swipe {
     width: 50px;
     height: 50px;
     border-radius: 50px;
     border: 2px solid;
-    border-color: $light;
+    border-color: white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.arrows{
+    &__svg{
+        width: 20px;
+        height: 20px;
+    }
+
+    &__icon {
+        fill: white;
+    }
+}
+
+.comments{
+
+    &-slider{
+        width:70%;
+        overflow: hidden;
+        display: flex;
+        height: 300px;
+        margin-bottom:13%;
+    }
+
+    &__text {
+        font-size: 16px;
+        font-weight: bold;
+        color: $light;
+        line-height:2;
+        width:65%;
+    }
+
+    &__person-job{
+        font-size: 16px;
+        font-weight: bold;
+        color: $light;
+        line-height:2;
+    }
+
+    &__person-name{
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom:5%;
+    }
+
+    &__person{
+        display: flex;
+        justify-content: center;
+        width:70%;
+    }
+
+}
+
+.commentator{
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    margin-right:5%;
+}
+
+.comment {
+    &__list{
+        min-width: 47%;
+        height: 100%;
+        margin-right: 3%;
+    }
+    &__item{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        height:inherit;
+        align-items:center;
+    }
+
 }

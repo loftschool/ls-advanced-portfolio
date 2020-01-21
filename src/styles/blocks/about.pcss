@@ -1,14 +1,17 @@
 .about {
-    /* margin-bottom: 150px; */
+    min-height:480px;
 
 &__container {
  display: flex;
  justify-content: center;
+ align-items: flex-end;
  color: $light;
+ min-height: inherit;
+
 }
 
 &__personal {
-    margin-right: 70px;
+    margin-right: 118px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,17 +19,16 @@
 }
 
 &__photo{
-    margin-bottom: 10%;
+    margin-bottom: 17%;
 }
 
 &__description {
-    width: 500px;
-    height: 270px;
+    width: 565px;
+    height: 350px;
     font-size: 16px;
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     z-index:1;
 }
 
@@ -35,23 +37,33 @@
 .personal__line-info{
     text-align: left;
     padding: 10px;
+    width:156px;
 }
 
 /* про меня */
 .im {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius:50%;
 }
 
+.description__hello {
+    margin-bottom: 3%;
+}
 
 .description__name {
     font-size: 36px;
     color: white;
+    margin-bottom: 7%;
+}
+
+.description__job{
+    margin-bottom: 20%;
 }
 .description__school {
     font-style: italic;
     font-weight: normal;
+    line-height:2;
 }
 
 

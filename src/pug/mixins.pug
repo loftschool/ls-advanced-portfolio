@@ -4,9 +4,9 @@ mixin image(path, className)
 mixin menu(className)
   - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
     nav(class=`nav nav__${className}`)
-      ul(class=`nav__list`)
+      ul(class=`nav__list nav__list--${className}`)
         each item in menu
-          li(class=`nav__item`)
+          li(class=`nav__item nav__item--${className}`)
             a(href="#" class=`nav__link`) #{item}
 
 mixin icon(name, className)
@@ -17,9 +17,9 @@ mixin icon(name, className)
 mixin social(className)
   - var social = ["insta", "vk", "github"];
       ul(class=`social social__${className}`)
-          each item in social
-              li(class=`social__item`)
-                  +icon(item)
+        each item in social
+          li(class=`social__item social__item--${className}`)
+            +icon(item, 'social')
 
 mixin me(className)
   div(class=`my my__${className}`) 
@@ -35,11 +35,14 @@ mixin presentation(className)
                   +image(item)
 
 mixin comments(className)
-  ul.comments__list
-    li.comments__item
-      p.comments__text
-      .comments__person
-        +image
-        .comments__person-info
-          .comments__person-name
-          .comments__person-job
+  - var content = [{ text:"Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", name: "Дмитрий Ковальчук", job: "Основатель Loftschool", icon: "dima"},{text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах", name: "Владимир Сабанцев", job: "Преподаватель", icon: "vladimir"},{ text:"Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", name: "Дмитрий Ковальчук", job: "Основатель Loftschool", icon: "dima"},{text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах", name: "Владимир Сабанцев", job: "преподаватель", icon: "vladimir"}];
+      each item in content
+        ul(class=`${className}__list`)
+            li(class=`${className}__item`)
+                p.comments__text #{item.text}
+                .comments__person
+                  +image(item.icon,'commentator')
+                  .comments__person-info
+                    .comments__person-name #{item.name}
+                    .comments__person-job #{item.job}
+

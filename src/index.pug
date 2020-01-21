@@ -75,7 +75,9 @@ html(lang="en")
                     +presentation('presentation')
                   .slider__buttons
                     a.slider__right
+                      +icon('back','arrows')
                     a.slider__left
+                      +icon('next','arrows')
               .projects__school
                 - var knowledges = ["HTML","CSS","Javascript"]
                 ul.knowledges-list
@@ -91,11 +93,12 @@ html(lang="en")
               .comments-heading
                 h3.comments-slider__heading Что обо мне говорят
                 ul.comments__button
-                  li.comments__left
-                  li.comments__right
+                  li.comments__swipe
+                    +icon('back','arrows')
+                  li.comments__swipe
+                     +icon('next','arrows')
               .comments-slider
-                ul.comments-slider-list
-                  li.comments-slider-item
+                +comments('comment')
               form.form
                 h3.form__heading Связаться со мной
                 .form__data
@@ -124,7 +127,7 @@ html(lang="en")
           .footer__information
             +menu('footer')
             .links
-              p.my__school Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
+              p.my-school Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
               +social('footer')
             .citation 
               p.citation__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает,где вы живете

@@ -1,5 +1,7 @@
 .projects {
-    margin-bottom: 100px;
+    min-height:1090px;
+    display: flex;
+    align-items: center;
     
     &__container{
         display: flex;
@@ -9,7 +11,7 @@
 
     &__school{
         width: 25%;
-        height: 360px;
+        height: 392px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -19,42 +21,45 @@
         font-size: 30px;
         color: $dark;
         font-weight: bold;
-
     }
 
     &__school-description{
         color: $light;
         font-weight: bold;
         font-size: 16px;
-
     }
 
     &__heading{
         font-size: 36px;
         font-weight: bold;
         color: $dark;
-        margin-bottom:100px;
+        margin-bottom:83px;
+    }
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
     }
 }
 
-.presentation {
-    width: 80%;
-}
+.knowledges{
 
-.knowledges-list {
+&-list {
     display: flex;
 }
 
-.knowledges-list__item {
+&-list__item {
     padding: 10px 20px;
     background-color: $blue;
     color: $light;
     border-radius:50px;
-    margin-right: 10px;
+    margin-right: 26px;
 
     &:nth-last-child(1){
         margin-right: 100px;
     }
+}
+
 }
 
 .school__link {
@@ -65,59 +70,69 @@
 
 .link{
     display: flex;
+
+    &__svg {
+        width: 18px;
+        height: 18px;
+        margin-right:18px;
+    }
+    
+    &__icon{
+        fill: $darkblue;
+    }
+
 }
 
-.link__svg {
-    width: 20px;
-    height: 30px;
-    margin-right:18px;
-}
-
-.link__icon{
-    fill: $darkblue;
-}
-
-.projects__block {
-    display: flex;
-    justify-content: space-between;
-}
 
 .screen{
     width: 975px;
     height: 549px;
 }
 
-.slider-block{
+.slider{
+    display:flex;
+    position: absolute;
+    bottom: 11%;
+    right: 9%;
+
+
+&-block{
     width:704px;
     height: 100px;
     overflow:hidden;
 }
 
-.slider__left{
+&__left{
     width: 50px;
     height: 50px;
     background-color: $dark;
+    display:flex;
+    justify-content: center;
+    align-items:center;
 }
 
-.slider__right{
+&__right{
     width: 50px;
     height: 50px;
     background: $dark;
+    display:flex;
+    justify-content: center;
+    align-items:center;
 }
 
-.slider{
+&__buttons{
     display:flex;
-    position: absolute;
-    bottom: 3%;
-    right: 9%;
+    flex-direction:column;  
+}
+
 }
 
 .presentation {
     position: relative; 
+    width: 80%;
 
     &__list{
-        display: flex;
-        
+        display: flex;   
     }
 
     &__item{
@@ -125,9 +140,6 @@
     }
 }
 
-.slider__buttons{
-    display:flex;
-    flex-direction:column;
-}
+
 
 
