@@ -28,10 +28,20 @@
     &__svg {
         width:30px;
         height:30px;
+        
+        &:hover{
+            cursor: pointer;
+        }
+
+        &:hover>.social__icon{
+            fill:$orange;
+        }
+
     }
 
     &__icon {
         fill: $light;
+        transition: 0.2s
     }
 }
 

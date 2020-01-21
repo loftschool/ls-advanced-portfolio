@@ -15,11 +15,13 @@ mixin icon(name, className)
     use(xlink:href=icon.url class=`${className}__icon`)
 
 mixin social(className)
-  - var social = ["insta", "vk", "github"];
+  - var social = ["instagram", "vk", "github"];
       ul(class=`social social__${className}`)
         each item in social
           li(class=`social__item social__item--${className}`)
             +icon(item, 'social')
+            a(href=`https://${item}.com/` class=`social__link`)
+
 
 mixin me(className)
   div(class=`my my__${className}`) 

@@ -4,18 +4,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    position:relative;
 
     &__container {
         min-height: 1400px;
         display: flex;
         flex-direction: column;
-        /* justify-content: space-between; */
+        z-index:1;
+    }
+
+    &:before{
+        content: "";
+        display:block;
+        position: absolute;
+        min-height:inherit;
+        width:100%;
+        background: linear-gradient( 90deg, black, transparent);
     }
 }
 
 .form {
     width:800px;
+
+    &_heading {
+        font-size: 36px;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 84px;
+    }
 
     &__data{
         display: flex;
@@ -27,15 +43,8 @@
     &__label{
         position: relative;
     }
+}
 
-   
-}
-.form__heading {
-    font-size: 36px;
-    color: white;
-    font-weight: bold;
-    margin-bottom: 84px;
-}
 
 .label__name {
     color: $light;
@@ -73,7 +82,6 @@
     font-weight: bold;
 }
 
-
 .type__svg {
     width: 30px;
     height: 30px;
@@ -84,25 +92,49 @@
     fill: $light;
 }
 
-.comments-heading{
+.arrows{
+
+    &__svg{
+        width: 20px;
+        height: 20px;
+
+        &:hover{
+            cursor:pointer;
+        }
+
+        &:hover>.arrows__icon {
+            fill: $orange;
+        }
+    }
+
+    &__icon {
+        fill: white;
+    }
+
+}
+
+.comments{
+
+
+&-heading{
     display: flex;
     margin-bottom: 5%;
 }
 
-.comments-slider__heading{
+&-slider__heading{
     font-size: 36px;
     color: white;
     font-weight: bold;
     margin-right: 6%;
 }
 
-.comments__button {
+&__button {
     display: flex;
     justify-content: space-between;
     width: 10%;
 }
 
-.comments__swipe {
+&__swipe {
     width: 50px;
     height: 50px;
     border-radius: 50px;
@@ -113,25 +145,13 @@
     align-items:center;
 }
 
-.arrows{
-    &__svg{
-        width: 20px;
-        height: 20px;
-    }
-
-    &__icon {
-        fill: white;
-    }
-}
-
-.comments{
 
     &-slider{
         width:70%;
         overflow: hidden;
         display: flex;
         height: 300px;
-        margin-bottom:13%;
+        margin-bottom:10%;
     }
 
     &__text {
@@ -159,7 +179,7 @@
     &__person{
         display: flex;
         justify-content: center;
-        width:70%;
+        width:100%;
     }
 
 }
