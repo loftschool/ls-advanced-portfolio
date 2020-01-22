@@ -11,11 +11,11 @@ section.about
                             {"title": "Родися", "value": "26 декабря 1976"}
                         ]
 
-                ul.user__desc
+                table.user__desc
                     each val in items
-                        li.user__desc-item
-                            span.user__title=val.title
-                            span.user__value=val.value
+                        tr.user__desc-item
+                            td.user__title=val.title
+                            td.user__value=val.value
 
         .about__right
               h4.about__prolog Привет, меня зовут

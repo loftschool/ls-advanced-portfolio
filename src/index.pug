@@ -18,9 +18,9 @@ html(lang="en")
 
       section.service
         .triangle
-          .container
+          .container.service__container
             .service__desc
-              h2.service__title Чем я могу быть полезен вам
+              h2.title Чем я могу быть полезен вам
               p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
             ul.skills
@@ -42,70 +42,73 @@ html(lang="en")
                           .skill__title #{skill}    
 
       section.works
-        .container
+        .container.works__container
           h2.works__title Мои работы
-          .works__left
-            .slider
-              .slider__main
-                +image('content/1.jpg', 'slider__pic')
-                .slider__preview
-                  ul.previews
-                  - for (var i = 2; i < 6; i++)
-                    li.previews__item
-                      +image(`content/${i}.jpg`, 'previews__pic')
-              .slider__control
-                button.slider__button.slider__button--prev
-                button.slider__button.slider__button--next
-          .works__right  
-            .works__tags
-            - var tags = ['HTML', 'CSS', 'Javascript']
-            each tag in tags
-              ul.tags
-                li.tags__item #{tag}
-          .works__text
-            h3.works__title Сайт школы образования
-            .works__desc-text
-              p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-            a.iconed-link
-              +icon('link', 'iconed-link__icon')
-              .iconed-link__text Посмотреть сайт
+          .works__main
+            .works__left
+              .slider
+                .slider__main
+                  +image('content/1.jpg', 'slider__pic')
+                  .slider__preview
+                    ul.previews
+                      - for (var i = 2; i < 6; i++)
+                        li.previews__item
+                          +image(`content/${i}.jpg`, 'previews__pic')
+                .slider__control
+                  button.slider__button.slider__button--prev
+                    +icon('arrow-down', 'slider__button-arrow')
+                  button.slider__button.slider__button--next
+                    +icon('arrow-down', 'slider__button-arrow')
+            .works__right  
+              .works__tags
+              - var tags = ['HTML', 'CSS', 'Javascript']
+                ul.tags
+                  each tag in tags
+                    li.tags__item #{tag}
+              .works__text
+                h3.title Сайт школы образования
+                .works__desc-text
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                a.iconed-link
+                  +icon('link', 'iconed-link__icon')
+                  .iconed-link__text Посмотреть сайт
 
       section.feedbacks
-      .triangles
+        .triangles
         .container
           .feedbacks__header
-            h2.title Что обо мне говорят
+            h2.feedbacks__title Что обо мне говорят
             .feedbacks__control
               button.feedbacks__button.feedbacks__button--prev
               button.feedbacks__button.feedbacks__button--next
           .feedbacks-slider
             ul.feedbacks-slider__list
-            -
-              var feedbacks = [
-                  {
-                    "name": "Ковальчук Дмитрий",
-                    "occupation": "Основатель Loftschool",
-                    "feedback": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
-                    "picture": "dmitry.jpg"
-                  },
-                  {
-                    "name": "Владимир Сабанцев",
-                    "occupation": "Преподаватель",
-                    "feedback": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
-                    "picture": "vladimir.jpg"
-                  }
-              ]
+              -
+                var feedbacks = [
+                    {
+                      "name": "Ковальчук Дмитрий",
+                      "occupation": "Основатель Loftschool",
+                      "feedback": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
+                      "picture": "dmitry.jpg"
+                    },
+                    {
+                      "name": "Владимир Сабанцев",
+                      "occupation": "Преподаватель",
+                      "feedback": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
+                      "picture": "vladimir.jpg"
+                    }
+                ]
 
-            each feedback in feedbacks
-              li.feedbacks-slider__item
-                .feedback
-                  .feedback__desc #{feedback.feedback}
-                  .feedback__user
-                    .user
-                      +image(`content/${feedback.picture}`, 'user__pic')
-                      .user__details
-                        .user__name #{feedback.name}
-                        .user__job #{feedback.occupation}
+              each feedback in feedbacks
+                li.feedbacks-slider__item
+                  .feedback
+                    .feedback__desc #{feedback.feedback}
+                    .feedback__user
+                      .user
+                        +image(`content/${feedback.picture}`, 'user__pic')
+                        .user__details
+                          .user__name #{feedback.name}
+                          .user__job #{feedback.occupation}
 
       section.contact
         .container
