@@ -1,0 +1,23 @@
+section.about
+    .container.about__container
+        .about__personal
+            .about__photo
+                +image('user', 'im')
+            .about__info
+                table.personal__table
+                    tr.personal__line
+                        td.personal__line-info Проживаю:
+                        th.personal__line-info  Москва
+                    tr.personal__line
+                        td.personal__line-info Возраст
+                        th.personal__line-info  25 лет
+                    tr.personal__line
+                        td.personal__line-info Родилась:
+                        th.personal__line-info  18 октября 1994   
+        .about__description 
+            .description__hello Привет, меня зовут
+            .description__name Севара Рахманова
+            .description__job Я занимаюсь разработкой совеременных сайтов и приложений. Мне нравится делать интересные и современные проекты
+            - var school = ["Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!"];
+            each loftschool in school
+                .description__school #{loftschool}

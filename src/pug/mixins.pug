@@ -11,40 +11,42 @@ mixin menu(className)
 
 mixin icon(name, className)
   - var icon = require(`images/icons/${name}.svg`);
-  svg(class=`${className}__svg` viewBox=icon.viewBox preserveAspectRatio="none")
-    use(xlink:href=icon.url class=`${className}__icon`)
+    svg(class=`${className}__svg` viewBox=icon.viewBox preserveAspectRatio="none")
+      use(xlink:href=icon.url class=`${className}__icon`)
 
 mixin social(className)
   - var social = ["instagram", "vk", "github"];
-      ul(class=`social social__${className}`)
-        each item in social
-          li(class=`social__item social__item--${className}`)
-            +icon(item, 'social')
-            a(href=`https://${item}.com/` class=`social__link`)
+    ul(class=`social social__${className}`)
+      each item in social
+        li(class=`social__item social__item--${className}`)
+          +icon(item, 'social')
+          a(href=`https://${item}.com/` class=`social__link`)
 
 
 mixin me(className)
   div(class=`my my__${className}`) 
     div(class=`my__job my__job--${className}`)
-        p Личный сайт <br/> веб разработчика
-    div(class=`my__name my__name--${className}`) Севара Рахманова
+      p Личный сайт веб разработчика
+    div(class=`my__name my__name--${className}`) 
+      p Севара Рахманова
 
 mixin presentation(className)
   - var presentation = ["slide1", "slide2", "slide3", "slide4","slide5"];
-      ul(class=`${className}__list`)
-          each item in presentation
-              li(class=`${className}__item`)
-                  +image(item)
+    ul(class=`${className}__list`)
+      each item in presentation
+        li(class=`${className}__item`)
+          +image(item)
 
 mixin comments(className)
   - var content = [{ text:"Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", name: "Дмитрий Ковальчук", job: "Основатель Loftschool", icon: "dima"},{text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах", name: "Владимир Сабанцев", job: "Преподаватель", icon: "vladimir"},{ text:"Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", name: "Дмитрий Ковальчук", job: "Основатель Loftschool", icon: "dima"},{text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах", name: "Владимир Сабанцев", job: "преподаватель", icon: "vladimir"}];
-      each item in content
-        ul(class=`${className}__list`)
-            li(class=`${className}__item`)
-                p.comments__text #{item.text}
-                .comments__person
-                  +image(item.icon,'commentator')
-                  .comments__person-info
-                    .comments__person-name #{item.name}
-                    .comments__person-job #{item.job}
+    each item in content
+      ul(class=`${className}__list`)
+        li(class=`${className}__item`)
+          +icon('quote' , 'quote')
+          p.comments__text #{item.text}
+          .comments__person
+            +image(item.icon,'commentator')
+            .comments__person-info
+              .comments__person-name #{item.name}
+              .comments__person-job #{item.job}
 

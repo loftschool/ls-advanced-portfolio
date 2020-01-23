@@ -1,143 +1,182 @@
 .projects {
-    min-height:1090px;
+  min-height: 1090px;
+  display: flex;
+  align-items: center;
+
+  &__container {
     display: flex;
-    align-items: center;
-    
-    &__container{
-        display: flex;
-        flex-direction:column;
-        justify-content: space-between;
-    }
+    flex-direction: column;
+    justify-content: center;
+    min-height: inherit;
+  }
 
-    &__school{
-        width: 25%;
-        height: 392px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    &__school-heading {
-        font-size: 30px;
-        color: $dark;
-        font-weight: bold;
-    }
-
-    &__school-description{
-        color: $light;
-        font-weight: bold;
-        font-size: 16px;
-    }
-
-    &__heading{
-        font-size: 36px;
-        font-weight: bold;
-        color: $dark;
-        margin-bottom:83px;
-    }
-
-    &__block {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
-.knowledges{
-
-&-list {
+  &__school {
+    width: 25%;
+    height: 392px;
     display: flex;
-}
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-&-list__item {
-    padding: 10px 20px;
-    background-color: $blue;
-    color: $light;
-    border-radius:50px;
-    margin-right: 26px;
-
-    &:nth-last-child(1){
-        margin-right: 100px;
-    }
-}
-
-}
-
-.school__link {
-    font-size:18px;
+  &__school-heading {
+    font-size: 30px;
+    color: $dark;
     font-weight: bold;
-    color: $darkblue;
-}
+  }
 
-.link{
+  &__school-description {
+    color: $light;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: $dark;
+    margin-bottom: 83px;
+  }
+
+  &__block {
     display: flex;
-
-    &__svg {
-        width: 18px;
-        height: 18px;
-        margin-right:18px;
-    }
-    
-    &__icon{
-        fill: $darkblue;
-    }
-
-}
-
-
-.screen{
-    width: 975px;
-    height: 549px;
-}
-
-.slider{
-    display:flex;
-    position: absolute;
-    bottom: 11%;
-    right: 9%;
-
-
-&-block{
-    width:704px;
-    height: 100px;
-    overflow:hidden;
-}
-
-&__left{
-    width: 50px;
-    height: 50px;
-    background-color: $dark;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-}
-
-&__right{
-    width: 50px;
-    height: 50px;
-    background: $dark;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-}
-
-&__buttons{
-    display:flex;
-    flex-direction:column;  
-}
-
+    justify-content: space-between;
+  }
 }
 
 .presentation {
-    position: relative; 
-    width: 80%;
+  width: 80%;
+  margin-right: 2%;
 
-    &__list{
-        display: flex;   
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    min-width: 25%;
+  }
+}
+
+.image-block {
+  position: relative;
+  width: 975px;
+  height: 549px;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+}
+
+.slider {
+  display: flex;
+  position: absolute;
+  bottom: 11%;
+  right: -5%;
+
+  &-block {
+    width: 704px;
+    height: 100px;
+    overflow: hidden;
+  }
+
+  &__left {
+    width: 50px;
+    height: 50px;
+    background-color: $dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
     }
 
-    &__item{
-        min-width:25%;
+    &:hover .arrows__svg > .arrows__icon {
+      fill: $orange;
+      transition: 0.2s;
     }
+  }
+
+  &__right {
+    width: 50px;
+    height: 50px;
+    background: $dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover .arrows__svg > .arrows__icon {
+      fill: $orange;
+      transition: 0.2s;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.knowledges {
+  &-list {
+    display: flex;
+  }
+
+  &-list__item {
+    padding: 10px 20px;
+    background-color: $blue;
+    color: $light;
+    border-radius: 50px;
+    margin-right: 26px;
+
+    &:nth-last-child(1) {
+      margin-right: 100px;
+    }
+  }
+}
+
+.link__school {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.link {
+  display: flex;
+  color: $darkblue;
+
+  &:hover {
+    cursor: pointer;
+    color: $orange;
+    transition: 0.2s;
+  }
+
+  &:hover .link__svg > .link__icon {
+    fill: $orange;
+  }
+
+  &__svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 18px;
+  }
+
+  &__icon {
+    fill: $darkblue;
+  }
+}
+
+.count {
+  font-weight: bold;
+  font-size: 400px;
+  color: $blue;
+  position: absolute;
+  right: -21%;
+  top: 0%;
 }
 
 

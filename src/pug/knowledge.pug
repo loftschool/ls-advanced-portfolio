@@ -1,0 +1,20 @@
+section.knowledge
+    .container.knowledge__container
+        .knowledge__topic
+            h2.knowledge__heading Чем я могу быть вам полезен
+            - var school = ["Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!"];
+            each loftschool in school
+                .knowledge__school #{loftschool}
+        .knowledge__about
+            - 
+                var grafics = [
+                ["Front-end", ["HTML5","CSS3","Javascript","jQuery и Vue.js"]],
+                ["Workflow", ["GIT","Terminal","Gulp","Webpack"]]
+                ];
+            ul.knowledge__list
+                each item in grafics
+                    li.knowledge__item 
+                        .knowledge__item-heading #{item[0]}
+                        ul.skills
+                            each skill in item[1]
+                                li.skills__item #{skill}

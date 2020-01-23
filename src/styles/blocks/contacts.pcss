@@ -1,208 +1,236 @@
 .contacts {
-    background: url(../images/content/background4.png) center center / cover no-repeat;
-    min-height: 1660px;
+  background: url(../images/content/background4.png) center center / cover no-repeat;
+  min-height: 1660px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__container {
+    min-height: 1400px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position:relative;
+    flex-direction: column;
+    z-index: 1;
+  }
 
-    &__container {
-        min-height: 1400px;
-        display: flex;
-        flex-direction: column;
-        z-index:1;
-    }
-
-    &:before{
-        content: "";
-        display:block;
-        position: absolute;
-        min-height:inherit;
-        width:100%;
-        background: linear-gradient( 90deg, black, transparent);
-    }
-}
-
-.form {
-    width:800px;
-
-    &_heading {
-        font-size: 36px;
-        color: white;
-        font-weight: bold;
-        margin-bottom: 84px;
-    }
-
-    &__data{
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 50px;
-       
-    }
-
-    &__label{
-        position: relative;
-    }
-}
-
-
-.label__name {
-    color: $light;
-    font-size: 16px; 
-    font-weight: bold;
-    margin-bottom: 27px;
-}
-
-.label__cell {
-    padding: 10px 33px;
-    background: transparent;
-    border: transparent;
-    border-bottom: 2px solid;
-    border-bottom-color: $light;
-    width: 350px;
-    outline: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.message {
-    width:100%;
-    margin-bottom: 68px;
-    resize: none;;
-}
-
-.send {
-    width:355px;
-    height: 80px;
-    color: white;
-    background: $orange;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.type__svg {
-    width: 30px;
-    height: 30px;
+  &:before {
+    content: "";
+    display: block;
     position: absolute;
+    min-height: inherit;
+    width: 100%;
+    background: linear-gradient(90deg, black, transparent);
+  }
 }
 
-.type__icon {
-    fill: $light;
-}
-
-.arrows{
-
-    &__svg{
-        width: 20px;
-        height: 20px;
-
-        &:hover{
-            cursor:pointer;
-        }
-
-        &:hover>.arrows__icon {
-            fill: $orange;
-        }
-    }
-
-    &__icon {
-        fill: white;
-    }
-
-}
-
-.comments{
-
-
-&-heading{
+.comments {
+  &-heading {
     display: flex;
     margin-bottom: 5%;
-}
+  }
 
-&-slider__heading{
+  &-slider__heading {
     font-size: 36px;
     color: white;
     font-weight: bold;
     margin-right: 6%;
-}
+  }
 
-&__button {
+  &__button {
     display: flex;
     justify-content: space-between;
     width: 10%;
-}
+  }
 
-&__swipe {
+  &__swipe {
     width: 50px;
     height: 50px;
     border-radius: 50px;
     border: 2px solid;
     border-color: white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+      border-color: $orange;
+      transition: 0.2s;
+    }
+
+    &:hover .arrows__svg > .arrows__icon {
+      fill: $orange;
+      transition: 0.2s;
+    }
+  }
+
+  &-slider {
+    width: 70%;
+    overflow: hidden;
+    display: flex;
+    height: 300px;
+    margin-bottom: 10%;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: bold;
+    color: $light;
+    line-height: 2;
+    width: 65%;
+  }
+
+  &__person-job {
+    font-size: 16px;
+    font-weight: bold;
+    color: $light;
+    line-height: 2;
+  }
+
+  &__person-name {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5%;
+  }
+
+  &__person {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
-
-    &-slider{
-        width:70%;
-        overflow: hidden;
-        display: flex;
-        height: 300px;
-        margin-bottom:10%;
-    }
-
-    &__text {
-        font-size: 16px;
-        font-weight: bold;
-        color: $light;
-        line-height:2;
-        width:65%;
-    }
-
-    &__person-job{
-        font-size: 16px;
-        font-weight: bold;
-        color: $light;
-        line-height:2;
-    }
-
-    &__person-name{
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom:5%;
-    }
-
-    &__person{
-        display: flex;
-        justify-content: center;
-        width:100%;
-    }
-
+.quote__svg {
+  width: 65px;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-.commentator{
-    width: 75px;
-    height: 75px;
-    border-radius: 50px;
-    margin-right:5%;
+.quote__icon {
+  fill: $light;
+  opacity: 0.5;
+}
+
+.commentator {
+  width: 75px;
+  height: 75px;
+  border-radius: 50px;
+  margin-right: 5%;
 }
 
 .comment {
-    &__list{
-        min-width: 47%;
-        height: 100%;
-        margin-right: 3%;
-    }
-    &__item{
-        display:flex;
-        flex-direction:column;
-        justify-content:space-between;
-        height:inherit;
-        align-items:center;
-    }
+  &__list {
+    min-width: 47%;
+    height: 100%;
+    margin-right: 3%;
+  }
 
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+    align-items: center;
+    position: relative;
+  }
+}
+
+.arrows {
+  &__svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__icon {
+    fill: white;
+  }
+}
+
+input,
+textarea:invalid {
+  box-shadow: none;
+}
+
+.form {
+  width: 800px;
+
+  &_heading {
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 84px;
+  }
+
+  &__data {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  &__label {
+    position: relative;
+  }
+}
+
+.label__name {
+  color: $light;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 27px;
+}
+
+.label__cell {
+  padding: 10px 15px 10px 48px;
+  background: transparent;
+  border: transparent;
+  border-bottom: 2px solid;
+  border-bottom-color: $light;
+  width: 350px;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+
+  &:focus {
+    border-color: $orange;
+  }
+}
+
+.message {
+  width: 100%;
+  margin-bottom: 68px;
+  resize: none;
+}
+
+.send {
+  width: 355px;
+  height: 80px;
+  color: white;
+  background: $orange;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+
+  &:hover {
+    background: white;
+    color: $orange;
+  }
+
+  &:focus {
+    background: $light;
+  }
+}
+
+.type__svg {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+
+.type__icon {
+  fill: $light;
 }

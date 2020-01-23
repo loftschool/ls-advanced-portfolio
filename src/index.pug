@@ -1,141 +1,26 @@
 include ./pug/mixins.pug
 
-- var school = ["Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!"];
-
 <!DOCTYPE html>
 html(lang="ru")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
     title Portfolio | main page
   body
     .wrapper
       section.page
         .splitblock
-          article.welcome
-            .container.welcome__container
-              header.header
-                .logo  CР
-                +menu('header')
-                +social('header')
-              +me('header')
-              .scroll-block
-                a.scroll__link(href="#") Скролл
-                +icon('scroll','scroll')
-          article.about
-            .container.about__container
-              .about__personal
-                .about__photo
-                  +image('user', 'im')
-                .about__info
-                  table.personal__table
-                    tr.personal__line
-                      td.personal__line-info Проживаю:
-                      th.personal__line-info  Москва
-                    tr.personal__line
-                      td.personal__line-info Возраст
-                      th.personal__line-info  25 лет
-                    tr.personal__line
-                      td.personal__line-info Родилась:
-                      th.personal__line-info  18 октября 1994   
-              .about__description 
-                .description__hello Привет, меня зовут
-                .description__name Севара Рахманова
-                .description__job Я занимаюсь разработкой совеременных сайтов и приложений. Мне нравится делать интересные и современные проекты
-                each loftschool in school
-                  .description__school #{loftschool}
-        article.knowledge
-          .container.knowledge__container
-            .knowledge__topic
-              h2.knowledge__heading Чем я могу быть вам полезен
-              each loftschool in school
-                .knowledge__school #{loftschool}
-            .knowledge__about
-              - 
-                var grafics = [
-                ["Front-end", ["HTML5","CSS3","Javascript","jQuery и Vue.js"]],
-                ["Workflow", ["GIT","Terminal","Gulp","Webpack"]]
-                ];
-              ul.knowledge__list
-                each item in grafics
-                  li.knowledge__item 
-                    .knowledge__item-heading #{item[0]}
-                    ul.skills
-                      each skill in item[1]
-                        li.skills__item #{skill}
-        article.projects
-          .container.projects__container
-            h2.projects__heading Мои работы
-            .projects__block
-              .presentation
-                +image('slide1', 'screen')
-                .slider
-                  .slider-block
-                    +presentation('presentation')
-                  .slider__buttons
-                    a.slider__right
-                      +icon('back','arrows')
-                    a.slider__left
-                      +icon('next','arrows')
-              .projects__school
-                - var knowledges = ["HTML","CSS","Javascript"]
-                ul.knowledges-list
-                  each item in knowledges
-                    li.knowledges-list__item #{item}
-                h3.projects__school-heading Сайт школы образования
-                p.projects__school-description Эта девчонка проходила обучение веб-разработке не где-то, а в Loftschool! 3 месяца только самых тяжелых испытаний и бессоных ночей!
-                .link
-                  +icon('link','link')
-                  a(href="https://loftschool.com").school__link Посмотреть сайт
-        article.contacts
-            .container.contacts__container
-              .comments-heading
-                h3.comments-slider__heading Что обо мне говорят
-                ul.comments__button
-                  li.comments__swipe
-                    +icon('back','arrows')
-                  li.comments__swipe
-                     +icon('next','arrows')
-              .comments-slider
-                +comments('comment')
-              form.form
-                h3.form__heading Связаться со мной
-                .form__data
-                  label.form__label
-                    .label__name Введите Ваше имя
-                    +icon('user','type')
-                    input(type="text" tabindex="1" name="name" required).label__cell
-                    .error
-                  label.form__label
-                    .label__name Введите Ваш email
-                    +icon('envelope','type')
-                    input(type="email" tabindex="2" name="email" required).label__cell
-                    .error
-                .form__text
-                  label.form__label.form__label-text
-                    .label__name Сообщение к письму
-                    +icon('message','type')
-                    textarea(name="text" tabindex="3" required).message.label__cell
-                    .error
-                    input(type="submit" value="отправить" tabindex="4" required).send
-      footer.footer
-        .container.footer__container
-          .footer__about
-            .year &copy; 2020
-            +me('footer')
-          .footer__information
-            +menu('footer')
-            .links
-              p.my-school Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
-              +social('footer')
-            .citation 
-              p.citation__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает,где вы живете
-              p.citation__author Martin Golding
+          include ./pug/welcome.pug
+          include ./pug/about.pug
+        include ./pug/knowledge.pug
+        include ./pug/projects.pug
+        include ./pug/contacts.pug
+      include ./pug/footer.pug
 
-         
 
-        
 
-           
-        
+
+
+
+

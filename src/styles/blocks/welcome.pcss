@@ -3,64 +3,63 @@
   height: 100vh;
   min-height: 650px;
 
-  &__container{
-    display:flex;
+  &__container {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items:center;
-    height: 100vh;
+    align-items: center;
+    min-height: inherit;
+    height: inherit;
     padding: 5vh 0;
-  } 
+  }
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  align-items:center;
-  width:100%;
-} 
+  align-items: center;
+  width: 100%;
+}
 
 .logo {
   font-size: 36px;
   font-weight: bold;
   color: white;
-
 }
 
 .scroll {
   &-block {
-    width:100%;
+    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+      color: $orange;
+    }
+
+    &:hover * .scroll__icon {
+      fill: $orange;
+    }
   }
-  
+
   &__link {
     font-size: 18px;
-    color:white;
     font-weight: bold;
     margin-right: 10px;
   }
-  
+
   &__svg {
     width: 30px;
     height: 30px;
     transition: 0.2s;
-    
-    &:hover{
-      cursor: pointer;
   }
 
-  &:hover>.scroll__icon{
-    fill:$orange;
-  }
-
-  }
-  
   &__icon {
     fill: white;
   }
-
 }
 
 

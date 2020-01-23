@@ -1,53 +1,54 @@
-.my{
-    &__header{
-      display:flex;
-      width: 62%;
+.my {
+  &__header {
+    display: flex;
+    justify-content: center;
+    width: 62%;
+    height: 15%;
   }
 
-    &__job--header {
-      width: 200px;
-      line-height:2;
-      text-align:right;
-      font-size:18px;
-      font-weight: bold;
-      margin-right: 4%;
-      color: $light;
-  }
-    
-    &__name--header {
-      width:430px;
-      font-size: 72px;
-      color: white;
-      font-weight: bold;
-      text-align:right;
-      line-height:1;
+  &__job--header {
+    width: 20%;
+    line-height: 2;
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 4%;
+    color: $light;
+    white-space:pre-wrap;
   }
 
-    &__footer {
-      display:flex;
-      flex-direction:column-reverse;
-      justify-content: flex-end;
-  }
-
-
-    &__job--footer {
-      text-align:left;
-      color: $light;
-      font-size:16px;
-      width:160px;
-  }
-    
-    &__name--footer {
-    text-align:left;
+  &__name--header {
+    width: 50%;
+    font-size: 72px;
     color: white;
     font-weight: bold;
-    font-size:18px;
-    width:100px;
-    margin-bottom:18px;
+    text-align: right;
+    line-height: 1;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+
+  &__job--footer {
+    text-align: left;
+    color: $light;
+    font-size: 16px;
+    width: 160px;
+  }
+
+  &__name--footer {
+    text-align: left;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 100px;
+    margin-bottom: 18px;
     line-height: 2;
     text-transform: uppercase;
   }
-    
 }
 
 

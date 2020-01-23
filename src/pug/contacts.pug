@@ -1,0 +1,31 @@
+section.contacts
+    .container.contacts__container
+        .comments-heading
+            h3.comments-slider__heading Что обо мне говорят
+            ul.comments__button
+                li.comments__swipe
+                    +icon('back','arrows')
+                li.comments__swipe
+                    +icon('next','arrows')
+        .comments-slider
+            +comments('comment')
+        form.form
+            h3.form__heading Связаться со мной
+            .form__data
+                label.form__label
+                    .label__name Введите Ваше имя
+                    +icon('user','type')
+                    input(type="text" tabindex="1" name="name" required).label__cell
+                    .error
+                label.form__label
+                    .label__name Введите Ваш email
+                    +icon('envelope','type')
+                    input(type="email" tabindex="2" name="email" required).label__cell
+                    .error
+            .form__text
+                label.form__label.form__label-text
+                    .label__name Сообщение к письму
+                    +icon('message','type')
+                    textarea(name="text" tabindex="3" required).message.label__cell
+                    .error
+                    input(type="submit" value="отправить" tabindex="4" required).send

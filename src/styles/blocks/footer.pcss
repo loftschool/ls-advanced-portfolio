@@ -1,71 +1,70 @@
 .footer {
-    position: absolute;
-    bottom: 0%;
-    background: $dark;
-    width: 100%;
-    min-height: 363px;
+  position: absolute;
+  bottom: 0;
+  background: $dark;
+  width: 100%;
+  min-height: 363px;
+  display: flex;
+  align-items: center;
+
+  &__container {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    min-height: 232px;
+  }
 
-    &__container {
-        display:flex;
-        justify-content: space-between;
-        min-height: 232px;
-    }
+  &__about {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+  }
 
-    &__about {
-        display: flex;
-        justify-content:space-between;
-        width:25%
-    }
-
-    &__information{
-        width:68%;
-        display: flex;
-        flex-flow: row wrap;
-    }
+  &__information {
+    width: 68%;
+    display: flex;
+    flex-flow: row wrap;
+  }
 }
 
 .year {
-    font-size: 48px;
-    font-weight:bold;
-    color: $light;
-    width: 170px;
+  font-size: 48px;
+  font-weight: bold;
+  color: $light;
+  width: 170px;
 }
 
-.links{
-    width:300px;
-    flex:1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.links {
+  width: 300px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.my-school{
-    font-size: 16px;
-    color: $light;
-    width: 69%;
-    line-height:2.5;
+.my-school {
+  font-size: 16px;
+  color: $light;
+  width: 69%;
+  line-height: 2.5;
 }
 
 .citation {
-    width:300px;
-    flex:1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  width: 300px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
-
-&__text {
-    color:$light;
+  &__text {
+    color: $light;
     font-size: 16px;
-    line-height:2.5;
-}
+    line-height: 2.5;
+  }
 
-&__author{
+  &__author {
     color: white;
     font-style: italic;
-}
+  }
 }
 
 

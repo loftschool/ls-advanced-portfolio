@@ -1,109 +1,108 @@
 .knowledge {
-    background: url(../images/content/background3.png) center center / cover no-repeat; 
-    position: relative;
-    min-height: 1296px;
+  background: url(../images/content/background3.png) center center / cover no-repeat;
+  position: relative;
+  min-height: 1296px;
+  display: flex;
+  align-items: flex-end;
+
+  &:before {
+    content: '';
+    display: block;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    bottom: -55%;
+    background: url(../images/content/hands.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    width: 70%;
+    height: 100%;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/content/background2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 39%;
+  }
+
+  &__container {
     display: flex;
-    align-items: flex-end; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 1040px;
+    width: 80%;
+  }
 
-    &:before{
-        content:"";
-        display: block;
-        z-index: 1;
-        position: absolute;
-        left: 0%;
-        bottom: -31%;
-        background: url(../images/content/hands.png);
-        background-repeat: no-repeat;
-        width: 48%;
-        height: 100%;
+  &__topic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 59%;
+    margin-bottom: 112px;
+  }
+
+  &__heading {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 60px;
+  }
+
+  &__school {
+    width: 100%;
+    color: $light;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.8;
+  }
+
+  &__item-heading {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    margin-bottom: 62px;
+
+    &:nth-last-child(1) {
+      margin-bottom: 0px;
     }
-
-    &:after{
-        content:"";
-        display: block;
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        background: url(../images/content/background2.png); 
-        background-repeat: no-repeat;
-        background-size: 100%;
-        width: 100%;
-        height: 39%;
-    }
-
-    &__container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-        min-height: 1040px;
-        width:77%;
-    }
-
-    &__topic{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items:flex-start;
-        width: 70%;
-        margin-bottom: 112px;
-    }
-
-
-    &__heading{
-        color: white;
-        font-size: 30px;
-        font-weight: bold;
-        margin-bottom: 60px;
-    }
-
-    &__school{
-        width: 100%;
-        color:$light;
-        font-size: 16px;
-        font-weight:bold;
-        line-height: 1.8;
-    }
-
-
-    &__item-heading {
-        color:white;
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 40px;
-    }
-
-    &__item {
-        margin-bottom: 62px;
-
-        &:nth-last-child(1){
-            margin-bottom: 0px;
-        }
-    }
+  }
 }
 
 .skills {
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  color: $light;
+
+  &__item {
+    width: 134px;
+    height: 134px;
+    border: 2px solid;
+    border-color: $light;
+    border-radius: 50%;
     display: flex;
-    font-size: 18px;
-    font-weight: bold;
-    color: $light;
+    justify-content: center;
+    align-items: center;
+    margin-right: 62px;
+    text-align: center;
 
-    &__item{
-        width: 134px;
-        height: 134px;
-        border: 2px solid;
-        border-color: $light;
-        border-radius:50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 62px;
-        text-align: center;
-
-        &:nth-last-child(1){
-            margin-right: 0px;
-        }
-    } 
+    &:nth-last-child(1) {
+      margin-right: 0px;
+    }
+  }
 } 
 
 
