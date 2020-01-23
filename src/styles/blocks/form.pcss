@@ -1,0 +1,43 @@
+.form__pic {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.form__row{
+    display: flex;
+    margin-top: 35px;
+
+    &--first {
+        margin-top: 85px;
+    }
+}
+
+.form__element {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 90px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.form__label {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__button {
+    font-size: 18px;
+    font-weight: 800;
+    padding: 30px 115px;
+    margin-top: 60px;
+    text-transform: uppercase;
+    color: $white-color;
+    border-top-right-radius: 5px;
+    border-end-start-radius: 5px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-image: linear-gradient(to right, $gradient-start-color, $gradient-end-color);
+}

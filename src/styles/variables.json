@@ -1,7 +1,11 @@
 {
   "text-color": "#464d62",
   "links-color": "#4b6fd7",
+  "white-color": "#fff",
   "grey-color": "#f3f5f9",
+  "gradient-start-color": "#7c00ea",
+  "gradient-end-color": "#4a00ed",
+  "bg-footer-color": "#252830",
   "btn-color": "#353e4e",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",

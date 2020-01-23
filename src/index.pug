@@ -73,15 +73,17 @@ html(lang="en")
                   +icon('link', 'iconed-link__icon')
                   .iconed-link__text Посмотреть сайт
 
-      section.feedbacks
-        .triangles
-        .container
-          .feedbacks__header
-            h2.feedbacks__title Что обо мне говорят
-            .feedbacks__control
-              button.feedbacks__button.feedbacks__button--prev
-              button.feedbacks__button.feedbacks__button--next
-          .feedbacks-slider
+      
+      .feedback-section
+        section.feedbacks
+          .triangles
+          .container
+            .feedbacks__header
+              h2.feedbacks__title Что обо мне говорят
+              .feedbacks__control
+                button.feedbacks__button.feedbacks__button--prev
+                button.feedbacks__button.feedbacks__button--next
+            .feedbacks-slider
             ul.feedbacks-slider__list
               -
                 var feedbacks = [
@@ -102,36 +104,39 @@ html(lang="en")
               each feedback in feedbacks
                 li.feedbacks-slider__item
                   .feedback
-                    .feedback__desc #{feedback.feedback}
-                    .feedback__user
-                      .user
-                        +image(`content/${feedback.picture}`, 'user__pic')
-                        .user__details
-                          .user__name #{feedback.name}
-                          .user__job #{feedback.occupation}
-
-      section.contact
-        .container
-          form.form
-            .form__row
-              .form__element
-                +icon('user', 'form__user-pic')
-                label.form_label Введите ваше имя
-                  input(type='text').form__input
+                    +icon('quote', 'feedback__pic')
+                    .feedback__content
+                      .feedback__desc #{feedback.feedback}
+                      .feedback__user
+                        .user
+                          .user__img-wrapper
+                            +image(`content/${feedback.picture}`, 'user__img')
+                          .user__details
+                            .user__name #{feedback.name}
+                            .user__job #{feedback.occupation}
+        section.contact
+          .container
+            h2.title.title__contact Связаться со мной
+            form.form
+              .form__row.form__row--first
                 .form__element
-                +icon('envelope', 'form__user-mail')
-                label.form_label Введите ваш email
-                  input(type='mail').form__input
-            .form__row
-              .form__element
-                +icon('quote', 'form__user-message')
-                label.form_label Сообщение к письму
-                  textarea(rows='2').form__input
-            button(type='submit').button отправить
-
+                  +icon('user', 'form__pic')
+                  label.form__label Введите ваше имя
+                    input(type='text').form__input
+                .form__element
+                  +icon('envelope', 'form__pic')
+                  label.form__label Введите ваш email
+                    input(type='mail').form__input
+              .form__row
+                .form__element
+                  +icon('quote', 'form__pic')
+                  label.form__label Сообщение к письму
+                    textarea(rows='2').form__input
+              button(type='submit').button.form__button отправить
+      
       footer.footer
-        .container
-          .copyrigt 2019
+        .container.footer__container
+          .copyrigt ©2019
           .owner
             .owner__desc Личный сайт веб разработчика
             .owner__title Алексей Лещенко

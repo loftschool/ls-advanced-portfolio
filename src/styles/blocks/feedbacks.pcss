@@ -1,5 +1,9 @@
 .feedbacks {
     height: 100vh;
+    
+}
+
+.feedback-section {
     background-image: url(./images/content/budda.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,15 +12,55 @@
 .feedbacks__title{
     font-size: 36px;
     font-weight: 800;
+    margin-top: 170px;
+}
+
+.feedbacks-slider {
+    width: 60%;
+    margin-top: 90px;
 }
 
 .feedbacks-slider__list {
     display: flex;
 }
 
+.feedbacks-slider__item {
+    margin-right: 60px;
+
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
 .feedback {
-    background-image: url(./images/icons/quote.svg);
-    background-size: 81px auto;
-    background-repeat: no-repeat;
-    background-position: left top;
+    display: flex;
+    height: 100%;
+}
+
+.feedback__pic {
+    width: 82px;
+    height: 70px;  
+    fill: $text-color;  
+    opacity: .4;
+    margin-right: 10px;
+}
+
+.feedback__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user {
+    display: flex;
+    margin-top: 30px;
+}
+
+.user__img-wrapper {
+    width: 71px;
+    height: 71px;
+}
+
+.user__details {
+    margin-left: 20px;
 }
