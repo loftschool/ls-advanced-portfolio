@@ -1,6 +1,5 @@
-.socials
-          ul.socials__list
-            each social, index in ['insta', 'vk', 'github']
-              li.nav__item
-                a.nav__url(href='#')
-                  +icon(social, 'social__img')
+ul.socials__list
+  each social, index in ['insta', 'vk', 'github']
+    li.socials__item
+      a.socials__url(href='#')
+        +icon(social, 'social__img')

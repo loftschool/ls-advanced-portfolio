@@ -5,3 +5,17 @@ mixin icon(name, className)
 
 mixin image(path, className)
   img(src=require(`images/${path}`) class=className)
+
+mixin nav(modificatorClassName)
+  nav.nav(class=modificatorClassName)
+    ul.nav__list
+        each val in ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
+            li.nav__item
+                a.nav__url(href='#', data-scroll-to=index)=val
+            
+mixin socials(modificatorClassName)
+  ul.socials__list(class=modificatorClassName)
+    each social, index in ['insta', 'vk', 'github']
+      li.socials__item
+        a.socials__url(href='#')
+          +icon(social, 'social__img')

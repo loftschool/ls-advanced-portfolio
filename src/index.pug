@@ -14,10 +14,10 @@ html(lang="en")
           section.wellcome
             include ./templates/blocks/header.pug
             include ./templates/blocks/maincontent.pug
-          include ./templates/blocks/aboutme.pug     
+          include ./templates/blocks/aboutme.pug
+          .triangle
 
       section.service
-        .triangle
           .container.service__container
             .service__desc
               h2.title Чем я могу быть полезен вам
@@ -141,16 +141,14 @@ html(lang="en")
             .owner__desc Личный сайт веб разработчика
             .owner__title Алексей Лещенко
           .footer__right
-            include ./templates/blocks/nav.pug
+            +nav('footer--nav')
             .footer__bottom
               .footer__desc
                 .footer__desc-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-                include ./templates/blocks/socials.pug
+                .footer_socials
+                  +socials('footer--nav')
               .footer__quote
                 .quote
                   .qoute__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .quote__author Martin Golding
-    
-        //- +image('content/user.jpg', 'user-pic')
-        //- +icon('link', 'link-class')
-        //- .icon-bg
+  

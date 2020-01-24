@@ -3,6 +3,7 @@
     background-color: $bg-footer-color;
     display: flex;
     align-items: center;
+    color: $white-color;
 }
 
 .footer__container{
@@ -15,15 +16,72 @@
 .copyrigt {
     font-size: 48px;
     font-weight: 700;
+    margin-right: 54px;
+    opacity: .4;
+}
 
+.footer--nav {
+    display: block;
+
+    .nav__item {
+        margin-right: 60px;
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+    .nav__url {
+        color: $white-color;
+        font-size: 16px;
+    }
+    
 }
 
 .footer__bottom {
     display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.footer__right {
+    flex: 1;
+}
+
+.footer__desc {
+    width: 315px;
+    opacity: .4;
+}
+
+.footer__quote {
+    width: 440px;
+}
+
+.footer_socials {
+    width: 60%;
+    margin-top: 30px;
+}
+
+.owner {
+    margin-right: 130px;
+}
+
+.owner__desc {
+    opacity: .4;
 }
 
 .owner__title {
     color: $white-color;
     font-size: 18px;
     font-weight: 800;
+    margin-top: 35px;
+}
+
+.quote__author {
+    font-style: italic;
+    margin-top: 25px;
+}
+
+.qoute__text {
+    opacity: .4;
 }
