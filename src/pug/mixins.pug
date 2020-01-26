@@ -8,6 +8,7 @@ mixin menu(className)
         each item in menu
           li(class=`nav__item nav__item--${className}`)
             a(href="#" class=`nav__link`) #{item}
+     
 
 mixin icon(name, className)
   - var icon = require(`images/icons/${name}.svg`);
@@ -35,7 +36,7 @@ mixin presentation(className)
     ul(class=`${className}__list`)
       each item in presentation
         li(class=`${className}__item`)
-          +image(item)
+          +image(item , 'slide')
 
 mixin comments(className)
   - var content = [{ text:"Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", name: "Дмитрий Ковальчук", job: "Основатель Loftschool", icon: "dima"},{text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах", name: "Владимир Сабанцев", job: "Преподаватель", icon: "vladimir"},{ text:"Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", name: "Дмитрий Ковальчук", job: "Основатель Loftschool", icon: "dima"},{text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах", name: "Владимир Сабанцев", job: "преподаватель", icon: "vladimir"}];

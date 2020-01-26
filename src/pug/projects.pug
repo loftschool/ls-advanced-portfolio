@@ -5,15 +5,15 @@ section.projects
             .presentation
                 .image-block
                     +image('slide1', 'screen')
-                    .count 1
                     .slider
                         .slider-block
                             +presentation('presentation')
                         ul.slider__buttons
-                            li.slider__right
+                            li.slider__button.slider__button--right
                                 +icon('back','arrows')
-                            li.slider__left
+                            li.slider__button.slider__button--left
                                 +icon('next','arrows')
+            .count 2
             .projects__school
                 - var knowledges = ["HTML","CSS","Javascript"]
                     ul.knowledges-list
@@ -24,3 +24,4 @@ section.projects
                     .link
                         +icon('link','link')
                         a(href="https://loftschool.com").link__school Посмотреть сайт
+                

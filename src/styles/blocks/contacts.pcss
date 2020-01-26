@@ -5,12 +5,45 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  @include phones {
+    min-height: 1850px;
+    align-items: flex-start;
+  }
 
   &__container {
     min-height: 1400px;
     display: flex;
     flex-direction: column;
     z-index: 1;
+    width: 96%;
+    @include tablets {
+      align-items: center;
+    }
+    @include phones {
+      min-height: 1000px;
+      margin-top: 5%;
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    min-height: inherit;
+    width: 36%;
+    background: url(../images/content/leaves.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: -7%;
+    right: -10%;
+
+    @include desktop {
+      width: 55%;
+      right: -19%;
+    }
+    @include phones {
+      display: none;
+    }
   }
 
   &:before {
@@ -19,7 +52,11 @@
     position: absolute;
     min-height: inherit;
     width: 100%;
-    background: linear-gradient(90deg, black, transparent);
+    background: linear-gradient(90deg, $gradient1, transparent);
+    @include tablets {
+      background: $gradient1;
+      opacity: 0.9;
+    }
   }
 }
 
@@ -27,6 +64,14 @@
   &-heading {
     display: flex;
     margin-bottom: 5%;
+    @include desktop {
+      width: 100%;
+    }
+    @include phones {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10%;
+    }
   }
 
   &-slider__heading {
@@ -34,23 +79,39 @@
     color: white;
     font-weight: bold;
     margin-right: 6%;
+    @include phones {
+      font-size: 24px;
+      margin-right: 0;
+      margin-bottom: 10%;
+    }
   }
 
   &__button {
     display: flex;
-    justify-content: space-between;
-    width: 10%;
+    justify-content: center;
+    width: 15%;
+    @include desktop {
+      width: 20%;
+    }
+    @include phones {
+      width: 50%;
+    }
   }
 
   &__swipe {
     width: 50px;
     height: 50px;
     border-radius: 50px;
-    border: 2px solid;
+    border: 1px solid;
     border-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 10%;
+
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
 
     &:hover {
       cursor: pointer;
@@ -65,11 +126,19 @@
   }
 
   &-slider {
-    width: 70%;
+    width: 65%;
     overflow: hidden;
     display: flex;
-    height: 300px;
-    margin-bottom: 10%;
+    height: 24rem;
+    margin-bottom: 5%;
+    @include desktop {
+      width: 100%;
+    }
+
+    @include phones {
+      height: 20rem;
+      margin-bottom: 0;
+    }
   }
 
   &__text {
@@ -77,7 +146,7 @@
     font-weight: bold;
     color: $light;
     line-height: 2;
-    width: 65%;
+    width: 80%;
   }
 
   &__person-job {
@@ -92,18 +161,23 @@
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 5%;
+    line-height: 1.5;
   }
 
   &__person {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 80%;
+    height: 30%;
+    @include desktop {
+      width: 89%;
+    }
   }
 }
 
 .quote__svg {
-  width: 65px;
-  height: 60px;
+  width: 55px;
+  height: 50px;
   position: absolute;
   left: 0;
   top: 0;
@@ -111,7 +185,7 @@
 
 .quote__icon {
   fill: $light;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .commentator {
@@ -126,6 +200,18 @@
     min-width: 47%;
     height: 100%;
     margin-right: 3%;
+
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+
+    @include desktop {
+      height: 90%;
+    }
+    @include phones {
+      min-width: 100%;
+      margin-right: 0;
+    }
   }
 
   &__item {
@@ -133,7 +219,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: inherit;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
   }
 }
@@ -155,23 +241,47 @@ textarea:invalid {
 }
 
 .form {
-  width: 800px;
+  width: 65%;
+  @include tablets {
+    width: 100%;
+  }
 
-  &_heading {
+  &__heading {
     font-size: 36px;
     color: white;
     font-weight: bold;
     margin-bottom: 84px;
+    @include tablets {
+      text-align: center;
+    }
+    @include phones {
+      font-size: 24px;
+      margin-bottom: 10%;
+    }
   }
 
   &__data {
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+    width: 100%;
+    @include phones {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
   }
 
   &__label {
     position: relative;
+    width: 46%;
+    @include phones {
+      width: 100%;
+      margin-bottom: 8%;
+    }
+  }
+
+  &__text {
+    width: 100%;
   }
 }
 
@@ -188,7 +298,7 @@ textarea:invalid {
   border: transparent;
   border-bottom: 2px solid;
   border-bottom-color: $light;
-  width: 350px;
+  width: 100%;
   outline: none;
   color: white;
   font-size: 18px;
@@ -223,6 +333,10 @@ textarea:invalid {
   &:focus {
     background: $light;
   }
+
+  @include phones {
+    width: 90%;
+  }
 }
 
 .type__svg {
@@ -233,4 +347,12 @@ textarea:invalid {
 
 .type__icon {
   fill: $light;
+}
+
+.submit {
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

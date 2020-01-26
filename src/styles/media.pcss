@@ -4,28 +4,22 @@ $dark: rgb(34, 36, 39);
 $blue: rgb(243, 245, 249);
 $darkblue: rgb(75, 110, 215);
 $orange: rgb(214, 131, 30);
-$gradient1: rgb(28,31,34);
+$gradient1: rgb(28, 31, 34);
 
-@mixin desktopHd() {
+@mixin desktop {
   @media screen and (max-width: 1800px) {
     @content;
   }
 }
 
-@mixin desktop() {
+@mixin tablets {
   @media screen and (max-width: 1200px) {
     @content;
   }
 }
 
-@mixin tablets() {
+@mixin phones {
   @media screen and (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin phones() {
-  @media screen and (max-width: 3200px) {
     @content;
   }
 }

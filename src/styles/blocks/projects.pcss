@@ -2,11 +2,20 @@
   min-height: 1090px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  @include tablets {
+    min-height: 1000px;
+  }
+  @include phones {
+    min-height: 900px;
+  }
 
   &__container {
+    width: 98%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     min-height: inherit;
   }
 
@@ -16,12 +25,32 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include tablets {
+      width: 65%;
+      align-self: center;
+      text-align: center;
+      align-items: center;
+    }
+    @include phones {
+      width: 70%;
+      text-align: left;
+      height: 300px;
+      align-items: flex-start;
+    }
   }
 
   &__school-heading {
     font-size: 30px;
     color: $dark;
     font-weight: bold;
+    @include tablets {
+      text-align: center;
+    }
+    @include phones {
+      text-align: left;
+      font-size: 24px;
+      width: 50%;
+    }
   }
 
   &__school-description {
@@ -29,6 +58,9 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 1.5;
+    @include phones {
+      font-size: 14px;
+    }
   }
 
   &__heading {
@@ -36,31 +68,62 @@
     font-weight: bold;
     color: $dark;
     margin-bottom: 83px;
+    align-self: flex-start;
+    @include phones {
+      font-size: 24px;
+      align-self: center;
+      margin-bottom: 0;
+    }
   }
 
   &__block {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    height: 33rem;
+    position: relative;
+
+    @include tablets {
+      flex-direction: column;
+      height: 50rem;
+    }
+    @include phones {
+      justify-content: space-around;
+    }
   }
 }
 
 .presentation {
-  width: 80%;
-  margin-right: 2%;
+  width: 62%;
+  height: 100%;
+
+  @include tablets {
+    width: 87%;
+    height: 100%;
+  }
+  @include phones {
+    width: 100%;
+    height: 45%;
+  }
 
   &__list {
+    height: 100%;
     display: flex;
   }
 
   &__item {
+    height: 100%;
     min-width: 25%;
   }
 }
 
 .image-block {
   position: relative;
-  width: 975px;
-  height: 549px;
+  height: 100%;
+  z-index: 1;
+  @include desktop {
+    height: 90%;
+  }
 }
 
 .screen {
@@ -69,20 +132,41 @@
 }
 
 .slider {
+  height: 22%;
   display: flex;
+  justify-content: flex-end;
   position: absolute;
   bottom: 11%;
-  right: -5%;
-
-  &-block {
-    width: 704px;
-    height: 100px;
-    overflow: hidden;
+  right: -6.5%;
+  @include desktop {
+    right: -5.5%;
+  }
+  @include tablets {
+    right: -5.5%;
+  }
+  @include phones {
+    right: 0;
+    bottom: 0;
+    height: 40%;
   }
 
-  &__left {
+  &-block {
+    width: 75%;
+    height: 100%;
+    overflow: hidden;
+    @include phones {
+      display: none;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__button {
     width: 50px;
-    height: 50px;
+    height: 50%;
     background-color: $dark;
     display: flex;
     justify-content: center;
@@ -96,46 +180,41 @@
       fill: $orange;
       transition: 0.2s;
     }
-  }
 
-  &__right {
-    width: 50px;
-    height: 50px;
-    background: $dark;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-      cursor: pointer;
+    @include phones {
+      width: 70px;
     }
-
-    &:hover .arrows__svg > .arrows__icon {
-      fill: $orange;
-      transition: 0.2s;
-    }
-  }
-
-  &__buttons {
-    display: flex;
-    flex-direction: column;
   }
 }
 
+.slide {
+  height: 100%;
+}
+
 .knowledges {
+  width: 100%;
+
   &-list {
     display: flex;
+    justify-content: space-around;
+    @include tablets {
+      width: 50%;
+    }
+    @include phones {
+      align-self: center;
+      width: 100%;
+    }
   }
 
   &-list__item {
-    padding: 10px 20px;
+    display: flex;
+    padding: 4% 6%;
     background-color: $blue;
     color: $light;
     border-radius: 50px;
-    margin-right: 26px;
 
-    &:nth-last-child(1) {
-      margin-right: 100px;
+    @include tablets {
+      padding: 2% 6%;
     }
   }
 }
@@ -148,6 +227,12 @@
 .link {
   display: flex;
   color: $darkblue;
+  @include tablets {
+    justify-content: center;
+  }
+  @include phones {
+    justify-content: flex-start;
+  }
 
   &:hover {
     cursor: pointer;
@@ -171,12 +256,20 @@
 }
 
 .count {
-  font-weight: bold;
-  font-size: 400px;
-  color: $blue;
+  font-weight: 900;
+  font-size: 20rem;
+  color: $light;
+  opacity: 0.5;
   position: absolute;
-  right: -21%;
-  top: 0%;
+  right: 26%;
+  top: 0;
+  @include tablets {
+    font-size: 17rem;
+    right: 0;
+  }
+  @include phones {
+    display: none;
+  }
 }
 
 

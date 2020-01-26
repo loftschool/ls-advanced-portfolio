@@ -6,23 +6,59 @@
   min-height: 363px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  @include phones {
+    min-height: 500px;
+  }
 
   &__container {
     display: flex;
     justify-content: space-between;
     min-height: 232px;
+    width: 98%;
+    @include tablets {
+      min-height: 18rem;
+    }
+    @include phones {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__about {
     display: flex;
     justify-content: space-between;
-    width: 25%;
+    width: 29%;
+    @include desktop {
+      flex-direction: column;
+      width: 24%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    @include tablets {
+      width: 30%;
+    }
+    @include phones {
+      width: 95%;
+      margin-bottom: 5%;
+    }
   }
 
   &__information {
     width: 68%;
     display: flex;
     flex-flow: row wrap;
+    @include desktop {
+      width: 75%;
+    }
+    @include tablets {
+      flex-direction: column;
+      align-items: center;
+      width: 70%;
+    }
+    @include phones {
+      width: 95%;
+    }
   }
 }
 
@@ -31,6 +67,13 @@
   font-weight: bold;
   color: $light;
   width: 170px;
+  line-height: 1;
+  @include desktop {
+    margin-bottom: 7%;
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 
 .links {
@@ -39,13 +82,28 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include tablets {
+    width: 100%;
+    justify-content: space-around;
+  }
+  @include phones {
+    margin-bottom: 5%;
+  }
 }
 
 .my-school {
   font-size: 16px;
   color: $light;
   width: 69%;
-  line-height: 2.5;
+  line-height: 2;
+  @include tablets {
+    line-height: 1.5;
+  }
+  @include phones {
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 3%;
+  }
 }
 
 .citation {
@@ -53,17 +111,31 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  @include tablets {
+    width: 100%;
+    justify-content: space-around;
+  }
 
   &__text {
     color: $light;
     font-size: 16px;
-    line-height: 2.5;
+    line-height: 2;
+    @include tablets {
+      line-height: 1.5;
+    }
+    @include phones {
+      font-size: 14px;
+      margin-bottom: 5%;
+    }
   }
 
   &__author {
     color: white;
     font-style: italic;
+    @include phones {
+      font-size: 14px;
+    }
   }
 }
 

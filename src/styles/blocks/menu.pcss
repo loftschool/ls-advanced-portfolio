@@ -6,6 +6,21 @@
     margin: 0 auto;
     align-items: center;
     justify-content: center;
+
+    @include tablets {
+      display: none;
+    }
+
+    @include phones {
+      display: none;
+      position: absolute;
+      top: -4%;
+      left: -14%;
+      width: 100vh;
+      height: 100vh;
+      background: white;
+      z-index: 1;
+    }
   }
 
   &__list {
@@ -18,6 +33,16 @@
 
   &__list--header {
     justify-content: center;
+
+    @include phones {
+      color: $gradient1;
+      font-weight: bold;
+      flex-direction: column;
+      height: 51%;
+      width: 71%;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
   }
 
   &__item {
@@ -27,20 +52,71 @@
     &:hover {
       color: $orange;
     }
-  }
 
-  &__item:nth-last-child(1) {
-    margin-right: 0;
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
   }
 
   &__footer {
     justify-content: flex-start;
     align-items: flex-start;
+    @include tablets {
+      margin-bottom: 3%;
+    }
   }
 
   &__list--footer {
     justify-content: flex-start;
+    @include phones {
+      flex-flow: row wrap;
+    }
+  }
+
+  &__item--footer {
+    @include phones {
+      width: 50%;
+      margin-right: 0;
+      text-align: center;
+      margin-bottom: 3%;
+    }
   }
 }
+
+.menu {
+  &__svg {
+  
+    width: 35px;
+    height: 35px;
+    display: none;
+    @include tablets {
+    display: block;
+    }
+  }
+
+  &__icon {
+    fill: white;
+  }
+}
+
+.close {
+  @include phones {
+  
+    &__svg {
+      display: none;
+      width:35px;
+      height:35px;
+      position: absolute;
+      right: 2%;
+      top: 0;
+      z-index:2;
+    }
+    &__icon {
+      fill:black;
+    }
+  }
+
+}
+
 
 

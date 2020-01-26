@@ -1,8 +1,9 @@
 html {
-  @include desktop {
+
+  @include tablets {
     font-size: 15px;
   }
-  @include tablets {
+  @include phones {
     font-size: 14px;
   }
 }
@@ -28,9 +29,18 @@ body {
 }
 
 .container {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   max-width: 1500px;
-  width: 95%;
+  width: 100%;
+
+  @include tablets {
+    max-width: 1080px;
+  }
+
+  @include phones {
+    max-width: 690px;
+  }
+
 }
 
 * {

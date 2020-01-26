@@ -4,19 +4,12 @@
   min-height: 1296px;
   display: flex;
   align-items: flex-end;
-
-  &:before {
-    content: '';
-    display: block;
-    z-index: 1;
-    position: absolute;
-    left: 0;
-    bottom: -55%;
-    background: url(../images/content/hands.png);
-    background-repeat: no-repeat;
-    background-size: 50%;
-    width: 70%;
-    height: 100%;
+  justify-content: center;
+  @include tablets {
+    min-height: 1400px;
+  }
+  @include phones {
+    min-height: 1100px;
   }
 
   &:after {
@@ -34,11 +27,27 @@
 
   &__container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
     min-height: 1040px;
-    width: 80%;
+    @include tablets {
+      min-height: 500px;
+      justify-content: flex-end;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__content {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+
+    @include tablets {
+      width: 100%;
+      align-items: center;
+    }
   }
 
   &__topic {
@@ -46,8 +55,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 59%;
-    margin-bottom: 112px;
+    width: 85%;
+    margin-bottom: 10%;
+    @include tablets {
+      width: 80%;
+      align-items: center;
+      margin-bottom: 4%;
+      text-align: center;
+    }
+    @include phones {
+      margin-bottom: 11%;
+    }
   }
 
   &__heading {
@@ -55,6 +73,16 @@
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 60px;
+    @include tablets {
+      margin-bottom: 20px;
+      width: 54%;
+      text-align: center;
+    }
+    @include phones {
+      width: 100%;
+      font-size: 24px;
+      text-align: left;
+    }
   }
 
   &__school {
@@ -63,29 +91,84 @@
     font-size: 16px;
     font-weight: bold;
     line-height: 1.8;
+    @include tablets {
+      width: 85%;
+    }
+    @include phones {
+      font-size: 14px;
+      text-align: left;
+      width: 100%;
+    }
+  }
+
+  &__about {
+    width: 80%;
+    align-self: flex-end;
+    @include desktop {
+      margin-right: 5%;
+    }
+    @include tablets {
+      align-self: center;
+      margin-right: 0;
+      display: flex;
+      justify-content: center;
+    }
+    @include phones {
+      width: 90%;
+    }
+  }
+
+  &__list {
+    @include tablets {
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    @include phones {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    margin-bottom: 10%;
+
+    &:nth-last-child(1) {
+      margin-bottom: 0px;
+    }
+    @include phones {
+      margin-bottom: 0;
+    }
   }
 
   &__item-heading {
     color: white;
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 40px;
-  }
-
-  &__item {
-    margin-bottom: 62px;
-
-    &:nth-last-child(1) {
-      margin-bottom: 0px;
+    margin-bottom: 10%;
+    @include tablets {
+      text-align: center;
+    }
+    @include phones {
+      font-size: 18px;
+      margin-bottom: 7%;
     }
   }
 }
 
 .skills {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   font-size: 18px;
   font-weight: bold;
   color: $light;
+  @include phones {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
 
   &__item {
     width: 134px;
@@ -96,15 +179,40 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 62px;
     text-align: center;
+    @include tablets {
+      width: 120px;
+      height: 120px;
+      margin-right: 4%;
+    }
+    @include phones {
+      width: 112px;
+      height: 112px;
+      margin-right: 0;
+      margin-bottom: 5%;
+    }
 
     &:nth-last-child(1) {
       margin-right: 0px;
     }
   }
-} 
+}
 
+.keyboard {
+  width: 43%;
+  position: absolute;
+  left: -2%;
+  bottom: -7%;
+  @include desktop {
+    left: -8%;
+  }
+  @include tablets {
+    position: static;
+    transform: rotate(-90deg);
+    height: 100%;
+    width: 26%;
+  }
+}
 
 
 

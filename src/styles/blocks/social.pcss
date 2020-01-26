@@ -1,16 +1,45 @@
 .social {
   display: flex;
   justify-content: space-between;
-  width: 15%;
+  width: 20%;
+  @include desktop {
+    width: 23%;
+  }
+  @include tablets {
+    width: 65%;
+    justify-content: flex-end;
+  }
 
-  &__item {
+  @include phones {
+    display: none;
+  }
+
+  &__item--header {
     margin-right: 6%;
+
+    @include tablets {
+      margin-left: 5%;
+
+      &:nth-child(1) {
+        margin-left: 0;
+      }
+    }
+
+    &:nth-child(3) {
+      margin-right: 0;
+    }
   }
 
   &__footer {
     display: flex;
-    justify-content: flex-start;
-    width: 100%;
+    justify-content: space-between;
+    width: 50%;
+    @include tablets {
+      width: 38%;
+    }
+    @include phones {
+      width: 55%;
+    }
   }
 
   &__item--footer {
@@ -32,11 +61,20 @@
     &:hover .social__svg > .social__icon {
       fill: $orange;
     }
+
+    @include phones {
+      width: 55px;
+      height: 55px;
+    }
   }
 
   &__svg {
     width: 30px;
     height: 30px;
+
+    &:hover > .social__icon {
+      fill: $orange;
+    }
   }
 
   &__icon {
