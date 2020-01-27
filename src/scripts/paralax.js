@@ -1,4 +1,4 @@
-const paralax = document.querySelector('.paralax__layer');
+const paralax = document.querySelector('.paralax');
 const paralaxLayer = paralax.children;
 
 function moveLayersDepensOnScroll(scroll , layers , speed) {
@@ -9,9 +9,9 @@ function moveLayersDepensOnScroll(scroll , layers , speed) {
     })
 } 
 
-window.addEventListener(scroll, e=>{
+window.addEventListener('scroll', e=>{
     const wScroll = window.pageYOffset;
-    moveLayersDependsOnScroll(wScroll , paralaxLayer , 14);
+    moveLayersDepensOnScroll(wScroll , paralaxLayer , 12);
   })
 
 
