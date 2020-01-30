@@ -1,0 +1,38 @@
+.sidebar {
+  display: none; 
+  @include tablets {
+    width: 52%;
+    height: 100vh;
+    /* display:flex;  */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: white;
+    right: 0%;
+    top: 0%;
+    z-index: 1;
+  }
+  @include phones {
+    width: 100%;
+  }
+}
+
+.close {
+  &__svg {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    z-index: 2;
+
+    &:hover > .close__icon {
+      fill: $orange;
+    }
+  }
+
+  &__icon {
+    fill: black;
+  }
+}

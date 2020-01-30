@@ -1,4 +1,4 @@
-section.knowledge
+section.knowledge#knowledge
     .container.knowledge__container
         .keyboard
             +image('hands', 'hands')
@@ -8,16 +8,25 @@ section.knowledge
                 - var school = ["Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!"];
                 each loftschool in school
                     .knowledge__school #{loftschool}
-            .knowledge__about
-                - 
-                    var grafics = [
-                    ["Front-end", ["HTML5","CSS3","Javascript","jQuery и Vue.js"]],
-                    ["Workflow", ["GIT","Terminal","Gulp","Webpack"]]
-                    ];
-                ul.knowledge__list
-                    each item in grafics
-                        li.knowledge__item 
-                            .knowledge__item-heading #{item[0]}
-                            ul.skills
-                                each skill in item[1]
-                                    li.skills__item #{skill}
+            script(type='text/x-template')#skills
+                .knowledge__about
+                    - 
+                        var grafics = [
+                        ["Front-end", ["HTML5","CSS3","Javascript","jQuery и Vue.js"]],
+                        ["Workflow", ["GIT","Terminal","Gulp","Webpack"]]
+                        ];
+                    ul.knowledge__list#skills-row
+                        each item in grafics
+                            li.knowledge__item 
+                                .knowledge__item-heading #{item[0]}
+                                ul.skills
+                                    each skill in item[1]
+                                        li.skills__item #{skill}
+                                            svg(viewbox='0 0 0 100 100' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink").circle#skill-icon(
+                                                :skillName='skillName' 
+                                                :skillPercent='skillPercent'
+                                            )
+                                                circle(cx='85' cy='85' r='60' fill="none" stroke='url(#linear-gradient)' stroke-width='15' stroke-dashoffset='0' stroke-dasharray='380').circle-icon 
+                                                linearGradient#linear-gradient
+                                                    stop(offset="0%" stop-color="gold").stop-1
+                                                    stop(offset="100%" stop-color="teal").stop-2

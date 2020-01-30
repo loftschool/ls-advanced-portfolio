@@ -14,9 +14,3 @@ window.addEventListener('scroll', e=>{
     moveLayersDepensOnScroll(wScroll , paralaxLayer , 12);
   })
 
-
-//   window.onscroll = function() {
-//       var wScroll = window.pageYOffset;
-
-//       console.log(wScroll);
-//   }

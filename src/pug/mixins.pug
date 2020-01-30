@@ -2,14 +2,13 @@ mixin image(path, className)
   img(src=require(`images/content/${path}.png`) class=className)
 
 mixin menu(className)
-  - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+  - var menu = [{menu:'Главная', link: 'welcome'} , {menu:'Обо мне', link: 'about'} , {menu:'Навыки', link: 'knowledge'} , {menu:'Работы', link: 'projects'}, {menu:'Отзывы', link: 'contacts'} ,{menu:'Связаться', link: 'contacts'}]; 
     nav(class=`nav nav__${className}`)
       ul(class=`nav__list nav__list--${className}`)
-        each item in menu
-          li(class=`nav__item nav__item--${className}`)
-            a(href="#" class=`nav__link`) #{item}
-     
-
+        each item in menu  
+          li(class=`nav__item nav__item--${className}`) 
+            a(href=`#${item.link}` class=`nav__link`) #{item.menu} 
+        
 mixin icon(name, className)
   - var icon = require(`images/icons/${name}.svg`);
     svg(class=`${className}__svg` viewBox=icon.viewBox preserveAspectRatio="none")
@@ -20,9 +19,8 @@ mixin social(className)
     ul(class=`social social__${className}`)
       each item in social
         li(class=`social__item social__item--${className}`)
-          +icon(item, 'social')
           a(href=`https://${item}.com/` class=`social__link`)
-
+            +icon(item, 'social')
 
 mixin me(className)
   div(class=`my my__${className}`) 
@@ -41,12 +39,12 @@ mixin presentation(className)
 mixin comments(className)
   - var content = [{ text:"Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", name: "Дмитрий Ковальчук", job: "Основатель Loftschool", icon: "dima"},{text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах", name: "Владимир Сабанцев", job: "Преподаватель", icon: "vladimir"},{ text:"Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", name: "Дмитрий Ковальчук", job: "Основатель Loftschool", icon: "dima"},{text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах", name: "Владимир Сабанцев", job: "преподаватель", icon: "vladimir"}];
     each item in content
-      ul(class=`${className}__list`)
-        li(class=`${className}__item`)
+      flickity(ref='flickity' :options='flickityOptions' class=`${className}__list`)
+        div(class=`${className}__item` v-for='review in contacts')
           +icon('quote' , 'quote')
-          p.comments__text #{item.text}
+          p.comments__text({{review.review}}) #{item.text}
           .comments__person
-            +image(item.icon,'commentator')
+            +image(item.icon,'commentator')(:src='review.photo')
             .comments__person-info
-              .comments__person-name #{item.name}
-              .comments__person-job #{item.job}
+              .comments__person-name({{review.name}}) #{item.name}
+              .comments__person-job({{review.job}}) #{item.job}

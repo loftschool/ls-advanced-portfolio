@@ -1,11 +1,14 @@
-section.welcome
+section.welcome#welcome
     .container.welcome__container
         header.header
             .logo  CР
+            .sidebar(:style="{display: appearMenu}")
+                +menu('sidebar')
+                +social('sidebar')
+                +icon('close','close')(@click='hide(none)' @touched='hide(none)')
             +menu('header')
             +social('header')
-            +icon('menu' , 'menu')
-            //- +icon('close','close')
+            +icon('menu' , 'menu')(@click='appear(flex)' @touched='appear(flex)')
         +me('header')
         .scroll-block
             a.scroll__link(href="#") Скролл

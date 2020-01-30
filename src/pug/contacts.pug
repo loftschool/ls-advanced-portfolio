@@ -1,12 +1,12 @@
-section.contacts
+section.contacts#contacts(@click='CheckArrows' @touchend='Checkarrows')
     .container.contacts__container
         .comments-heading
             h3.comments-slider__heading Что обо мне говорят
             ul.comments__button
                 li.comments__swipe
-                    +icon('back','arrows')
+                    +icon('back','arrows')(@click='back' :disabled='true' class='back')
                 li.comments__swipe
-                    +icon('next','arrows')
+                    +icon('next','arrows')(@click='next' :disabled='true' class='next')
         .comments-slider
             +comments('comment')
         form.form

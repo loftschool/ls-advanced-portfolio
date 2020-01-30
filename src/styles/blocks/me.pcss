@@ -2,20 +2,22 @@
   &__header {
     display: flex;
     justify-content: center;
-    width: 49%;
-    height: 15%;
-    z-index:2;
+    width: 48%;
+    height: 36%;
+    z-index:1; 
 
     @include tablets {
       flex-direction: column;
-      height: 20%;
+      height: 3%;
       align-items: center;
       position: absolute;
-      top: 20%;
+      top: 8%;
+      z-index:0;
     }
     @include phones {
-      height: 30%;
+      height: 2%;
       width: 75%;
+      top:10%;
     }
   }
 
