@@ -5,10 +5,10 @@ section.welcome#welcome
             .sidebar(:style="{display: appearMenu}")
                 +menu('sidebar')
                 +social('sidebar')
-                +icon('close','close')(@click='hide(none)' @touched='hide(none)')
+                +icon('close','close')(@click='hide' @touched='hide')
             +menu('header')
             +social('header')
-            +icon('menu' , 'menu')(@click='appear(flex)' @touched='appear(flex)')
+            +icon('menu' , 'menu')(@click='appear' @touched='appear')
         +me('header')
         .scroll-block
             a.scroll__link(href="#") Скролл

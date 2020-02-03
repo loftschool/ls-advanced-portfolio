@@ -2,17 +2,16 @@ import Vue from 'vue';
 
 new Vue ({
     el: '#welcome',
-
     data: {
         appearMenu: '',
     },
-
     methods:{
-        hide(newStyle){
-            this.appearMenu = newStyle
+        hide(){
+           this.appearMenu = 'none';
         },
-        appear(newStyle){
-            this.appearMenu = newStyle
+        appear(){
+            this.appearMenu = 'flex';
+            
         }
     }
 })
