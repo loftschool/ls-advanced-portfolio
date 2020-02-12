@@ -7,11 +7,10 @@ new Vue ({
     },
     methods:{
         hide(){
-           this.appearMenu = 'none';
+           this.appearMenu = false;
         },
         appear(){
-            this.appearMenu = 'flex';
-            
+            this.appearMenu = true;
         }
     }
-})
+});

@@ -37,14 +37,13 @@ mixin presentation(className)
           +image(item , 'slide')
 
 mixin comments(className)
-  - var content = [{ text:"Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", name: "Дмитрий Ковальчук", job: "Основатель Loftschool", icon: "dima"},{text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах", name: "Владимир Сабанцев", job: "Преподаватель", icon: "vladimir"},{ text:"Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", name: "Дмитрий Ковальчук", job: "Основатель Loftschool", icon: "dima"},{text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах", name: "Владимир Сабанцев", job: "преподаватель", icon: "vladimir"}];
-    each item in content
-      flickity(ref='flickity' :options='flickityOptions' class=`${className}__list`)
-        div(class=`${className}__item` v-for='review in contacts')
-          +icon('quote' , 'quote')
-          p.comments__text({{review.review}}) #{item.text}
-          .comments__person
-            +image(item.icon,'commentator')(:src='review.photo')
-            .comments__person-info
-              .comments__person-name({{review.name}}) #{item.name}
-              .comments__person-job({{review.job}}) #{item.job}
+  script(type='text/x-template')#comments
+    flickity(ref='flickity' :options='flikityOptions').flickity
+      div(v-for='review in contacts')
+        +icon('quote' , 'quote')
+        p.comments__text {{review.text}}
+        .comments__person
+          img(:src="review.icon", alt="")
+          .comments__person-info
+            .comments__person-name {{review.name}}
+            .comments__person-job {{review.job}} 
