@@ -50,7 +50,7 @@ new Vue({
                 console.log(item)
                 const requirePic = require(`../images/content/${item.icon}.png`);
 
-                item.pohot = requirePic;
+                item.icon = requirePic;
 
                 return item;
             });

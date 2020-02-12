@@ -2,13 +2,13 @@ mixin image(path, className)
   img(src=require(`images/content/${path}.png`) class=className)
 
 mixin menu(className)
-  - var menu = [{menu:'Главная', link: 'welcome'} , {menu:'Обо мне', link: 'about'} , {menu:'Навыки', link: 'knowledge'} , {menu:'Работы', link: 'projects'}, {menu:'Отзывы', link: 'contacts'} ,{menu:'Связаться', link: 'contacts'}]; 
+  - var menu = [{menu:'Главная', link: 'welcome'} , {menu:'Обо мне', link: 'about'} , {menu:'Навыки', link: 'knowledge'} , {menu:'Работы', link: 'projects'}, {menu:'Отзывы', link: 'contacts'} ,{menu:'Связаться', link: 'contacts'}];
     nav(class=`nav nav__${className}`)
       ul(class=`nav__list nav__list--${className}`)
-        each item in menu  
-          li(class=`nav__item nav__item--${className}`) 
-            a(href=`#${item.link}` class=`nav__link`) #{item.menu} 
-        
+        each item in menu
+          li(class=`nav__item nav__item--${className}`)
+            a(href=`#${item.link}` class=`nav__link`) #{item.menu}
+
 mixin icon(name, className)
   - var icon = require(`images/icons/${name}.svg`);
     svg(class=`${className}__svg` viewBox=icon.viewBox preserveAspectRatio="none")
@@ -23,10 +23,10 @@ mixin social(className)
             +icon(item, 'social')
 
 mixin me(className)
-  div(class=`my my__${className}`) 
+  div(class=`my my__${className}`)
     div(class=`my__job my__job--${className}`)
       p Личный сайт веб разработчика
-    div(class=`my__name my__name--${className}`) 
+    div(class=`my__name my__name--${className}`)
       p Севара Рахманова
 
 mixin presentation(className)
@@ -39,11 +39,11 @@ mixin presentation(className)
 mixin comments(className)
   script(type='text/x-template')#comments
     flickity(ref='flickity' :options='flikityOptions').flickity
-      div(v-for='review in contacts')
+      div(v-for='review in contacts').comment__slider_item
         +icon('quote' , 'quote')
         p.comments__text {{review.text}}
         .comments__person
           img(:src="review.icon", alt="")
           .comments__person-info
             .comments__person-name {{review.name}}
-            .comments__person-job {{review.job}} 
+            .comments__person-job {{review.job}}
