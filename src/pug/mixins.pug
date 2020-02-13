@@ -39,11 +39,11 @@ mixin presentation(className)
 mixin comments(className)
   script(type='text/x-template')#comments
     flickity(ref='flickity' :options='flikityOptions').flickity
-      div(v-for='review in contacts')
+      div(v-for='review in contacts').flickity__slider_item
         +icon('quote' , 'quote')
         p.comments__text {{review.text}}
         .comments__person
-          img(:src="review.icon", alt="")
+          img(:src="review.icon", alt="").commentator
           .comments__person-info
             .comments__person-name {{review.name}}
             .comments__person-job {{review.job}} 
