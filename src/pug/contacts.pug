@@ -1,4 +1,4 @@
-section.contacts#contacts(@click='CheckArrows' @touchend='Checkarrows')
+section.contacts
     .container.contacts__container
         .comments-heading
             h3.comments-slider__heading Что обо мне говорят
@@ -8,7 +8,7 @@ section.contacts#contacts(@click='CheckArrows' @touchend='Checkarrows')
                 li.comments__swipe
                     +icon('next','arrows')(@click='next' :disabled='true' class='next')
         .comments-slider
-            +comments('comment')
+            +comments('contacts')
         form.form
             h3.form__heading Связаться со мной
             .form__data

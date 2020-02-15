@@ -37,7 +37,7 @@ mixin presentation(className)
           +image(item , 'slide')
 
 mixin comments(className)
-  script(type='text/x-template')#comments
+  script(type='text/x-template').comments#comments(@click='CheckArrows' @touchend='Checkarrows')
     flickity(ref='flickity' :options='flikityOptions').flickity
       div(v-for='review in contacts').comment__slider_item
         +icon('quote' , 'quote')
