@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 $light: rgb(128, 121, 113);
 $violet: rgb(62, 62, 89);
-$violet-light: rgb(56, 59, 207);
+$violet-light: rgb(19, 90, 227);
 $violet-dark: rgb(2, 6, 181);
 $sky: rgb(247, 249, 254);
 $dark: rgb(71, 81, 104);
@@ -225,7 +225,7 @@ textarea:invalid {
   }
 }
 .type-group {
-  color:$light;
+  color: $light;
   font-size: 1.125rem;
   font-weight: 400;
   padding: 2%;
@@ -235,8 +235,8 @@ textarea:invalid {
   text-align: left;
   width: 60%;
   &::placeholder {
-  color:$light;
- }
+    color: $light;
+  }
   &__name {
     width: 40%;
     margin-right: 3%;
@@ -263,7 +263,7 @@ textarea:invalid {
 /* work */
 .edit-work {
   width: 100%;
-  height: 50rem;
+  height: 51rem;
   background: white;
   box-shadow: 0 0 10px $violet;
   margin-bottom: 2%;
@@ -320,166 +320,340 @@ textarea:invalid {
     align-items: center;
     justify-content: center;
     padding: 0;
-    position:relative;
+    position: relative;
 
     &-file {
-      width:100%;
-      height:100%;
+      width: 100%;
+      height: 100%;
       opacity: 0;
-      position:absolute;
+      position: absolute;
     }
   }
 }
-.fill-work{
-  width:48%;
-  height:95%;
-  &__label{
-    width:100%;
-    margin-bottom:2%;
-    color:$light;
-    display:flex;
-    flex-direction:column;
+.fill-work {
+  width: 48%;
+  height: 95%;
+  &__label {
+    width: 100%;
+    margin-bottom: 2%;
+    color: $light;
+    display: flex;
+    flex-direction: column;
   }
-  &__name{
-    margin-bottom:1%;
+  &__name {
+    margin-bottom: 1%;
   }
-  &__textarea{
+  &__textarea {
     color: $light;
   }
-  &__text{
-    resize:none;
-    width:96%;
-    height:30%;
+  &__text {
+    resize: none;
+    width: 96%;
+    height: 30%;
     padding: 2%;
-    outline:none;
+    outline: none;
     font-size: 1.125rem;
   }
-  &__buttons{
-    display:flex;
-    height:11%;
-    margin-top:1%;
+  &__buttons {
+    display: flex;
+    height: 11%;
+    margin-top: 5%;
   }
 }
-.type__work{
-  width:96%;
+.type__work {
+  width: 96%;
 }
 
-.tags{
-  margin-top:3%;
-  width:100%;
-  height:10%;
+.tags {
+  margin-top: 3%;
+  width: 100%;
+  height: 10%;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
 }
-.tag{
+.tag {
   padding: 1% 2%;
   margin-right: 1%;
-  display:flex;
+  display: flex;
   background: #dee4ed;
-  border-radius:50px;
+  border-radius: 50px;
 }
-.cancel{
+.cancel {
   font-size: 1rem;
-  font-weight:bold;
+  font-weight: bold;
   color: $violet-light;
-  border:none;
-  background:transparent;
+  border: none;
+  background: transparent;
   margin-right: 1%;
-  outline:none;
-  cursor:pointer;
+  outline: none;
+  cursor: pointer;
 }
 
-.send{
-  cursor:pointer;
+.send {
+  cursor: pointer;
   background: linear-gradient(90deg, $violet-light, $violet-dark);
   color: white;
-  width:36%;
-  height:100%;
-  border-radius:50px;
+  width: 50%;
+  height: 85%;
+  border-radius: 50px;
   font-size: 1rem;
-  font-weight:bold;
-  text-transform:uppercase;
-}
-.added-work{
-  display: flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  &__list{
-    display:flex;
-    flex-flow:row wrap;
-    align-items:center;
-    width:100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  &__review {
+    width: 30%;
   }
-  &__item{
-    width:30%;
+}
+.added-work {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+  }
+  &__item {
+    width: 30%;
     height: 35rem;
-    margin-right:3%;
+    margin-right: 3%;
+    margin-bottom: 4%;
     box-shadow: 0 0 10px $violet;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    &:nth-last-child(){
-      margin-right:0;
+    &:nth-last-child() {
+      margin-right: 0;
     }
   }
-  &-button{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  &-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     background: linear-gradient(90deg, $violet-light, $violet-dark);
-    &>p{
-      color:white;
+    & > p {
+      color: white;
       font-size: 1.125rem;
-      font-weight:700;
-      width:35%;
-      text-align: center
+      font-weight: 700;
+      width: 35%;
+      text-align: center;
     }
   }
 }
-.round__add{
-  width:10rem;
-  height:10rem;
-  margin-bottom:7%;
+.round__add {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 7%;
   border: 2px solid white;
 }
-.slide{
-  width:100%;
-  height:13rem;
-  margin-bottom:5%;
+.slide {
+  width: 100%;
+  height: 13rem;
+  margin-bottom: 5%;
 }
-.added-information{
-  width:90%;
-  &>h3{
+.added-information {
+  width: 90%;
+  & > h3 {
     color: $light;
     margin-bottom: 3%;
   }
-  &>p{
+  & > p {
     margin-bottom: 3%;
   }
 }
-.control-added{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:100%;
-  margin-bottom:10%;
-  &__work{
-    width:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.control-added {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10%;
+  &__work {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1rem;
     font-weight: bold;
     color: $light;
-    &>p{
+    & > p {
       margin-right: 3%;
     }
   }
 }
+.administration-review {
+  width: 100%;
+}
+.edit-review {
+  width: 100%;
+  height: 36rem;
+  background: white;
+  box-shadow: 0 0 10px $violet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 5%;
+  & > h4 {
+    color: $dark;
+    font-size: 1.125rem;
+    width: 95%;
+    padding: 3% 0;
+    border-bottom: 1px solid $light;
+  }
+
+  &__form {
+    width: 95%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+  }
+}
+.add-image__review {
+  width: 25%;
+  height: 90%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.add-review__pic {
+  position: relative;
+  color: $violet-light;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.add-review__pic-file {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+.image-review {
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+  background: #dee4ed;
+  margin-bottom: 20%;
+}
+.fill-review {
+  width: 65%;
+  height: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  &__label {
+    width: 45%;
+    color: $light;
+    margin-bottom: 5%;
+    &--text {
+      width: 100%;
+    }
+    &--button {
+      width: 100%;
+      height: 5rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+  &__textarea {
+    width: 96%;
+    padding: 2%;
+    resize: none;
+    height: 10rem;
+    outline: none;
+  }
+  &__text {
+    width: 96%;
+  }
+}
+.added-review {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  &__item {
+    width: 30%;
+    height: 25rem;
+    margin-right: 3%;
+    margin-bottom: 4%;
+    box-shadow: 0 0 10px $violet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    &:nth-last-child() {
+      margin-right: 0;
+    }
+  }
+  &__button {
+    background: linear-gradient(90deg, $violet-light, $violet-dark);
+    justify-content: center;
+    & > p {
+      color: white;
+      width: 25%;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+}
+.round__review {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 7%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.added-review__person{
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  margin-top:2%;
+}
+.review__pic{
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+}
+.person-info{
+  &__name{
+    color: $violet-dark;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+  &__job{
+    color: $light;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+.added-review__information{
+  width: 85%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: $dark;
+}
+.control-added-review{
+  width:85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+ }
 </style>
 <template lang="pug">
   .admin__cover
@@ -637,45 +811,51 @@ textarea:invalid {
             h4 Блок «Отзывы»
           .administration-review
               .edit-review
+                h4 Новый отзыв
                 form.edit-review__form
-                    h4 Новый отзыв
-                    .add-image__review
-                      //- +image('user','user')
-                      input(type="image" placeholder='добавить фото' required)
+                  label.add-image__review
+                    .image-review 
+                       img(src="./../images/icons/user2.svg" alt="plus").person
+                    .add-review__pic Добавить фото
+                      input(type="file" accept="image/png,image/jpeg" tabindex='1' required).add-review__pic-file
+                    .error
+                  .fill-review
+                    label.fill-review__label
+                        .fill-review__name Имя автора
+                        input(type="text" tabindex="1" name="name" required).type-group.fill-review__text
+                        .error
+                    label.fill-review__label
+                      .fill-review__name Титул автора
+                      input(type="text" tabindex="2" name="link" required).type-group.fill-review__text
                       .error
-                    .fill-review
-                      label.fill-review__label
-                          .fill-review__name Имя автора
-                          input(type="text" tabindex="1" name="name" required).fill-review__text
-                          .error
-                      label.fill-review__label
-                        .fill-review__name Титул автора
-                        input(type="text" tabindex="2" name="link" required).fill-review__text
-                        .error
-                      label.fill-review__label
-                        .fill-review__name Отзыв
-                        textarea(name="text" tabindex="3" required).fill-review__textarea
-                        .error
-                      label.fill-review__label
-                        input(type="button" tabindex="2" name="cancel").review-cancel
-                        input(type="submit" tabindex="1" name="submit").review-send
+                    label.fill-review__label.fill-review__label--text
+                      .fill-review__name Отзыв
+                      textarea(name="text" tabindex="3" required).fill-review__textarea
+                      .error
+                    label.fill-review__label.fill-review__label--button
+                      button(type="button" tabindex="1" name="cancel").cancel
+                        p Отмена
+                      input(type="submit" tabindex="2" name="submit").send.send__review
               .added-review
-                ul.added-review_list 
-                  li.added-review__item 
+                ul.added-review__list 
+                  li.added-review__item.added-review__button
+                    .round.round__review
+                      img(src="./../images/icons/plus.svg" alt="plus").plus
                     p Добавить отзыв
-                    input(type="button" name="add").add__review
                   li.added-review__item
-                    .added-review__block
-                      .added-review-person  
-                        //- +image('','')
-                        .added-review__name Владимир Сабанцев
-                        .added-review__job Преподаватель
-                    .added-block__information
+                    .added-review__person  
+                      img(src="./../images/content/dima.png").review__pic
+                      .person-info
+                        .person-info__name Владимир Сабанцев
+                        .person-info__job Преподаватель
+                    .added-review__information
                       p Этот парень проходил обучение веб-разбработке не где-то, а в Loftschool! 4,5 месяца толькоамых важных тяжелых испытаний и бессоных ночей. 
                     .control-added-review
-                      button.edit__review-button
-                      //- +icon('pencil','pencil')
-                      button.delete__review-button
-                      //- +icon('cross','cross')
+                      .control-added__work
+                        p Править
+                        img(src="./../images/icons/pencil.svg" alt="plus").pencil__edit
+                      .control-added__work
+                        p Удалить
+                        img(src="./../images/icons/plus.svg" alt="plus").delete__edit
 </template>
 
