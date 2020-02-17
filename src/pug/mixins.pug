@@ -36,14 +36,4 @@ mixin presentation(className)
         li(class=`${className}__item`)
           +image(item , 'slide')
 
-mixin comments(className)
-  script(type='text/x-template').comments#comments(@click='CheckArrows' @touchend='Checkarrows')
-    flickity(ref='flickity' :options='flikityOptions').flickity
-      div(v-for='review in contacts').comment__slider_item
-        +icon('quote' , 'quote')
-        p.comments__text {{review.text}}
-        .comments__person
-          img(:src="review.icon", alt="").commentator
-          .comments__person-info
-            .comments__person-name {{review.name}}
-            .comments__person-job {{review.job}}
+

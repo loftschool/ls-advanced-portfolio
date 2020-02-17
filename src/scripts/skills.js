@@ -13,7 +13,7 @@ const skillIcon = {
           getComputedStyle(circle).getPropertyValue("stroke-dasharray")
         );
         const percent = (dashArray / 100) * (100 - this.skillPercent);
-  
+
         circle.style.strokeDashoffset = percent;
       }
     },
@@ -21,15 +21,15 @@ const skillIcon = {
       this.drawColoredCircle();
     }
 };
-  
+
 new Vue({
     el: "#skills",
     template: "#skills",
-   
+
     data() {
       return {
           skillIcon:{}
-        }   
+        }
     },
     created() {
       const data = require("../data/skills.json");

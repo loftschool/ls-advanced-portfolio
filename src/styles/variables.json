@@ -4,5 +4,12 @@
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",
-  "bp-phones": "480px"
+  "bp-phones": "480px",
+  "text-white": "#fff",
+  "text-white-opacity": "rgba(#fff, .5)",
+  "text-black": "#0a001d",
+  "text-black-opacity": "rgba(10, 0, 29, 0.5)",
+  "blue": "#008bff",
+  "admin-black": "#414c63",
+  "admin-gray": "rgba(65, 76, 99, 0.51)"
 }

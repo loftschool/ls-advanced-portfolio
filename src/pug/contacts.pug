@@ -1,14 +1,6 @@
 section.contacts
     .container.contacts__container
-        .comments-heading
-            h3.comments-slider__heading Что обо мне говорят
-            ul.comments__button
-                li.comments__swipe
-                    +icon('back','arrows')(@click='back' :disabled='true' class='back')
-                li.comments__swipe
-                    +icon('next','arrows')(@click='next' :disabled='true' class='next')
-        .comments-slider
-            +comments('contacts')
+        .rewiews
         form.form
             h3.form__heading Связаться со мной
             .form__data
@@ -24,7 +16,7 @@ section.contacts
                     .error
             .form__text
                 label.form__label.form__label-text
-                    .label__name Сообщение к письму
+                    .label__nxsame Сообщение к письму
                     +icon('message','type')
                     textarea(name="text" tabindex="3" required).message.label__cell
                     .error

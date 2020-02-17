@@ -1,0 +1,17 @@
+script(type='text/x-template')#rewiews
+    section.rewiews(@click="checkArrows" @touchend="checkArrows")
+        .container.rewiews__container
+            .rewiews__head
+                h2.rewiews__title Что обо мне говорят
+                .rewiews__controls
+                    button.rewiews__arrow.rewiews__prev(@click="previous" :disabled='true')
+                    button.rewiews__arrow.rewiews__next(@click="next" :disabled='false')
+            flickity(ref="flickity" :options="flickityOptions").rewiews__slider
+                .rewiews__slider_item(v-for="rewiew in rewiews")
+                    p.rewiwes__slider_text {{rewiew.rewiew}}
+                    .rewiews__slider_author
+                        .rewiews__slider_img
+                            img(:src="require(rewiew.photo)", alt="").rewiews__slider_pic
+                        .rewiews__slider_description
+                            .rewiews__slider_name {{rewiew.name}}
+                            .rewiews__slider_about {{rewiew.about}}

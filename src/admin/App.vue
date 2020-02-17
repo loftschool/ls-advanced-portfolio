@@ -179,6 +179,7 @@ textarea:invalid {
 .plus {
   width: inherit;
   height: inherit;
+  background: svg-load('plus.svg', fill=#fff, width=100%, height=100%)  no-repeat;
 }
 .administration-about {
   width: 100%;
@@ -618,7 +619,7 @@ textarea:invalid {
   justify-content: center;
 }
 .added-review__person{
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: space-between;
   width: 85%;
@@ -655,6 +656,7 @@ textarea:invalid {
   margin-bottom: 5%;
  }
 </style>
+
 <template lang="pug">
   .admin__cover
     header.header__admin
@@ -662,7 +664,7 @@ textarea:invalid {
         img(src="./../images/content/user.png").admin__pic
         h3.admin__name Рахманова Севара
         p Панель администрирования
-      .exit 
+      .exit
         a(href='#' class='exit__link') Выйти
     section.navigation
       ul.navigation__list
@@ -674,10 +676,10 @@ textarea:invalid {
         li.administration__item.administration__item--about
           .administration__heading
             h4.administration__heading--name Блок «Обо мне»
-            button 
+            button
               p Добавить группу
               .round
-                img(src="./../images/icons/plus.svg" alt="plus").plus
+                .plus
           .administration-about
             ul.administration-about__list
               li.administration-about__item
@@ -774,13 +776,13 @@ textarea:invalid {
                       .fill-work__name Добавление тэга
                       input(type="text" tabindex="5" name="tag").type-group.type__work
                       ul.tags
-                        li.tag 
+                        li.tag
                           p html
                           img(src="./../images/icons/cross.svg" alt="cross").cross
-                        li.tag 
-                          p css 
+                        li.tag
+                          p css
                           img(src="./../images/icons/cross.svg" alt="cross").cross
-                        li.tag 
+                        li.tag
                           p Javascript
                           img(src="./../images/icons/cross.svg" alt="cross").cross
                     label.fill-work__buttons
@@ -788,7 +790,7 @@ textarea:invalid {
                         p Отмена
                       input(type="submit" tabindex="2" name="submit").send
             .added-work
-              ul.added-work__list 
+              ul.added-work__list
                 li.added-work__item.added-work-button
                   .round.round__add
                     img(src="./../images/icons/plus.svg" alt="plus").plus
@@ -814,7 +816,7 @@ textarea:invalid {
                 h4 Новый отзыв
                 form.edit-review__form
                   label.add-image__review
-                    .image-review 
+                    .image-review
                        img(src="./../images/icons/user2.svg" alt="plus").person
                     .add-review__pic Добавить фото
                       input(type="file" accept="image/png,image/jpeg" tabindex='1' required).add-review__pic-file
@@ -837,19 +839,19 @@ textarea:invalid {
                         p Отмена
                       input(type="submit" tabindex="2" name="submit").send.send__review
               .added-review
-                ul.added-review__list 
+                ul.added-review__list
                   li.added-review__item.added-review__button
                     .round.round__review
                       img(src="./../images/icons/plus.svg" alt="plus").plus
                     p Добавить отзыв
                   li.added-review__item
-                    .added-review__person  
+                    .added-review__person
                       img(src="./../images/content/dima.png").review__pic
                       .person-info
                         .person-info__name Владимир Сабанцев
                         .person-info__job Преподаватель
                     .added-review__information
-                      p Этот парень проходил обучение веб-разбработке не где-то, а в Loftschool! 4,5 месяца толькоамых важных тяжелых испытаний и бессоных ночей. 
+                      p Этот парень проходил обучение веб-разбработке не где-то, а в Loftschool! 4,5 месяца толькоамых важных тяжелых испытаний и бессоных ночей.
                     .control-added-review
                       .control-added__work
                         p Править

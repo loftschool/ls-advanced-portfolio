@@ -401,3 +401,158 @@ textarea:invalid {
     height: 90%;
   }
 }
+
+
+.rewiews {
+  position: relative;
+}
+.rewiews__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.rewiews__head {
+  display: flex;
+  margin-bottom: 100px;
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.rewiews__title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-right: 100px;
+  @include phones {
+    margin-right: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+  }
+}
+
+.rewiews__arrow {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: solid 1px $text-white;
+  background: svg-load(
+  "arrow-down.svg",
+  fill=$text-white,
+  width=12px,
+  height=20px
+  )
+  center center no-repeat;
+  &:hover {
+    background-color: $blue;
+  }
+  &:disabled{
+    border-color: #2d3c4e;
+    background: svg-load(
+    "arrow-down.svg",
+    fill=#2d3c4e,
+    width=12px,
+    height=20px
+    )
+    center center no-repeat;
+  }
+}
+
+.rewiews__prev {
+  transform: rotate(-180deg);
+  margin-right: 30px;
+}
+
+
+//////СЛАЙДЕР
+
+///ФЛИКИТИ
+.flickity-viewport {
+  width: 100%;
+}
+
+///
+.rewiews__slider {
+  width:85%;
+  display: flex;
+}
+
+.rewiews__slider_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 90px;
+  width: 45%;
+  @include tablets {
+    padding-left: 35px;
+  }
+  @include phones {
+    min-width: 100%;
+  }
+}
+
+.rewiews__slider_item:not(:first-child){
+  margin-left:50px;
+}
+
+.rewiwes__slider_text {
+  position: relative;
+  line-height: 1.88;
+  font-weight: 600;
+  color: $text-white-opacity;
+  margin-bottom: 30px;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 75px;
+    height: 60px;
+    top: 0;
+    left: -90px;
+    background: svg-load(
+    "quote.svg",
+    fill=rgba($text-white, 0.05),
+    width=100%,
+    height=100%
+    )
+    center center no-repeat;
+    @include tablets {
+      left: -35px;
+      width: 30px;
+      height: 25px;
+    }
+  }
+}
+
+.rewiews__slider_author {
+  display: flex;
+  align-items: center;
+}
+
+.rewiews__slider_img {
+  min-width: 75px;
+  min-height: 75px;
+  overflow: hidden;
+  border-radius: 100%;
+  margin-right: 30px;
+}
+
+.rewiews__slider_name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  @include phones {
+    font-size: 14px;
+  }
+}
+
+.rewiews__slider_about {
+  font-weight: 600;
+  color: $text-white-opacity;
+  @include phones {
+    font-size: 14px;
+  }
+}
