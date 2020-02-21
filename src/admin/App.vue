@@ -180,6 +180,9 @@ textarea:invalid {
   width: inherit;
   height: inherit;
   background: svg-load('plus.svg', fill=#fff, width=100%, height=100%)  no-repeat;
+  background-size: 70%;
+  background-position: center;
+
 }
 .administration-about {
   width: 100%;
@@ -225,6 +228,13 @@ textarea:invalid {
     justify-content: space-between;
   }
 }
+.control__about{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .type-group {
   color: $light;
   font-size: 1.125rem;
@@ -260,11 +270,15 @@ textarea:invalid {
 }
 .control__about--added {
   width: 22%;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 /* work */
 .edit-work {
   width: 100%;
-  height: 51rem;
+  height: 55rem;
   background: white;
   box-shadow: 0 0 10px $violet;
   margin-bottom: 2%;
@@ -282,6 +296,7 @@ textarea:invalid {
     width: 95%;
     padding: 3% 0;
     border-bottom: 1px solid $light;
+    margin-bottom: 2%;
   }
 }
 .edit-work__space {
@@ -374,11 +389,16 @@ textarea:invalid {
   align-items: center;
 }
 .tag {
-  padding: 1% 2%;
+  padding: 1%;
   margin-right: 1%;
   display: flex;
   background: #dee4ed;
   border-radius: 50px;
+  width: 18%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 .cancel {
   font-size: 1rem;
@@ -395,14 +415,14 @@ textarea:invalid {
   cursor: pointer;
   background: linear-gradient(90deg, $violet-light, $violet-dark);
   color: white;
-  width: 50%;
+  width: 35%;
   height: 85%;
   border-radius: 50px;
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   &__review {
-    width: 30%;
+    width: 25%;
   }
 }
 .added-work {
@@ -471,18 +491,17 @@ textarea:invalid {
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 10%;
   margin-bottom: 10%;
   &__work {
     width: 50%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
     font-weight: bold;
     color: $light;
-    & > p {
-      margin-right: 3%;
-    }
   }
 }
 .administration-review {
@@ -490,7 +509,7 @@ textarea:invalid {
 }
 .edit-review {
   width: 100%;
-  height: 36rem;
+  height: 40rem;
   background: white;
   box-shadow: 0 0 10px $violet;
   display: flex;
@@ -504,6 +523,7 @@ textarea:invalid {
     width: 95%;
     padding: 3% 0;
     border-bottom: 1px solid $light;
+    margin-bottom:2%;
   }
 
   &__form {
@@ -539,6 +559,13 @@ textarea:invalid {
   border-radius: 50%;
   background: #dee4ed;
   margin-bottom: 20%;
+}
+.person {
+  width: inherit;
+  height: inherit;
+  background: svg-load('user2.svg', fill=#fff)  no-repeat;
+  background-size: 70%;
+  background-position: center;
 }
 .fill-review {
   width: 65%;
@@ -621,14 +648,15 @@ textarea:invalid {
 .added-review__person{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 85%;
-  margin-top:2%;
+  margin-top:3%;
 }
 .review__pic{
   border-radius: 50%;
   width: 5rem;
   height: 5rem;
+  margin-right: 10%;
 }
 .person-info{
   &__name{
@@ -650,10 +678,57 @@ textarea:invalid {
 }
 .control-added-review{
   width:85%;
+  height:10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5%;
+ }
+
+ .trash {
+  width: inherit;
+  height: inherit;
+  background: svg-load('trash.svg', fill=$light, width=100%, height=100%)  no-repeat;
+  background-size: 70%;
+  background-position: center;
+ }
+ .pencil {
+  width: inherit;
+  height: inherit;
+  background: svg-load('pencil.svg', fill=$light, width=100%, height=100%)  no-repeat;
+  background-size: 70%;
+  background-position: center;
+  &__violet{
+  background: svg-load('pencil.svg', fill=$violet-light, width=100%, height=100%)  no-repeat;
+  background-size: 25%;
+  background-position: center;
+  }
+ }
+ .cross{
+  width: inherit;
+  height: inherit;
+  background: svg-load('cross.svg', fill=red, width=100%, height=100%)  no-repeat;
+  background-size: 70%;
+  background-position: center;
+  &__two{
+  background-size: 25%;
+  background-position: center;
+  }
+  &__tag{
+  background: svg-load('cross.svg', fill=$violet, width=100%, height=100%)  no-repeat;
+  background-size: 60%;
+  background-position: center;
+  }
+ }
+ .tick{
+  width: inherit;
+  height: inherit;
+  background: svg-load('tick.svg', fill=green, width=100%, height=100%)  no-repeat;
+  background-size: 70%;
+  background-position: center;
+ }
+ .administration-work{
+   min-height:80%;
  }
 </style>
 
@@ -688,63 +763,63 @@ textarea:invalid {
                     input(type="text" placeholder='Название новой группы' tabindex="1" required).type-group
                     .error
                     .control__about
-                      img(src="./../images/icons/tick.svg" alt="tick").tick
-                      img(src="./../images/icons/cross.svg" alt="cross").cross
+                      .tick
+                      .cross
                   label.administration__label.administration__label-bottom
                     input(type="text" placeholder='Новый навык' tabindex="2" required).type-group.type-group__name
                     .error
                     input(type="text" placeholder='100 %' tabindex="3" required).type-group.type-group__procent
                     .error
                     .round.round__group
-                      img(src="./../images/icons/plus.svg" alt="plus").plus
+                      .plus
               li.administration-about__item
                 form.administration-about__form
                   label.administration__label.administration__label-top
                     input(type="text" placeholder='Название новой группы' tabindex="1" required).type-group
                     .error
                     .control__about
-                      img(src="./../images/icons/pencil.svg" alt="pencil").pencil
-                      img(src="./../images/icons/tick.svg" alt="tick").tick
-                      img(src="./../images/icons/cross.svg" alt="cross").cross
+                      .pencil
+                      .tick
+                      .cross
                   label.administration__label.administration__label-added
                     .type-group.type-group--added-name Git
                     .type-group.type-group--added-procent 100%
                     .contol__about.control__about--added
-                      img(src="./../images/icons/pencil.svg" alt="pencil").pencil
-                      img(src="./../images/icons/trash.svg" alt="pencil").trash
-                      img(src="./../images/icons/tick.svg" alt="tick").tick
-                      img(src="./../images/icons/cross.svg" alt="cross").cross
+                      .pencil
+                      .trash
+                      .tick
+                      .cross
                   label.administration__label.administration__label-bottom
                     input(type="text" placeholder='Новый навык' tabindex="2" required).type-group.type-group__name
                     .error
                     input(type="text" placeholder='100 %' tabindex="3" required).type-group.type-group__procent
                     .error
                     .round.round__group
-                      img(src="./../images/icons/plus.svg" alt="plus").plus
+                      .plus
               li.administration-about__item
                 form.administration-about__form
                   label.administration__label.administration__label-top
                     input(type="text" placeholder='Название новой группы' tabindex="1" required).type-group
                     .error
                     .control__about
-                      img(src="./../images/icons/pencil.svg" alt="pencil").pencil
-                      img(src="./../images/icons/tick.svg" alt="tick").tick
-                      img(src="./../images/icons/cross.svg" alt="cross").cross
+                      .pencil
+                      .tick
+                      .cross
                   label.administration__label.administration__label-added
                     .type-group.type-group--added-name Git
                     .type-group.type-group--added-procent 100%
                     .contol__about.control__about--added
-                      img(src="./../images/icons/pencil.svg" alt="pencil").pencil
-                      img(src="./../images/icons/trash.svg" alt="pencil").trash
-                      img(src="./../images/icons/tick.svg" alt="tick").tick
-                      img(src="./../images/icons/cross.svg" alt="cross").cross
+                      .pencil
+                      .trash
+                      .tick
+                      .cross
                   label.administration__label.administration__label-bottom
                     input(type="text" placeholder='Новый навык' tabindex="2" required).type-group.type-group__name
                     .error
                     input(type="text" placeholder='100 %' tabindex="3" required).type-group.type-group__procent
                     .error
                     .round.round__group
-                      img(src="./../images/icons/plus.svg" alt="plus").plus
+                      .plus
         li.administration__item.administration__item--work
           .administration__heading
             h4 Блок «Работы»
@@ -778,13 +853,13 @@ textarea:invalid {
                       ul.tags
                         li.tag
                           p html
-                          img(src="./../images/icons/cross.svg" alt="cross").cross
+                          .cross.cross__tag
                         li.tag
                           p css
-                          img(src="./../images/icons/cross.svg" alt="cross").cross
+                          .cross.cross__tag
                         li.tag
                           p Javascript
-                          img(src="./../images/icons/cross.svg" alt="cross").cross
+                          .cross.cross__tag
                     label.fill-work__buttons
                       button(type="button" tabindex="1" name="cancel").cancel
                         p Отмена
@@ -793,7 +868,7 @@ textarea:invalid {
               ul.added-work__list
                 li.added-work__item.added-work-button
                   .round.round__add
-                    img(src="./../images/icons/plus.svg" alt="plus").plus
+                    .plus
                   p Добавить работу
                 li.added-work__item
                   img(src="./../images/content/slide1.png").slide
@@ -804,10 +879,10 @@ textarea:invalid {
                   .control-added
                     .control-added__work
                       p Править
-                      img(src="./../images/icons/pencil.svg" alt="plus").pencil__edit
+                      .pencil.pencil__violet
                     .control-added__work
                       p Удалить
-                      img(src="./../images/icons/plus.svg" alt="plus").delete__edit
+                      .cross.cross__two
         li.administration__item.administration__item--review
           .administration__heading
             h4 Блок «Отзывы»
@@ -817,7 +892,7 @@ textarea:invalid {
                 form.edit-review__form
                   label.add-image__review
                     .image-review
-                       img(src="./../images/icons/user2.svg" alt="plus").person
+                      .person
                     .add-review__pic Добавить фото
                       input(type="file" accept="image/png,image/jpeg" tabindex='1' required).add-review__pic-file
                     .error
@@ -842,7 +917,7 @@ textarea:invalid {
                 ul.added-review__list
                   li.added-review__item.added-review__button
                     .round.round__review
-                      img(src="./../images/icons/plus.svg" alt="plus").plus
+                      .plus
                     p Добавить отзыв
                   li.added-review__item
                     .added-review__person
@@ -855,9 +930,9 @@ textarea:invalid {
                     .control-added-review
                       .control-added__work
                         p Править
-                        img(src="./../images/icons/pencil.svg" alt="plus").pencil__edit
+                        .pencil.pencil__violet
                       .control-added__work
                         p Удалить
-                        img(src="./../images/icons/plus.svg" alt="plus").delete__edit
+                        .cross.cross__two
 </template>
 
