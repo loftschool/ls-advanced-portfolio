@@ -6,6 +6,7 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
@@ -53,7 +54,6 @@ module.exports = (env, argv) => {
           spriteFilename: svgPath => `sprite${svgPath.substr(-4)}`
         }
       },
-      "svg-transform-loader",
       {
         loader: "svgo-loader",
         options: {
@@ -131,6 +131,7 @@ module.exports = (env, argv) => {
   if (isProductionBuild) {
     config.devtool = "none";
     config.plugins = (config.plugins || []).concat([
+      new CleanWebpackPlugin(),
       new webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: '"production"'
