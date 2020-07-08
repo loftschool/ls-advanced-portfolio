@@ -1,0 +1,59 @@
+.form-block {
+  margin-right: 50px;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 14px;
+  flex: 1;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:before {
+    content: attr(data-title);
+    margin-bottom: 21px;
+    display: block;
+    font-weight: 600;
+    color: rgba($text-color, .3);
+    margin-left: 50px;
+  }
+
+
+  @include phones {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.form-block__container {
+  display: flex;
+  align-items: center;
+
+  &_align_top {
+    align-items: flex-start;
+  }
+}
+
+.form-block__icon {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  opacity: .3;
+  margin-right: 16px;
+}
+
+.form-block__field {
+  flex: 1;
+}
+
+.form-block__input {
+  background: transparent;
+  border: 0 none;
+  width: 100%;
+  &::placeholder {
+    color: currentColor;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

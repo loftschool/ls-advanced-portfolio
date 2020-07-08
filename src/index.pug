@@ -1,15 +1,184 @@
-include ./mixins.pug
+extends ./main.layout.pug
 
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | main page
-  body
-    .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+block content
+  .welcome-section
+    section.fullscreen-section.hero
+      .container.hero__container
+        header.header
+          .header__logo
+            a.logo(href="") ВА
+          .header__menu 
+            nav.menu
+              ul.menu__list
+                - var menuLinks = ["Обо мне", "Навыки", "Работы", "Отзывы"];
+                each item in menuLinks 
+                  li.menu__item
+                    a(href="#").menu__link #{item}
+          .header__buttons
+            ul.socials
+              - var socials = ['insta', 'vk', 'github', 'envelope'];
+              each item in socials
+                li.socials__item
+                  a(href=`${item === 'envelope' ? 'mailto:sabantsev@yandex.ru' : '#'}`).socials__link
+                    +icon(item, 'socials__icon')
+
+        .hero__content
+          .userinfo
+            .userinfo__title Личный сайт #[span.userinfo__occ веб разработчика]
+            .userinfo__name Владимир Астаханов
+        .hero__downbutton
+          .scroll-down
+            a(href="").scroll-down__btn Скролл
+            
+    section.about
+      .container
+        .about__columns
+          .about__user
+            .user
+              .user__avatar
+                .user__avatar-wrapper
+                  +image('content/user.jpg', 'user__avatar-pic')
+              .user__about
+                - 
+                  var userinfo = [
+                    ['Проживаю:', "Новосибирск"],
+                    ['Возраст:', "27 лет"],
+                    ['Родился:', "1 января 1991"],
+                  ];
+                table.user__table
+                  each item in userinfo
+                    tr
+                      td.user__table-title #{item[0]}
+                      td.user__table-content #{item[1]}
+          .about__user-text
+            .about__main-text-content
+              .about__desc Привет, меня зовут
+              .about__title Владимир Астаханов
+              .about__text-info
+                p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            .about__ps
+              | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+  .triangles.triangles_top
+    svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+      polygon(points="0,0 0,100 1000,100")
+    svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+      polygon(points="0,100 1000,100 1000,0")
+  .middle-section
+    section.values
+      .container.values__container
+        .values__wrapper
+          .values__title
+            .values__title-container
+              .values__title-text Чем я могу быть полезен вам
+              .values__content
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+          .values__widget
+            .values__widget-container
+              - 
+                var skillsCategories = [
+                  ["Frontend", ["HTML5", "CSS3", "Javascript", "Vue.js"]],
+                  ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]
+                ];
+
+              ul.skills
+                each category in skillsCategories
+                  li.skills__item(v-for="category in categories")
+                    .skills-row
+                      .skills-row__title #{category[0]}
+                      ul.skills-row__list
+                        each skill in category[1]
+                          li.skills-row__item
+                            .skill
+                              svg(viewBox="0 0 100 100").skill__circle-shape
+                                circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                                circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle_above
+                                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+                                  stop(offset="0%" stop-color="#5500f2")
+                                  stop(offset="100%" stop-color="#8f00ef")
+                              .skill__circle-text #{skill}
+    section.works
+      .container.works__container
+        .section-title.works__section-title Мои работы
+        .works__content
+          .works-slider
+            .works-slider__pics(data-slide="1")
+              .works-slider__pics-content
+                +image('content/slider-1.jpg', 'works-slider__fullpic')
+                .works-slider__buttons
+                  a(href="#").works-slider__btn.works-slider__btn_next
+                  a(href="#").works-slider__btn.works-slider__btn_prev
+                ul.works-slider__thumbs
+                  - for (var i = 3; i > 0; i--)
+                    li.works-slider__thumb-item(class=`${i === 1 ? 'active' : ''}`)
+                      a(href="").works-slider__thumb-link
+                        +image(`content/slider-${i}.jpg`, 'works-slider__thumb')
+            .works-slider__data
+              ul.works-slider__tags
+                - var tags = ['HTML', 'CSS', 'JavaScript'];
+                each item in tags
+                  li.works-slider__tag-item 
+                    .tag #{item}
+              .works-slider__title Сайт школы образования
+              .works-slider__desc
+                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+              .works-slider__link 
+                a(href="").iconed-link Посмотреть сайт
+
+  .triangles.triangles_bottom
+    svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+      polygon(points="0,0 1000,0 1000,100")
+    svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+      polygon(points="0,0 0,100 1000,0")
+  section.contacts
+    .container.contacts__container
+      .contacts__about
+        .reviews
+          .reviews__header
+            .reviews__title.section-title Что обо мне говорят
+            .reviews__buttons
+              .reviews__btn.reviews__btn_prev
+              .reviews__btn.reviews__btn_next
+          ul.reviews__content
+            - for (var i = 0; i < 2; i++)
+              li.reviews__content-item
+                .quote
+                  .quote__text
+                    p Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .quote__user
+                    .user-min
+                      .user-min__avatar
+                        .user-min__pic-wrapper
+                          +image('content/user.jpg', 'user-min__avatar-pic')
+                      .user-min__info
+                        .user-min__name Ковальчук Дмитрий
+                        .user-min__occ Основатель Loftschool
+  footer.footer
+    .container.footer__container
+      .footer__copyright
+        .footer__copyright-col
+          .footer__copyright-year &copy; 2019
+        .footer__copyright-userinfo
+          .footer__copyright-name Владимир Астаханов
+          .footer__data-text Личный сайт веб - разработчика
+      .footer__data
+        nav.menu.menu--color-white.footer__data-menu
+          ul.menu__list
+            each item in menuLinks 
+              li.menu__item
+                a(href="#").menu__link #{item}
+        .footer__data-content
+          .footer__data-col
+            .footer__data-text
+              p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+            .footer__data-socials
+              ul.socials.socials--round-borders
+                each item in socials
+                  li.socials__item
+                    a(href="#").socials__link
+                      +icon(item, 'socials__icon')
+          .footer__data-col
+            .text-quote
+              .text-quote__text
+                p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете 
+              .text-quote__author Martin Golding

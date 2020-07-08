@@ -1,0 +1,50 @@
+.about__columns {
+  display: flex;
+  padding: 169px 17% 268px;
+  justify-content: space-between;
+  @include desktop {
+    padding-right: 2%;
+    padding-left: 2%;
+  }
+  @include phones {
+    flex-direction: column;
+    padding-top: 114px;
+    padding-bottom: 114px;
+  }
+}
+
+.about__user-text {
+  color: rgba($text-color, .5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 56%;
+  @include phones {
+    width: 100%;
+  }
+}
+
+.about__user {
+  width: 36%;
+  @include phones {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+.about__desc {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about__title {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: $text-color;
+}
+
+.about__ps {
+  font-style: italic;
+  margin-bottom: 36px;
+}

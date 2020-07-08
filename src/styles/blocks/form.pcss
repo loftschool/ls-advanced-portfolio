@@ -1,0 +1,29 @@
+.form__row {
+  margin-bottom: 38px;
+  display: flex;
+
+  @include phones {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  &--extra-margin {
+    margin-bottom: 60px;
+  @include phones {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.gradient-btn.form__submit {
+  @include phones {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}

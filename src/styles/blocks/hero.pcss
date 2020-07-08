@@ -1,0 +1,31 @@
+.hero {
+  padding-top: 54px;
+  position: relative;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hero__content {
+  flex: .8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24%;
+
+  @include desktop {
+    padding: 0 10%;
+  }
+}
+
+.hero__downbutton {
+  position: absolute;
+  bottom: 4%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}

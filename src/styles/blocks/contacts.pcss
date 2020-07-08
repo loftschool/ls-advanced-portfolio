@@ -1,0 +1,40 @@
+.contacts {
+  background: url('~images/bg/budda.jpg') top right 53% / cover no-repeat;
+  padding-top: 253px;
+  padding-bottom: 135px;
+
+  @include phones {
+    padding-top: 170px;
+    padding-bottom: 110px;
+  }
+}
+
+.contacts__form-title {
+  @include phones {
+    text-align: center;
+  }
+}
+
+.contacts__about {
+  margin-bottom: 190px;
+
+  @include phones {
+    margin-bottom: 150px;
+  }
+}
+
+.contacts__container {
+  padding-right: 26%;
+
+  @include tablets {
+    padding-right: 0;
+  }
+}
+
+.contacts__form {
+  width: 89%;
+
+  @include tablets {
+    width: 100%;
+  }
+}

@@ -1,0 +1,41 @@
+.triangles {
+  position: relative;
+  height: 100px;
+
+  &_top {
+    margin-top: -120px;
+    height: 120px;
+
+    @include phones {
+      height: 40px;
+      margin-top: -40px;
+    }
+  }
+
+  &_bottom {
+    margin-bottom: -90px;
+    height: 90px;
+
+    @include phones {
+      height: 40px;
+      margin-bottom: -40px;
+    }
+  }
+}
+
+.triangles__shape {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: 50%;
+  fill: #fff;
+  height: 100%;
+
+  &_left {
+    left: 0;
+  }
+  &_right {
+    right: 0;
+  }
+}

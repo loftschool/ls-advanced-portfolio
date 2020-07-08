@@ -1,0 +1,31 @@
+.quote {
+  padding-left: 24%;
+  position: relative;
+
+  @include tablets {
+    padding-left: 0;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 18%;
+    height: 37%;
+    opacity: .05;
+    background: svg-load('quote.svg', fill=$text-color) center center / contain no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include tablets {
+      background: none;
+    }
+  }
+}
+
+.quote__text {
+  margin-bottom: 30px;
+  color: rgba($text-color, .5);
+  font-weight: 600;
+  line-height: 1.8;
+}

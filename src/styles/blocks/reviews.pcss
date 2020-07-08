@@ -1,0 +1,85 @@
+.reviews__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 95px;
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 33px;
+  }
+}
+
+.reviews__title.section-title {
+  margin-bottom: 0;
+  margin-right: 10%;
+  @include phones {
+    margin-right: 0%;
+    margin-bottom: 25px;
+  }
+}
+
+.reviews__buttons {
+  display: flex;
+}
+
+.reviews__btn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid currentColor;
+  position: relative;
+  border-radius: 50%;
+  margin-right: 30px;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:before {
+    content: "";
+    width: 8px;
+    height: 10px;
+    display: block;
+    background: svg-load('arrow-down.svg', fill=$text-color) center center / contain no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &_prev {
+    &:before {
+      transform: translate(-50%, -50%) rotate(-180deg);
+    }
+  }
+}
+
+.reviews__content {
+  overflow: hidden;
+  display: flex;
+}
+
+.reviews__content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  will-change: transform;
+  transition: transform .3s;
+
+  @include tablets {
+    margin-left: 0;
+  }
+  @include phones {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.reviews__content-item {
+  flex-shrink: 0;
+  padding-right: 30px;
+  width: 50%;
+
+  @include phones {
+    margin-right: 0;
+    width: 100%;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
