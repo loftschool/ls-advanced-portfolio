@@ -1,12 +1,12 @@
-import Card from "./card.vue";
+import card from "./card.vue";
 
 export default {
-  title: "Card",
-  component: Card,
+  title: "card",
+  component: card,
 };
 
 export const defaultView = () => ({
-  components: { Card },
+  components: { card },
   template: `
     <card
       title="Заголовок" 
@@ -21,7 +21,7 @@ defaultView.story = {
 }
 
 export const complexView = () => ({
-  components: {Card},
+  components: {card},
   template: `
     <card>
       <h1 slot="title">Заголовок</h1> 
@@ -36,7 +36,7 @@ complexView.story = {
 
 
 export const simpleView = () => ({
-  components: { Card },
+  components: { card },
   template: `
     <card simple>
       <h1>Содержимое</h1> 
