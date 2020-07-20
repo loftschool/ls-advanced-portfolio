@@ -6,17 +6,24 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot",
     "build": "webpack --mode=production --progress",
-    "reg": "node reg-util.js"
+    "reg": "node reg-util.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/core": "^7.10.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/vue": "^5.3.19",
     "autoprefixer": "^9.4.8",
     "babel-loader": "^8.0.5",
+    "babel-preset-vue": "^2.0.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",
     "cssnano": "^4.1.10",
