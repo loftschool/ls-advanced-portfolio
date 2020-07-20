@@ -1,5 +1,8 @@
 <template>
-  <button class="about-page__add-new">{{title}}</button>
+  <button 
+    v-on="$listeners"
+    class="about-page__add-new"
+  >{{title}}</button>
 </template>
 
 <script>
