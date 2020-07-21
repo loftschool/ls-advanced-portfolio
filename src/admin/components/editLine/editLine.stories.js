@@ -31,3 +31,14 @@ export const defaultView = () => ({
 defaultView.story = {
   name: "Стандартный вид",
 };
+
+export const blockedView = () => ({
+  components: { editLine },
+  template: `
+    <editLine value="Название" blocked />
+  `,
+});
+
+blockedView.story = {
+  name: "Заблокированный",
+};
