@@ -65,7 +65,7 @@ export default {
     }
   },
   components: {
-    tooltip: () => import("../tooltip/tooltip.vue")
+    tooltip: () => import("../tooltip")
   }
 };
 </script>
