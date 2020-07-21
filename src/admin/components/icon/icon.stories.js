@@ -16,6 +16,17 @@ defaultView.story = {
   name: "Стандартный вид",
 };
 
+export const labeledView = () => ({
+  components: { icon },
+  template: `
+    <icon title="удалить" />
+  `,
+});
+
+labeledView.story = {
+  name: "С подписью",
+};
+
 export const iconedView = () => ({
   components: { icon },
   template: `
