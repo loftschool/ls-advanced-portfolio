@@ -65,7 +65,7 @@ export default {
     }
   },
   components: {
-    tooltip: () => import("../tooltip")
+    tooltip: () => import("components/tooltip")
   }
 };
 </script>
