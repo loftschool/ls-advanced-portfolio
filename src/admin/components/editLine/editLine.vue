@@ -12,7 +12,7 @@
         :value="value"
         :errorText="errorText"
         @input="$emit('input', $event)"
-        @keydown.native.enter="$emit('approve')"
+        @keydown.native.enter="onApprove"
         autofocus="autofocus"
         no-side-paddings="no-side-paddings"
       ></app-input>
