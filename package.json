@@ -32,6 +32,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-advanced-variables": "^3.0.0",
+    "postcss-each": "^0.10.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-inline-svg": "^4.1.0",
     "postcss-loader": "^3.0.0",
