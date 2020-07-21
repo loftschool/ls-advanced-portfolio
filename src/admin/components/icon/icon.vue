@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="['btn', iconClass, {'grayscale': this.grayscale}, {'no-word' : !!title}]"
+    :class="['btn', iconClass, {'grayscale': this.grayscale}, {'no-words' : !!title === false}]"
     :data-text="title"
     type="button"
     v-on="$listeners"
