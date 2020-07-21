@@ -1,4 +1,4 @@
-import roundBtn from "./roundBtn.vue";
+import roundBtn from "../../button.vue";
 import { action } from "@storybook/addon-actions";
 
 const methods = {
@@ -6,14 +6,14 @@ const methods = {
 }
 
 export default {
-  title: "roundBtn",
+  title: "button/round",
   component: roundBtn,
 };
 
 export const defaultView = () => ({
   components: { roundBtn },
   template: `
-    <round-btn @click="onClick" />
+    <round-btn type="iconed" @click="onClick" />
   `,
   methods
 });

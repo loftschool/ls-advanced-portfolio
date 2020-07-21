@@ -1,4 +1,4 @@
-import appButton from "./button.vue";
+import appButton from "../../button.vue";
 import { action } from "@storybook/addon-actions";
 
 const methods = {
@@ -7,7 +7,7 @@ const methods = {
 }
 
 export default {
-  title: "appButton",
+  title: "button/default",
   components: { appButton },
 };
 
@@ -51,7 +51,7 @@ disabledView.story = {
 export const fileView = () => ({
   components: { appButton },
   template: `
-    <appButton type="file" @change="onChange" />
+    <appButton typeAttr="file" @change="onChange" />
   `,
   methods
 });

@@ -1,22 +1,26 @@
-import squareBtn from "./squareBtn.vue";
+import squareBtn from "../../button.vue";
 import { action } from "@storybook/addon-actions";
 
 const methods = {
   onClick: action("onClick"),
-  onChange: action("onChange")
-}
+  onChange: action("onChange"),
+};
 
 export default {
-  title: "squareBtn",
-  components: squareBtn
-}
+  title: "button/square",
+  components: squareBtn,
+};
 
 export const defaultView = () => ({
   components: { squareBtn },
   template: `
-    <square-btn title="Отправить" @click="onClick" />
+    <square-btn 
+      type="square"
+      title="Отправить" 
+      @click="onClick" 
+    />
   `,
-  methods
+  methods,
 });
 
 defaultView.story = {

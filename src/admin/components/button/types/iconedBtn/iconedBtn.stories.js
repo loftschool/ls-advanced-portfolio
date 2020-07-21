@@ -1,4 +1,4 @@
-import iconedBtn from "./iconedBtn.vue";
+import iconedBtn from "../../button.vue";
 import { action } from "@storybook/addon-actions";
 
 const methods = {
@@ -6,14 +6,14 @@ const methods = {
 };
 
 export default {
-  title: "iconedBtn",
+  title: "button/iconed",
   component: iconedBtn,
 };
 
 export const defaultView = () => ({
   components: { iconedBtn },
   template: `
-    <iconed-btn @click="onClick" title="Заголовок" />
+    <iconed-btn type="iconed" @click="onClick" title="Заголовок" />
   `,
   methods,
 });
