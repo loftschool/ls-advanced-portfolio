@@ -7,8 +7,13 @@ export default {
 
 export const defaultView = () => ({
   components: { appInput },
+  data() {
+    return {
+      title : "Текст"
+    }
+  },
   template: `
-    <app-input />
+    <app-input v-model="title" />
   `,
 });
 
@@ -54,4 +59,20 @@ errorView.story = {
   name: "С ошибкой",
 };
 
+
+export const typeView = () => ({
+  components: { appInput },
+  template: `
+    <app-input
+      type="number"
+      min="0"
+      max="100"
+      maxlength="3" 
+    />
+  `,
+});
+
+typeView.story = {
+  name: "Другой тип",
+};
 
