@@ -1,6 +1,6 @@
 @import url("../../../../../styles/mixins.pcss");
 
-.btn-container {
+.square-btn-component {
   background: linear-gradient(to right, #006aed, #3f35cb) center center
     no-repeat;
   display: flex;
@@ -17,7 +17,7 @@
   }
 }
 
-.btn__sign {
+.sign {
   display: block;
   width: 164px;
   height: 164px;
@@ -25,7 +25,6 @@
   border: 2px solid #fff;
   position: relative;
   margin-bottom: 30px;
-  width: 164px;
 
   &:before {
     content: "+";
@@ -49,14 +48,14 @@
   }
 }
 
-.btn__text {
+.text {
   @include phones {
     display: flex;
     align-items: center;
   }
 }
 
-.btn__title {
+.title {
   font-size: 18px;
   color: #fff;
   font-weight: bold;

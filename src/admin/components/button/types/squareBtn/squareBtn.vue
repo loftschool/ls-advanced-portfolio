@@ -1,8 +1,8 @@
 <template>
-  <button class="btn-container" type="button" v-on="$listeners">
-    <div class="btn__text">
-      <div class="btn__sign"></div>
-      <div class="btn__title">{{title}}</div>
+  <button class="square-btn-component" type="button" v-on="$listeners">
+    <div class="text">
+      <div class="sign"></div>
+      <div class="title">{{title}}</div>
     </div>
   </button>
 </template>

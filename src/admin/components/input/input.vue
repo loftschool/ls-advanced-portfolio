@@ -4,7 +4,7 @@
     v-if="fieldType === 'input'"
     :class="[{'input_labeled' : !!title, 'no-side-paddings' : noSidePaddings}, iconClass, {'error' : !!errorMessage}]"
   >
-    <div class="input__title" v-if="title">{{title}}</div>
+    <div class="title" v-if="title">{{title}}</div>
     <input
       class="input__elem field__elem"
       v-bind="$attrs"
@@ -21,7 +21,7 @@
     v-bind="$attrs"
     :class="{'error': !!errorMessage}"
   >
-    <div class="input__title" v-if="title">{{title}}</div>
+    <div class="title" v-if="title">{{title}}</div>
     <textarea
       class="textarea__elem field__elem"
       :value="value"

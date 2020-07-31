@@ -1,13 +1,13 @@
 <template>
-  <div class="edit-line-container" :class="{'blocked' : blocked}">
-    <div class="skills-card-title" v-if="editmode === false">
-      <div class="skills-card-title__text">{{value}}</div>
-      <div class="skills-card-title__icon">
+  <div class="edit-line-component" :class="{'blocked' : blocked}">
+    <div class="title" v-if="editmode === false">
+      <div class="text">{{value}}</div>
+      <div class="icon">
         <icon symbol="pencil" grayscale @click="editmode = true"></icon>
       </div>
     </div>
-    <div v-else class="skills-card-title">
-      <div class="skills-card-title__input">
+    <div v-else class="title">
+      <div class="input">
         <app-input
           placeholder="Название новой группы"
           :value="value"
@@ -18,11 +18,11 @@
           no-side-paddings="no-side-paddings"
         ></app-input>
       </div>
-      <div class="skills-card-title__buttons">
-        <div class="skills-card-title__btn">
+      <div class="buttons">
+        <div class="button-icon">
           <icon symbol="tick" @click="onApprove"></icon>
         </div>
-        <div class="skills-card-title__btn">
+        <div class="button-icon">
           <icon symbol="cross" @click="$emit('remove')"></icon>
         </div>
       </div>

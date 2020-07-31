@@ -1,8 +1,9 @@
 <template>
-  <div class="avatar" :style="measures">
+  <div class="avatar-component" :style="measures">
     <img 
-      class="avatar__pic" 
+      class="image"
       v-bind="$attrs"
+      alt="user picture"
     />
   </div>
 </template>

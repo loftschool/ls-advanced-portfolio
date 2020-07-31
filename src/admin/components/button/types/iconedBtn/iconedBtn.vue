@@ -1,7 +1,7 @@
 <template>
   <button 
     v-on="$listeners"
-    class="about-page__add-new"
+    class="button-component"
   >{{title}}</button>
 </template>
 
