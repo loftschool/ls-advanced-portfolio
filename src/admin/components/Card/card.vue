@@ -1,13 +1,13 @@
 <template>
-  <div class="card card_plain" v-if="simple">
+  <div class="card-component card_plain" v-if="simple">
     <slot name="default"></slot>
   </div>
-  <div class="card" v-else>
-    <div class="card__title">
-      <div class="card__title-text" v-text="title"></div>
+  <div class="card-component" v-else>
+    <div class="header">
+      <div class="text" v-text="title"></div>
       <slot name="title" v-if="!!title === false"></slot>
     </div>
-    <div class="card__content">
+    <div class="content">
       <slot name="content"></slot>
     </div>
   </div>
