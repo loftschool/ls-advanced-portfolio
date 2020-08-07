@@ -1,0 +1,23 @@
+.round-button-component {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  padding: 0;
+  background: linear-gradient(to right, #006aed 0%, #3f35cb 100%) center center;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  flex-shrink: 0;
+
+  &:before {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1;
+  }
+}

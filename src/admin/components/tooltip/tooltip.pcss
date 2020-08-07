@@ -1,0 +1,22 @@
+.input__error-tooltip-container {
+  z-index: 100;
+  background: $errors-color;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 14px;
+  white-space: nowrap;
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-width: 0;
+    border-bottom: 7px $errors-color;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
