@@ -64,7 +64,7 @@
   "dependencies": {
     "normalize.css": "^8.0.1",
     "promptly": "^3.0.3",
-    "pug": "^3.0.0",
+    "pug": "^3.0.1",
     "request": "^2.88.0",
     "signale": "^1.4.0",
     "vue": "^2.6.7",
